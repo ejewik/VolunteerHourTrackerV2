@@ -11,8 +11,10 @@ import UIKit
 
 class CreateEntryViewController : UIViewController {
     
+    var entry: Entry?
     
-    @IBOutlet weak var eventTitleLabel: UILabel!
+   
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var timeToPicker: UIDatePicker!
     @IBOutlet weak var timeFromPicker: UIDatePicker!
@@ -21,5 +23,45 @@ class CreateEntryViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let entry = entry {
+        descriptionTextView.text = entry.description
+        titleTextField.text = entry.eventTitle
+            
+        } else {
+        
+        descriptionTextView.text = ""
+        titleTextField.text = ""
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier,
+        let destination = segue.destination as? HoursTableViewController
+            else { return }
+        
+        switch identifier {
+        case "save" where entry != nil:
+            entry?.eventTitle = titleTextField.text ?? ""
+            entry?.description = descriptionTextView.text ?? ""
+            
+            destination.tableView.reloadData()
+            
+        case "save" where entry == nil:
+            let entry = Entry()
+            entry.eventTitle = titleTextField.text ?? ""
+            entry.description = descriptionTextView.text ?? ""
+            
+            destination.entries.append(entry)
+            
+        case "cancel":
+            print("cancel button tapped")
+            
+        default: print("unexpected segue identifier")
+        }
     }
 }

@@ -15,7 +15,7 @@
 		4B683B7F2106537E006EBF40 /* HoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B7E2106537E006EBF40 /* HoursTableViewController.swift */; };
 		4B683B8621065502006EBF40 /* HourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B8521065502006EBF40 /* HourTableViewCell.swift */; };
 		4B683B882106698A006EBF40 /* CreateEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B872106698A006EBF40 /* CreateEntryViewController.swift */; };
-		4B683B8D21079C36006EBF40 /* AddEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B8C21079C36006EBF40 /* AddEntryTableViewCell.swift */; };
+		4B683B8F2107A3B6006EBF40 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B8E2107A3B6006EBF40 /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		4B683B7E2106537E006EBF40 /* HoursTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursTableViewController.swift; sourceTree = "<group>"; };
 		4B683B8521065502006EBF40 /* HourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourTableViewCell.swift; sourceTree = "<group>"; };
 		4B683B872106698A006EBF40 /* CreateEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEntryViewController.swift; sourceTree = "<group>"; };
-		4B683B8C21079C36006EBF40 /* AddEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryTableViewCell.swift; sourceTree = "<group>"; };
+		4B683B8E2107A3B6006EBF40 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				4B683B8521065502006EBF40 /* HourTableViewCell.swift */,
-				4B683B8C21079C36006EBF40 /* AddEntryTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +111,7 @@
 		4B683B84210654C7006EBF40 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4B683B8E2107A3B6006EBF40 /* Entry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,9 +187,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B683B8F2107A3B6006EBF40 /* Entry.swift in Sources */,
 				4B683B882106698A006EBF40 /* CreateEntryViewController.swift in Sources */,
 				4B683B7221065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld in Sources */,
-				4B683B8D21079C36006EBF40 /* AddEntryTableViewCell.swift in Sources */,
 				4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */,
 				4B683B7F2106537E006EBF40 /* HoursTableViewController.swift in Sources */,
 				4B683B8621065502006EBF40 /* HourTableViewCell.swift in Sources */,
