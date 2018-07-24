@@ -11,6 +11,14 @@ import UIKit
 
 class CreateEntryViewController : UIViewController {
     
+    
+    @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var timeToPicker: UIDatePicker!
+    @IBOutlet weak var timeFromPicker: UIDatePicker!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

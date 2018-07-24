@@ -19,6 +19,7 @@ class HoursTableViewController : UITableViewController {
         }
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            //let cell = tableView.dequeueReusableCell(withIdentifier: "AddEntryTableViewCell", for: indexPath) as! AddEntryTableViewCell
             let cell = tableView.dequeueReusableCell(withIdentifier: "HourTableViewCell", for: indexPath) as! HourTableViewCell
             //cell.textLabel?.text = "Cell Row: \(indexPath.row) Section: \(indexPath.section)"
             
@@ -29,7 +30,14 @@ class HoursTableViewController : UITableViewController {
             
             return cell
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
         
+        if identifier == "displayEntry" {
+            print("Transition to Create Entry VC")
+        }
+    }
         
     
 }
