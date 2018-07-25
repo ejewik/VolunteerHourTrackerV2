@@ -7,15 +7,29 @@
 //
 
 import Foundation
-import UIKit 
+import UIKit
 
-class HoursTableViewController : UITableViewController {
+
+
+class HoursTableViewController : UITableViewController  {
+   // func needHours(controller: CreateEntryViewController, hours: Int16) {
+        //
+   // }
+    
+    
+    
     
     //var totalHours : Int = 0
     
     var entries = [Entry]() {
         didSet {
             tableView.reloadData()
+            
+            var totalHours : Int = 0
+            for entry in entries {
+                totalHours += Int(entry.hourCount)
+            }
+            self.title = "Total hours: \(String(totalHours))"
         }
     }
     
@@ -24,7 +38,7 @@ class HoursTableViewController : UITableViewController {
         
          entries = CoreDataHelper.retrieveEntries()
         
-        self.title = "Total hours: \(String(CreateEntryViewController.totalHours))"
+       // self.title = "Total hours: \(String(CreateEntryViewController.totalHours))"
         
     }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
