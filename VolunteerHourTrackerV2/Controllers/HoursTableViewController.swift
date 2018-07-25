@@ -11,6 +11,8 @@ import UIKit
 
 class HoursTableViewController : UITableViewController {
     
+    //var totalHours : Int = 0
+    
     var entries = [Entry]() {
         didSet {
             tableView.reloadData()
@@ -19,6 +21,11 @@ class HoursTableViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         entries = CoreDataHelper.retrieveEntries()
+        
+        self.title = "Total hours: \(String(CreateEntryViewController.totalHours))"
+        
     }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             
@@ -28,23 +35,19 @@ class HoursTableViewController : UITableViewController {
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "HourTableViewCell", for: indexPath) as! HourTableViewCell
-             //let cell2 = tableView.dequeueReusableCell(withIdentifier: "HourTableViewCell", for: indexPath) as! HourTableViewCell
-            //cell.textLabel?.text = "Cell Row: \(indexPath.row) Section: \(indexPath.section)"
             let entry = entries[indexPath.row]
             
            
             cell.eventLabel.text = entry.eventTitle
-            //cell.hourLabel.text = entry.hourCount
+            
             cell.clubLabel.text = entry.club
-            cell.dateLabel.text = entry.date.convertToString()
+            
+            //cell..text = entry.content
+            cell.dateLabel.text = entry.date?.convertToString() ?? "unknown"
             cell.hourLabel.text = String(entry.hourCount)
             
 
-           // cell.dateLabel.text = "date"
-            
-            //cell.eventLabel.text = "title"
-            //cell.hourLabel.text = "hours"
-            //cell.clubLabel.text = "club"
+          
             
             
             return cell
@@ -73,12 +76,15 @@ class HoursTableViewController : UITableViewController {
     }
 
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
-        
+        entries = CoreDataHelper.retrieveEntries()
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            entries.remove(at: indexPath.row)
+            let entryToDelete = entries[indexPath.row]
+            CoreDataHelper.delete(entry: entryToDelete)
+            
+            entries = CoreDataHelper.retrieveEntries()
         }
     }
     

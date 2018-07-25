@@ -168,9 +168,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peB-kx-CYQ">
-                                <rect key="frame" x="66" y="284" width="240" height="59"/>
-                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWg-xW-dlC">
+                                <rect key="frame" x="66" y="286" width="243" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -180,17 +183,18 @@
                             <constraint firstItem="4AY-cn-cI4" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="140" id="73g-bZ-vKu"/>
                             <constraint firstItem="a5r-Ef-zdr" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="7cG-wT-59y"/>
                             <constraint firstAttribute="trailing" secondItem="7HR-Xw-QDC" secondAttribute="trailing" constant="10" id="9c4-pv-qt7"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="dWg-xW-dlC" secondAttribute="bottom" constant="351" id="AEa-J9-YCT"/>
                             <constraint firstAttribute="bottomMargin" secondItem="4AY-cn-cI4" secondAttribute="bottom" constant="410" id="Abm-0U-TFw"/>
                             <constraint firstItem="4PZ-Sh-6mj" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="20" id="DwG-RT-0i3"/>
                             <constraint firstItem="aMo-Jm-jMk" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="490" id="Ii3-s1-f9J"/>
-                            <constraint firstItem="peB-kx-CYQ" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="220" id="OOr-sb-04Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4AY-cn-cI4" secondAttribute="trailing" constant="200" id="QDg-Jx-kos"/>
+                            <constraint firstItem="dWg-xW-dlC" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="222" id="TFa-4I-1Dt"/>
                             <constraint firstAttribute="bottomMargin" secondItem="4PZ-Sh-6mj" secondAttribute="bottom" constant="540" id="Te5-2A-byJ"/>
                             <constraint firstAttribute="bottom" secondItem="7HR-Xw-QDC" secondAttribute="bottom" constant="410" id="UOz-xN-qJy"/>
                             <constraint firstAttribute="bottomMargin" secondItem="aMo-Jm-jMk" secondAttribute="bottom" constant="80" id="XLe-R0-ceY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="peB-kx-CYQ" secondAttribute="trailing" constant="53" id="Xju-dL-Cw0"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="peB-kx-CYQ" secondAttribute="bottom" constant="324" id="a5q-gH-HCA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dWg-xW-dlC" secondAttribute="trailing" constant="50" id="YIS-KH-haN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zCk-0T-f5N" secondAttribute="trailing" constant="50" id="ane-uG-mWu"/>
+                            <constraint firstItem="dWg-xW-dlC" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="e2F-ZC-nuf"/>
                             <constraint firstItem="4AY-cn-cI4" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="10" id="ell-S4-Ac2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aMo-Jm-jMk" secondAttribute="trailing" constant="150" id="frb-Jz-ghz"/>
                             <constraint firstItem="a5r-Ef-zdr" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="280" id="hCs-JZ-JcN"/>
@@ -198,7 +202,6 @@
                             <constraint firstAttribute="bottomMargin" secondItem="a5r-Ef-zdr" secondAttribute="bottom" constant="180" id="k8D-Dh-vOG"/>
                             <constraint firstItem="7HR-Xw-QDC" firstAttribute="height" secondItem="4AY-cn-cI4" secondAttribute="height" id="osY-uF-uTv"/>
                             <constraint firstItem="zCk-0T-f5N" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="80" id="ugc-fu-npz"/>
-                            <constraint firstItem="peB-kx-CYQ" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="vdD-1S-ZvV"/>
                             <constraint firstItem="aMo-Jm-jMk" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="150" id="vx3-kt-ogm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4PZ-Sh-6mj" secondAttribute="trailing" constant="50" id="ww9-kh-cEy"/>
                             <constraint firstItem="4PZ-Sh-6mj" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="yJw-Qq-2Jr"/>
@@ -213,6 +216,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="clubTextField" destination="dWg-xW-dlC" id="fDf-C2-5FI"/>
                         <outlet property="datePicker" destination="zCk-0T-f5N" id="sjG-Sb-PLz"/>
                         <outlet property="descriptionTextView" destination="a5r-Ef-zdr" id="R9H-K9-Kcv"/>
                         <outlet property="timeFromPicker" destination="4AY-cn-cI4" id="Byb-s4-DRB"/>

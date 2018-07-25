@@ -11,6 +11,9 @@ import UIKit
 
 class CreateEntryViewController : UIViewController {
     
+    static var totalHours : Int16 = 0
+    var initialHours : Int16 = 0
+    
     var entry: Entry?
     
    
@@ -19,6 +22,7 @@ class CreateEntryViewController : UIViewController {
     @IBOutlet weak var timeToPicker: UIDatePicker!
     @IBOutlet weak var timeFromPicker: UIDatePicker!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var clubTextField: UITextField!
     
     
     override func viewDidLoad() {
@@ -29,13 +33,22 @@ class CreateEntryViewController : UIViewController {
         super.viewWillAppear(animated)
         
         if let entry = entry {
-        descriptionTextView.text = entry.description
+        descriptionTextView.text = entry.content 
         titleTextField.text = entry.eventTitle
+        clubTextField.text = entry.club
+            timeToPicker.date = entry.timeTo!
+            timeFromPicker.date = entry.timeFrom!
+            datePicker.date = entry.date!
+            
             
         } else {
         
         descriptionTextView.text = ""
         titleTextField.text = ""
+            clubTextField.text = ""
+            timeToPicker.date = Date()
+            timeFromPicker.date = Date()
+            datePicker.date = Date()
         }
     }
     
@@ -47,22 +60,48 @@ class CreateEntryViewController : UIViewController {
         switch identifier {
         case "save" where entry != nil:
             entry?.eventTitle = titleTextField.text ?? ""
-            entry?.description = descriptionTextView.text ?? ""
-            entry?.timeTo = Date()
+            entry?.content = descriptionTextView.text ?? ""
+            entry?.club = clubTextField.text ?? ""
+            entry?.timeTo = timeToPicker.date
+            entry?.timeFrom = timeFromPicker.date
+            entry?.date = datePicker.date
+            var interval = DateInterval(start: (entry?.timeFrom!)!, end: (entry?.timeTo!)!)
+            var hours = interval.duration / 3600.0
+            entry?.hourCount = Int16(hours)
             
-            destination.tableView.reloadData()
+            CreateEntryViewController.totalHours += (entry?.hourCount)!
+            CreateEntryViewController.totalHours -= initialHours
+            initialHours = CreateEntryViewController.totalHours
+            
+            
+            CoreDataHelper.saveEntry()
+            
+            //destination.tableView.reloadData()
             
         case "save" where entry == nil:
-            let entry = Entry()
+            let entry = CoreDataHelper.newEntry()
             entry.eventTitle = titleTextField.text ?? ""
-            entry.description = descriptionTextView.text ?? ""
+            entry.content = descriptionTextView.text ?? ""
+            entry.club = clubTextField.text ?? ""
             entry.timeTo = timeToPicker.date
             entry.timeFrom = timeFromPicker.date
-            var interval = DateInterval(start: entry.timeFrom, end: entry.timeTo)
-            var hours = interval.duration / 3600.0
-            entry.hourCount = Int(hours)
+            entry.date = datePicker.date
             
-            destination.entries.append(entry)
+            if entry.timeFrom! < entry.timeTo! {
+            var interval = DateInterval(start: entry.timeFrom!, end: entry.timeTo!)
+            var hours = interval.duration / 3600.0
+            entry.hourCount = Int16(round(hours))
+                
+                initialHours = entry.hourCount
+                
+                CreateEntryViewController.totalHours += entry.hourCount
+            }
+            else
+            {
+                print("error - reverse interval")
+            }
+            
+            CoreDataHelper.saveEntry()
             
         case "cancel":
             print("cancel button tapped")
