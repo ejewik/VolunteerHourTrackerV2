@@ -32,9 +32,14 @@ class HoursTableViewController : UITableViewController {
             //cell.textLabel?.text = "Cell Row: \(indexPath.row) Section: \(indexPath.section)"
             let entry = entries[indexPath.row]
             
+           
             cell.eventLabel.text = entry.eventTitle
-            cell.hourLabel.text = entry.hourCount
+            //cell.hourLabel.text = entry.hourCount
             cell.clubLabel.text = entry.club
+            cell.dateLabel.text = entry.date.convertToString()
+            cell.hourLabel.text = String(entry.hourCount)
+            
+
            // cell.dateLabel.text = "date"
             
             //cell.eventLabel.text = "title"

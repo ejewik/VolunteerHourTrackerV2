@@ -48,6 +48,7 @@ class CreateEntryViewController : UIViewController {
         case "save" where entry != nil:
             entry?.eventTitle = titleTextField.text ?? ""
             entry?.description = descriptionTextView.text ?? ""
+            entry?.timeTo = Date()
             
             destination.tableView.reloadData()
             
@@ -55,6 +56,11 @@ class CreateEntryViewController : UIViewController {
             let entry = Entry()
             entry.eventTitle = titleTextField.text ?? ""
             entry.description = descriptionTextView.text ?? ""
+            entry.timeTo = timeToPicker.date
+            entry.timeFrom = timeFromPicker.date
+            var interval = DateInterval(start: entry.timeFrom, end: entry.timeTo)
+            var hours = interval.duration / 3600.0
+            entry.hourCount = Int(hours)
             
             destination.entries.append(entry)
             

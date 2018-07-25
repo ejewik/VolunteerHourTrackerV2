@@ -13,7 +13,7 @@ class Entry {
     var date = Date()
     var timeFrom = Date()
     var timeTo = Date()
-    var hourCount = ""
+    var hourCount = 0
     var club = ""
     var description = ""
 }

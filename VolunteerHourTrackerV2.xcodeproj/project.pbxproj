@@ -16,6 +16,7 @@
 		4B683B8621065502006EBF40 /* HourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B8521065502006EBF40 /* HourTableViewCell.swift */; };
 		4B683B882106698A006EBF40 /* CreateEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B872106698A006EBF40 /* CreateEntryViewController.swift */; };
 		4B683B8F2107A3B6006EBF40 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B8E2107A3B6006EBF40 /* Entry.swift */; };
+		4BA25E8C2107EC650044E4B2 /* Date+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4B683B8521065502006EBF40 /* HourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourTableViewCell.swift; sourceTree = "<group>"; };
 		4B683B872106698A006EBF40 /* CreateEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEntryViewController.swift; sourceTree = "<group>"; };
 		4B683B8E2107A3B6006EBF40 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+convertToString.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		4B683B81210654AC006EBF40 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B683B8F2107A3B6006EBF40 /* Entry.swift in Sources */,
+				4BA25E8C2107EC650044E4B2 /* Date+convertToString.swift in Sources */,
 				4B683B882106698A006EBF40 /* CreateEntryViewController.swift in Sources */,
 				4B683B7221065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld in Sources */,
 				4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */,

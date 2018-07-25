@@ -70,16 +70,16 @@
                                             </constraints>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0xp-zF-ibI">
-                                            <rect key="frame" x="286" y="11" width="58" height="53"/>
+                                            <rect key="frame" x="156" y="11" width="203" height="53"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gi-ZH-oK9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="58" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="203" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdt-GW-CJ4">
-                                                    <rect key="frame" x="0.0" y="32" width="58" height="21"/>
+                                                    <rect key="frame" x="0.0" y="32" width="203" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -98,8 +98,8 @@
                                         <constraint firstItem="hyi-EX-9Kv" firstAttribute="leading" secondItem="xuC-Ob-NZv" secondAttribute="leadingMargin" constant="30" id="Qg2-wW-SMG"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="hyi-EX-9Kv" secondAttribute="trailing" constant="180" id="Rru-yH-Qwi"/>
                                         <constraint firstItem="hyi-EX-9Kv" firstAttribute="top" secondItem="xuC-Ob-NZv" secondAttribute="topMargin" id="nem-zY-VwP"/>
-                                        <constraint firstItem="0xp-zF-ibI" firstAttribute="leading" secondItem="xuC-Ob-NZv" secondAttribute="leadingMargin" constant="270" id="qIH-6j-Xd0"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="0xp-zF-ibI" secondAttribute="trailing" constant="15" id="qhu-tl-nGn"/>
+                                        <constraint firstItem="0xp-zF-ibI" firstAttribute="leading" secondItem="xuC-Ob-NZv" secondAttribute="leadingMargin" constant="140" id="qIH-6j-Xd0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0xp-zF-ibI" secondAttribute="trailing" id="qhu-tl-nGn"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -130,63 +130,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5r-Ef-zdr">
-                                <rect key="frame" x="67" y="359" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5r-Ef-zdr">
+                                <rect key="frame" x="66" y="344" width="243" height="143"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4AY-cn-cI4">
-                                <rect key="frame" x="26" y="254" width="133" height="13"/>
+                                <rect key="frame" x="26" y="204" width="133" height="53"/>
                                 <date key="date" timeIntervalSinceReferenceDate="554077916.10263801">
                                     <!--2018-07-23 22:31:56 +0000-->
                                 </date>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7HR-Xw-QDC">
-                                <rect key="frame" x="200" y="254" width="165" height="13"/>
+                                <rect key="frame" x="200" y="204" width="165" height="53"/>
                                 <date key="date" timeIntervalSinceReferenceDate="554077918.98403704">
                                     <!--2018-07-23 22:31:58 +0000-->
                                 </date>
                             </datePicker>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zCk-0T-f5N">
-                                <rect key="frame" x="57" y="121" width="260" height="66"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zCk-0T-f5N">
+                                <rect key="frame" x="66" y="144" width="243" height="63"/>
                                 <date key="date" timeIntervalSinceReferenceDate="554075800.27040005">
                                     <!--2018-07-23 21:56:40 +0000-->
                                 </date>
                             </datePicker>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="peB-kx-CYQ">
-                                <rect key="frame" x="67" y="275" width="240" height="59"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-Jm-jMk">
-                                <rect key="frame" x="167" y="556" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-Jm-jMk">
+                                <rect key="frame" x="166" y="554" width="43" height="33"/>
                                 <state key="normal" title="Done!"/>
                                 <connections>
                                     <segue destination="Oyj-SH-6sD" kind="unwind" identifier="save" unwindAction="unwindWithSegue:" id="6eb-GQ-D0f"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4PZ-Sh-6mj">
-                                <rect key="frame" x="139" y="83" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4PZ-Sh-6mj">
+                                <rect key="frame" x="66" y="84" width="243" height="43"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peB-kx-CYQ">
+                                <rect key="frame" x="66" y="284" width="240" height="59"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="zCk-0T-f5N" secondAttribute="bottom" constant="460" id="0Uu-Nd-HlG"/>
+                            <constraint firstItem="zCk-0T-f5N" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="5LP-fR-ryK"/>
                             <constraint firstItem="7HR-Xw-QDC" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leading" constant="200" id="6v6-YE-X32"/>
+                            <constraint firstItem="4AY-cn-cI4" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="140" id="73g-bZ-vKu"/>
+                            <constraint firstItem="a5r-Ef-zdr" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="7cG-wT-59y"/>
                             <constraint firstAttribute="trailing" secondItem="7HR-Xw-QDC" secondAttribute="trailing" constant="10" id="9c4-pv-qt7"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="4AY-cn-cI4" secondAttribute="bottom" constant="410" id="Abm-0U-TFw"/>
+                            <constraint firstItem="4PZ-Sh-6mj" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="20" id="DwG-RT-0i3"/>
+                            <constraint firstItem="aMo-Jm-jMk" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="490" id="Ii3-s1-f9J"/>
+                            <constraint firstItem="peB-kx-CYQ" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="220" id="OOr-sb-04Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4AY-cn-cI4" secondAttribute="trailing" constant="200" id="QDg-Jx-kos"/>
-                            <constraint firstAttribute="bottom" secondItem="7HR-Xw-QDC" secondAttribute="bottom" constant="400" id="UOz-xN-qJy"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="4AY-cn-cI4" secondAttribute="bottom" constant="400" id="XuE-mS-nuP"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="4PZ-Sh-6mj" secondAttribute="bottom" constant="540" id="Te5-2A-byJ"/>
+                            <constraint firstAttribute="bottom" secondItem="7HR-Xw-QDC" secondAttribute="bottom" constant="410" id="UOz-xN-qJy"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="aMo-Jm-jMk" secondAttribute="bottom" constant="80" id="XLe-R0-ceY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="peB-kx-CYQ" secondAttribute="trailing" constant="53" id="Xju-dL-Cw0"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="peB-kx-CYQ" secondAttribute="bottom" constant="324" id="a5q-gH-HCA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zCk-0T-f5N" secondAttribute="trailing" constant="50" id="ane-uG-mWu"/>
                             <constraint firstItem="4AY-cn-cI4" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="10" id="ell-S4-Ac2"/>
-                            <constraint firstItem="4AY-cn-cI4" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="190" id="fIS-71-X1C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aMo-Jm-jMk" secondAttribute="trailing" constant="150" id="frb-Jz-ghz"/>
+                            <constraint firstItem="a5r-Ef-zdr" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="280" id="hCs-JZ-JcN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a5r-Ef-zdr" secondAttribute="trailing" constant="50" id="iME-9h-Aje"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="a5r-Ef-zdr" secondAttribute="bottom" constant="180" id="k8D-Dh-vOG"/>
                             <constraint firstItem="7HR-Xw-QDC" firstAttribute="height" secondItem="4AY-cn-cI4" secondAttribute="height" id="osY-uF-uTv"/>
+                            <constraint firstItem="zCk-0T-f5N" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="80" id="ugc-fu-npz"/>
+                            <constraint firstItem="peB-kx-CYQ" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="vdD-1S-ZvV"/>
+                            <constraint firstItem="aMo-Jm-jMk" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="150" id="vx3-kt-ogm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4PZ-Sh-6mj" secondAttribute="trailing" constant="50" id="ww9-kh-cEy"/>
+                            <constraint firstItem="4PZ-Sh-6mj" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="yJw-Qq-2Jr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X5j-IS-hhr"/>
                     </view>
