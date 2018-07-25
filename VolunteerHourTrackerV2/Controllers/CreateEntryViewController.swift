@@ -9,13 +9,11 @@
 import Foundation
 import UIKit
 
-protocol CreateEntryViewControllerDelegate{
-    func needHours(controller: CreateEntryViewController, hours: Int16 )
-}
+
 
 class CreateEntryViewController : UIViewController {
     
-    var delegate: CreateEntryViewController! = nil
+    
     
     static var totalHours : Int16 = 0
     var initialHours : Int16 = 0
@@ -78,16 +76,14 @@ class CreateEntryViewController : UIViewController {
             var hours = interval.duration / 3600.0
             entry?.hourCount = Int16(hours)
             
-            //delegate.needHours(controller: CreateEntryViewController, hours: totalHours )
+           
             
             CreateEntryViewController.totalHours += (entry?.hourCount)!
-            //CreateEntryViewController.totalHours -= initialHours
-            //initialHours = CreateEntryViewController.totalHours
             
             
             CoreDataHelper.saveEntry()
             
-            //destination.tableView.reloadData()
+           
             
         case "save" where entry == nil:
             let entry = CoreDataHelper.newEntry()
