@@ -122,7 +122,13 @@ class HoursTableViewController : UITableViewController  {
         
     }
     }
-
+    
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        tableView.reloadData()
+    }
+    
+    
     
     
 }
