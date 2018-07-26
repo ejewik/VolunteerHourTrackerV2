@@ -55,62 +55,62 @@ class DonationViewController: UIViewController {
                 else { return }
     }
     
-            switch identifier {
-            case "save" where entry != nil:
-                donation?.eventTitle = titleTextField.text ?? ""
-                donation?.content = descriptionTextView.text ?? ""
-                donation?.club = clubTextField.text ?? ""
-                entry?.date = datePicker.date
-                var interval = DateInterval(start: (entry?.timeFrom!)!, end: (entry?.timeTo!)!)
-                let hours = interval.duration / 3600.0
-                entry?.hourCount = Int16(hours)
-    
-    
-    
-                CreateEntryViewController.totalHours += (entry?.hourCount)!
-    
-    
-                CoreDataHelper.saveEntry()
-    
-    
-    
-            case "save" where entry == nil:
-                let entry = CoreDataHelper.newEntry()
-                entry.eventTitle = titleTextField.text ?? ""
-                entry.content = descriptionTextView.text ?? ""
-                entry.club = clubTextField.text ?? ""
-                entry.timeTo = timeToPicker.date
-                entry.timeFrom = timeFromPicker.date
-                entry.date = datePicker.date
-    
-                if entry.timeFrom! < entry.timeTo! {
-                    var interval = DateInterval(start: entry.timeFrom!, end: entry.timeTo!)
-                    let hours = interval.duration / 3600.0
-                    entry.hourCount = Int16(round(hours))
-    
-                    initialHours = entry.hourCount
-    
-                    CreateEntryViewController.totalHours += entry.hourCount
-                    //print( CreateEntryViewController.totalHours)
-                }
-                else
-                {
-                    print("error - reverse interval")
-                }
-    
-                CoreDataHelper.saveEntry()
-    
-            case "cancel":
-                print("cancel button tapped")
-    
-            default: print("unexpected segue identifier")
-            }
-        }
-    }
-
-
-
-
+//            switch identifier {
+//            case "save" where entry != nil:
+//                donation?.eventTitle = titleTextField.text ?? ""
+//                donation?.content = descriptionTextView.text ?? ""
+//                donation?.club = clubTextField.text ?? ""
+//                entry?.date = datePicker.date
+//                var interval = DateInterval(start: (entry?.timeFrom!)!, end: (entry?.timeTo!)!)
+//                let hours = interval.duration / 3600.0
+//                entry?.hourCount = Int16(hours)
+//    
+//    
+//    
+//                CreateEntryViewController.totalHours += (entry?.hourCount)!
+//    
+//    
+//                CoreDataHelper.saveEntry()
+//    
+//    
+//    
+//            case "save" where entry == nil:
+//                let entry = CoreDataHelper.newEntry()
+//                entry.eventTitle = titleTextField.text ?? ""
+//                entry.content = descriptionTextView.text ?? ""
+//                entry.club = clubTextField.text ?? ""
+//                entry.timeTo = timeToPicker.date
+//                entry.timeFrom = timeFromPicker.date
+//                entry.date = datePicker.date
+//    
+//                if entry.timeFrom! < entry.timeTo! {
+//                    var interval = DateInterval(start: entry.timeFrom!, end: entry.timeTo!)
+//                    let hours = interval.duration / 3600.0
+//                    entry.hourCount = Int16(round(hours))
+//    
+//                    initialHours = entry.hourCount
+//    
+//                    CreateEntryViewController.totalHours += entry.hourCount
+//                    //print( CreateEntryViewController.totalHours)
+//                }
+//                else
+//                {
+//                    print("error - reverse interval")
+//                }
+//    
+//                CoreDataHelper.saveEntry()
+//    
+//            case "cancel":
+//                print("cancel button tapped")
+//    
+//            default: print("unexpected segue identifier")
+//            }
+//        }
+//    }
+//
+//
+//
+//
 
 //
 //        if let entry = entry {

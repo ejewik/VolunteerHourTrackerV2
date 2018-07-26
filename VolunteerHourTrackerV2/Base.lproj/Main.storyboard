@@ -45,9 +45,6 @@
                                         <segment title="Hours"/>
                                         <segment title="Donations"/>
                                     </segments>
-                                    <connections>
-                                        <action selector="indexChanged:" destination="o0S-5d-PZP" eventType="valueChanged" id="4lW-gm-lyg"/>
-                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
