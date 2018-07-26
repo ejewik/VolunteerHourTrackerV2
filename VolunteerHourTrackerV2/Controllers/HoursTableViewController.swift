@@ -12,43 +12,54 @@ import UIKit
 
 
 class HoursTableViewController : UITableViewController  {
-   // func needHours(controller: CreateEntryViewController, hours: Int16) {
-        //
-   // }
+   
     
     
+    @IBOutlet weak var hourDonationSegmented: UISegmentedControl!
+  
     
     
-    //var totalHours : Int = 0
     
     var entries = [Entry]() {
         didSet {
+           
             tableView.reloadData()
+            
             
             var totalHours : Int = 0
             for entry in entries {
                 totalHours += Int(entry.hourCount)
             }
-            self.title = "Total hours: \(String(totalHours))"
+            //self.navigationItem.title = "Total hours: \(String(totalHours))"
+            self.parent?.title = "Total hours: \(String(totalHours))"
+            self.tabBarItem.title = "testing"
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
+        
          entries = CoreDataHelper.retrieveEntries()
         
-       // self.title = "Total hours: \(String(CreateEntryViewController.totalHours))"
+       
+        
         
     }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             
-            return entries.count
+            
+                return entries.count
+           
         }
         
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
+          
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "HourTableViewCell", for: indexPath) as! HourTableViewCell
+            
             let entry = entries[indexPath.row]
             
            
@@ -60,11 +71,10 @@ class HoursTableViewController : UITableViewController  {
             cell.dateLabel.text = entry.date?.convertToString() ?? "unknown"
             cell.hourLabel.text = String(entry.hourCount)
             
+                 return cell
 
-          
             
-            
-            return cell
+           
         }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -102,5 +112,22 @@ class HoursTableViewController : UITableViewController  {
         }
     }
     
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        switch hourDonationSegmented.selectedSegmentIndex {
+        
+        case 0:
+            print("hours selected")
+           
+        
+        case 1:
+            print("donations selected")
+           
+            
+        default:
+            print("unexpected segment control problem")
+            break
+            
+        }
+    }
     
 }

@@ -20,30 +20,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="NbZ-NC-8Bs">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add new event!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8h-Dj-CYU">
+                                    <rect key="frame" x="44" y="87" width="119" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycc-xD-UA7">
-                                    <rect key="frame" x="290" y="17" width="30" height="30"/>
+                                    <rect key="frame" x="290" y="83" width="30" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Add"/>
                                     <connections>
                                         <segue destination="LM4-Vo-9iZ" kind="show" identifier="addEntry" id="Yhr-Nx-yuw"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add new event!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8h-Dj-CYU">
-                                    <rect key="frame" x="43" y="22" width="119" height="21"/>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ig2-zq-mM1">
+                                    <rect key="frame" x="26" y="8" width="324" height="29"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                    <segments>
+                                        <segment title="Hours"/>
+                                        <segment title="Donations"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="indexChanged:" destination="o0S-5d-PZP" eventType="valueChanged" id="4lW-gm-lyg"/>
+                                    </connections>
+                                </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HourTableViewCell" id="z03-xy-5c8" customClass="HourTableViewCell" customModule="VolunteerHourTrackerV2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="169" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z03-xy-5c8" id="xuC-Ob-NZv">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -110,17 +121,29 @@
                                     <segue destination="LM4-Vo-9iZ" kind="show" identifier="displayEntry" id="yUj-aF-2UJ"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="donationTableViewCell" id="6f9-3z-wn2" customClass="DonationTableViewCell" customModule="VolunteerHourTrackerV2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="249" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6f9-3z-wn2" id="B4m-Ar-mbi" customClass="DonationTableViewCell" customModule="VolunteerHourTrackerV2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="o0S-5d-PZP" id="ocb-Ah-3B2"/>
                             <outlet property="delegate" destination="o0S-5d-PZP" id="Yyy-yT-QWb"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="iry-sd-pPH"/>
                     <navigationItem key="navigationItem" title="Entries" id="abp-5w-MR7"/>
+                    <connections>
+                        <outlet property="hourDonationSegmented" destination="ig2-zq-mM1" id="W92-68-S2M"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOR-V6-KYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2020" y="133.5832083958021"/>
         </scene>
         <!--Title-->
         <scene sceneID="Oa3-EE-PNo">
@@ -227,7 +250,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3I-rW-bsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Oyj-SH-6sD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1832.8" y="128.18590704647679"/>
+            <point key="canvasLocation" x="2772" y="128.18590704647679"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aFK-Kk-wbe">
@@ -240,15 +263,33 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="o0S-5d-PZP" kind="relationship" relationship="rootViewController" id="xc8-Rc-SZo"/>
+                        <segue destination="9I9-92-pQT" kind="relationship" relationship="rootViewController" id="xc8-Rc-SZo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWA-So-nH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Fdi-Rq-IkP">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="9I9-92-pQT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="vR5-GB-d9i"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OTK-uH-EV8">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="o0S-5d-PZP" kind="relationship" relationship="viewControllers" id="Mbj-tm-tgM"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqb-8x-dAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080.8" y="133.5832083958021"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yUj-aF-2UJ"/>
+        <segue reference="Yhr-Nx-yuw"/>
     </inferredMetricsTieBreakers>
 </document>
