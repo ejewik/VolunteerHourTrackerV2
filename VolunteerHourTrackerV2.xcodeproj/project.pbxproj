@@ -15,8 +15,8 @@
 		4B683B7F2106537E006EBF40 /* HoursTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B7E2106537E006EBF40 /* HoursTableViewController.swift */; };
 		4B683B8621065502006EBF40 /* HourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B8521065502006EBF40 /* HourTableViewCell.swift */; };
 		4B683B882106698A006EBF40 /* CreateEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B872106698A006EBF40 /* CreateEntryViewController.swift */; };
-		4B86132D210A3DD4006FF198 /* DonationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B86132C210A3DD4006FF198 /* DonationStoryboard.storyboard */; };
 		4B86132F210A4401006FF198 /* DonationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B86132E210A4401006FF198 /* DonationTableViewCell.swift */; };
+		4B861331210A8AA6006FF198 /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B861330210A8AA6006FF198 /* DonationViewController.swift */; };
 		4BA25E8C2107EC650044E4B2 /* Date+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */; };
 		4BA25E8E2108E5BA0044E4B2 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA25E8D2108E5BA0044E4B2 /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
@@ -32,8 +32,8 @@
 		4B683B7E2106537E006EBF40 /* HoursTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursTableViewController.swift; sourceTree = "<group>"; };
 		4B683B8521065502006EBF40 /* HourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourTableViewCell.swift; sourceTree = "<group>"; };
 		4B683B872106698A006EBF40 /* CreateEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEntryViewController.swift; sourceTree = "<group>"; };
-		4B86132C210A3DD4006FF198 /* DonationStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DonationStoryboard.storyboard; sourceTree = "<group>"; };
 		4B86132E210A4401006FF198 /* DonationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationTableViewCell.swift; sourceTree = "<group>"; };
+		4B861330210A8AA6006FF198 /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
 		4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+convertToString.swift"; sourceTree = "<group>"; };
 		4BA25E8D2108E5BA0044E4B2 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +75,6 @@
 				4B683B80210654A5006EBF40 /* Helpers */,
 				4B683B6921065258006EBF40 /* AppDelegate.swift */,
 				4B683B6D21065258006EBF40 /* Main.storyboard */,
-				4B86132C210A3DD4006FF198 /* DonationStoryboard.storyboard */,
 				4B683B7321065259006EBF40 /* Assets.xcassets */,
 				4B683B7521065259006EBF40 /* LaunchScreen.storyboard */,
 				4B683B7821065259006EBF40 /* Info.plist */,
@@ -105,6 +104,7 @@
 			children = (
 				4B683B7E2106537E006EBF40 /* HoursTableViewController.swift */,
 				4B683B872106698A006EBF40 /* CreateEntryViewController.swift */,
+				4B861330210A8AA6006FF198 /* DonationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,7 +184,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B683B7721065259006EBF40 /* LaunchScreen.storyboard in Resources */,
-				4B86132D210A3DD4006FF198 /* DonationStoryboard.storyboard in Resources */,
 				4B683B7421065259006EBF40 /* Assets.xcassets in Resources */,
 				4B683B6F21065258006EBF40 /* Main.storyboard in Resources */,
 			);
@@ -197,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B861331210A8AA6006FF198 /* DonationViewController.swift in Sources */,
 				4BA25E8C2107EC650044E4B2 /* Date+convertToString.swift in Sources */,
 				4B683B882106698A006EBF40 /* CreateEntryViewController.swift in Sources */,
 				4B683B7221065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld in Sources */,

@@ -20,6 +20,8 @@ class CreateEntryViewController : UIViewController {
     
     var entry: Entry?
     
+    
+    
    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -40,7 +42,7 @@ class CreateEntryViewController : UIViewController {
         super.viewWillAppear(animated)
         
         if let entry = entry {
-        descriptionTextView.text = entry.content 
+        descriptionTextView.text = entry.content
         titleTextField.text = entry.eventTitle
         clubTextField.text = entry.club
             timeToPicker.date = entry.timeTo!
@@ -50,7 +52,7 @@ class CreateEntryViewController : UIViewController {
             
         } else {
         
-        descriptionTextView.text = ""
+       descriptionTextView.text = ""
         titleTextField.text = ""
             clubTextField.text = ""
             timeToPicker.date = Date()
@@ -73,7 +75,7 @@ class CreateEntryViewController : UIViewController {
             entry?.timeFrom = timeFromPicker.date
             entry?.date = datePicker.date
             var interval = DateInterval(start: (entry?.timeFrom!)!, end: (entry?.timeTo!)!)
-            var hours = interval.duration / 3600.0
+            let hours = interval.duration / 3600.0
             entry?.hourCount = Int16(hours)
             
            
@@ -96,7 +98,7 @@ class CreateEntryViewController : UIViewController {
             
             if entry.timeFrom! < entry.timeTo! {
             var interval = DateInterval(start: entry.timeFrom!, end: entry.timeTo!)
-            var hours = interval.duration / 3600.0
+            let hours = interval.duration / 3600.0
             entry.hourCount = Int16(round(hours))
                 
                 initialHours = entry.hourCount

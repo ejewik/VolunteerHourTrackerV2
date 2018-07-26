@@ -28,7 +28,21 @@ struct CoreDataHelper {
         return entry
     }
     
+    static func newDonation() -> Donation {
+        let donation = NSEntityDescription.insertNewObject(forEntityName: "Donation", into: context) as! Donation
+        
+        return donation
+    }
+    
     static func saveEntry() {
+        do {
+            try context.save()
+        } catch let error {
+            print("Could not save \(error.localizedDescription)")
+        }
+    }
+    
+    static func saveDonation() { //will this work?????
         do {
             try context.save()
         } catch let error {
@@ -42,9 +56,28 @@ struct CoreDataHelper {
         saveEntry()
     }
     
+    static func delete(donation: Donation) {
+        context.delete(donation)
+        
+        saveDonation()
+    }
+    
     static func retrieveEntries() -> [Entry] {
         do {
             let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+            let results = try context.fetch(fetchRequest)
+            
+            return results
+        } catch let error {
+            print("Could not fetch \(error.localizedDescription)")
+            
+            return []
+        }
+    }
+    
+    static func retrieveDonations() -> [Donation] {
+        do {
+            let fetchRequest = NSFetchRequest<Donation>(entityName: "Donation")
             let results = try context.fetch(fetchRequest)
             
             return results

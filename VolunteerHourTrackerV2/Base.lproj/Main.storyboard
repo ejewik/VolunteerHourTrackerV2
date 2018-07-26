@@ -121,13 +121,49 @@
                                     <segue destination="LM4-Vo-9iZ" kind="show" identifier="displayEntry" id="yUj-aF-2UJ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="donationTableViewCell" id="6f9-3z-wn2" customClass="DonationTableViewCell" customModule="VolunteerHourTrackerV2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DonationTableViewCell" id="Ped-8C-Bqi" customClass="DonationTableViewCell" customModule="VolunteerHourTrackerV2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="249" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6f9-3z-wn2" id="B4m-Ar-mbi" customClass="DonationTableViewCell" customModule="VolunteerHourTrackerV2" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ped-8C-Bqi" id="NNg-GM-hrs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEB-r7-l6G">
+                                            <rect key="frame" x="50" y="11" width="43" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtJ-xv-89i">
+                                            <rect key="frame" x="50" y="48" width="36" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-p9-eY9">
+                                            <rect key="frame" x="191" y="11" width="43" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5i-q3-Ikp">
+                                            <rect key="frame" x="191" y="48" width="36" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="clubLabel" destination="XtJ-xv-89i" id="cOV-24-toa"/>
+                                    <outlet property="dateLabel" destination="i5i-q3-Ikp" id="EMC-eb-HQj"/>
+                                    <outlet property="eventLabel" destination="uEB-r7-l6G" id="lfA-tg-zNh"/>
+                                    <outlet property="itemLabel" destination="eVp-p9-eY9" id="N8d-VJ-ERP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -153,82 +189,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5r-Ef-zdr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5r-Ef-zdr">
                                 <rect key="frame" x="66" y="344" width="243" height="143"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4AY-cn-cI4">
-                                <rect key="frame" x="26" y="204" width="133" height="53"/>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4AY-cn-cI4">
+                                <rect key="frame" x="16" y="220" width="173" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="554077916.10263801">
                                     <!--2018-07-23 22:31:56 +0000-->
                                 </date>
                             </datePicker>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7HR-Xw-QDC">
-                                <rect key="frame" x="200" y="204" width="165" height="53"/>
-                                <date key="date" timeIntervalSinceReferenceDate="554077918.98403704">
-                                    <!--2018-07-23 22:31:58 +0000-->
-                                </date>
-                            </datePicker>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zCk-0T-f5N">
-                                <rect key="frame" x="66" y="144" width="243" height="63"/>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zCk-0T-f5N">
+                                <rect key="frame" x="27" y="151" width="320" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="554075800.27040005">
                                     <!--2018-07-23 21:56:40 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-Jm-jMk">
-                                <rect key="frame" x="166" y="554" width="43" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-Jm-jMk">
+                                <rect key="frame" x="167" y="556" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done!"/>
                                 <connections>
                                     <segue destination="Oyj-SH-6sD" kind="unwind" identifier="save" unwindAction="unwindWithSegue:" id="6eb-GQ-D0f"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4PZ-Sh-6mj">
-                                <rect key="frame" x="66" y="84" width="243" height="43"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4PZ-Sh-6mj">
+                                <rect key="frame" x="66" y="84" width="243" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWg-xW-dlC">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWg-xW-dlC">
                                 <rect key="frame" x="66" y="286" width="243" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7HR-Xw-QDC">
+                                <rect key="frame" x="197" y="212" width="153" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="554077918.98403704">
+                                    <!--2018-07-23 22:31:58 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="zCk-0T-f5N" secondAttribute="bottom" constant="460" id="0Uu-Nd-HlG"/>
-                            <constraint firstItem="zCk-0T-f5N" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="5LP-fR-ryK"/>
-                            <constraint firstItem="7HR-Xw-QDC" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leading" constant="200" id="6v6-YE-X32"/>
-                            <constraint firstItem="4AY-cn-cI4" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="140" id="73g-bZ-vKu"/>
-                            <constraint firstItem="a5r-Ef-zdr" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="7cG-wT-59y"/>
-                            <constraint firstAttribute="trailing" secondItem="7HR-Xw-QDC" secondAttribute="trailing" constant="10" id="9c4-pv-qt7"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="dWg-xW-dlC" secondAttribute="bottom" constant="351" id="AEa-J9-YCT"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="4AY-cn-cI4" secondAttribute="bottom" constant="410" id="Abm-0U-TFw"/>
-                            <constraint firstItem="4PZ-Sh-6mj" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="20" id="DwG-RT-0i3"/>
-                            <constraint firstItem="aMo-Jm-jMk" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="490" id="Ii3-s1-f9J"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4AY-cn-cI4" secondAttribute="trailing" constant="200" id="QDg-Jx-kos"/>
-                            <constraint firstItem="dWg-xW-dlC" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="222" id="TFa-4I-1Dt"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="4PZ-Sh-6mj" secondAttribute="bottom" constant="540" id="Te5-2A-byJ"/>
-                            <constraint firstAttribute="bottom" secondItem="7HR-Xw-QDC" secondAttribute="bottom" constant="410" id="UOz-xN-qJy"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="aMo-Jm-jMk" secondAttribute="bottom" constant="80" id="XLe-R0-ceY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dWg-xW-dlC" secondAttribute="trailing" constant="50" id="YIS-KH-haN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zCk-0T-f5N" secondAttribute="trailing" constant="50" id="ane-uG-mWu"/>
-                            <constraint firstItem="dWg-xW-dlC" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="e2F-ZC-nuf"/>
-                            <constraint firstItem="4AY-cn-cI4" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="10" id="ell-S4-Ac2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aMo-Jm-jMk" secondAttribute="trailing" constant="150" id="frb-Jz-ghz"/>
-                            <constraint firstItem="a5r-Ef-zdr" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="280" id="hCs-JZ-JcN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a5r-Ef-zdr" secondAttribute="trailing" constant="50" id="iME-9h-Aje"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="a5r-Ef-zdr" secondAttribute="bottom" constant="180" id="k8D-Dh-vOG"/>
-                            <constraint firstItem="7HR-Xw-QDC" firstAttribute="height" secondItem="4AY-cn-cI4" secondAttribute="height" id="osY-uF-uTv"/>
-                            <constraint firstItem="zCk-0T-f5N" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="80" id="ugc-fu-npz"/>
-                            <constraint firstItem="aMo-Jm-jMk" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="150" id="vx3-kt-ogm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4PZ-Sh-6mj" secondAttribute="trailing" constant="50" id="ww9-kh-cEy"/>
-                            <constraint firstItem="4PZ-Sh-6mj" firstAttribute="leading" secondItem="vMH-hz-Hyv" secondAttribute="leadingMargin" constant="50" id="yJw-Qq-2Jr"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="X5j-IS-hhr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ZWW-Jn-VsF">
@@ -251,6 +264,76 @@
                 <exit id="Oyj-SH-6sD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2772" y="128.18590704647679"/>
+        </scene>
+        <!--Donation View Controller-->
+        <scene sceneID="SDq-pW-1ng">
+            <objects>
+                <viewController id="56C-9z-JJs" customClass="DonationViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JVI-AV-gCC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZ5-sd-eWA">
+                                <rect key="frame" x="89" y="72" width="218" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="obn-d0-ngb">
+                                <rect key="frame" x="16" y="140" width="343" height="45"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="554338751.49384904">
+                                    <!--2018-07-26 22:59:11 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRd-65-gZV">
+                                <rect key="frame" x="89" y="274" width="218" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oW1-hE-yAc">
+                                <rect key="frame" x="164" y="588" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Ki-gh-48b">
+                                <rect key="frame" x="78" y="325" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Donation Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSf-7R-7nO">
+                                <rect key="frame" x="89" y="43" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kb4-Kn-dBS">
+                                <rect key="frame" x="78" y="202" width="234" height="48"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FyP-QW-WQO"/>
+                    </view>
+                    <connections>
+                        <outlet property="clubTextField" destination="sRd-65-gZV" id="NLe-ch-142"/>
+                        <outlet property="datePicker" destination="obn-d0-ngb" id="qHX-UX-1PA"/>
+                        <outlet property="descriptionTextView" destination="5Ki-gh-48b" id="UPq-9w-62W"/>
+                        <outlet property="donationTitleTextField" destination="xZ5-sd-eWA" id="Cot-pj-tMm"/>
+                        <outlet property="doneButton" destination="oW1-hE-yAc" id="ZVF-WO-mV1"/>
+                        <outlet property="itemNumberPicker" destination="kb4-Kn-dBS" id="h3x-dz-Jdf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93m-VD-ayg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2759.1999999999998" y="831.63418290854577"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aFK-Kk-wbe">
@@ -277,6 +360,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="vR5-GB-d9i"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OTK-uH-EV8">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
