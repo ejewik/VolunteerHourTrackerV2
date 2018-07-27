@@ -35,7 +35,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Add"/>
                                     <connections>
-                                        <segue destination="LM4-Vo-9iZ" kind="show" identifier="addEntry" id="3uV-3B-tb4"/>
+                                        <action selector="createButtonTapped:" destination="o0S-5d-PZP" eventType="touchUpInside" id="74T-kx-Uzb"/>
                                     </connections>
                                 </button>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ig2-zq-mM1">
@@ -174,7 +174,10 @@
                     <tabBarItem key="tabBarItem" title="Item" id="iry-sd-pPH"/>
                     <navigationItem key="navigationItem" title="Entries" id="abp-5w-MR7"/>
                     <connections>
+                        <outlet property="addButton" destination="ycc-xD-UA7" id="hIT-UV-2fN"/>
                         <outlet property="hourDonationSegmented" destination="ig2-zq-mM1" id="W92-68-S2M"/>
+                        <segue destination="56C-9z-JJs" kind="show" identifier="addDonation" id="8S5-Oy-h3j"/>
+                        <segue destination="LM4-Vo-9iZ" kind="show" identifier="addEntry" id="L2B-sW-Be0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOR-V6-KYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -333,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93m-VD-ayg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2756" y="985"/>
+            <point key="canvasLocation" x="2649" y="829"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aFK-Kk-wbe">
@@ -374,6 +377,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3uV-3B-tb4"/>
+        <segue reference="L2B-sW-Be0"/>
     </inferredMetricsTieBreakers>
 </document>

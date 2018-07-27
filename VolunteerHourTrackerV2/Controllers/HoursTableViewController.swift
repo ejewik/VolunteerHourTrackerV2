@@ -11,6 +11,7 @@ import UIKit
 
 class HoursTableViewController : UITableViewController  {
     @IBOutlet weak var hourDonationSegmented: UISegmentedControl!
+    @IBOutlet weak var addButton: UIButton!
     
     var entries = [Entry]() {
         didSet {
@@ -67,7 +68,7 @@ class HoursTableViewController : UITableViewController  {
         
     // MARK: - Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //segue from button to view controller doesn't trigger prepare for segue
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
@@ -85,6 +86,8 @@ class HoursTableViewController : UITableViewController  {
             
             destination.entry = entry
                 
+            print("entry display segue")
+                
             case 1:
                 
                 let donation = donations[indexPath.row]
@@ -93,25 +96,52 @@ class HoursTableViewController : UITableViewController  {
                 
                 destination.donation = donation
                 
+                print("donation display segue")
+                
             default:
                 print("Error when displaying entries")
-//                let entry = entries[indexPath.row]
-//
-//                let destination = segue.destination as! CreateEntryViewController //TODO: Must change to DonationViewController
-//
-//                destination.entry = entry
+
             }
             
-        case "addEntry":
-            print("create entry button tapped")
-            
+//        case "addEntry":
+//            print("create entry button tapped")
+//            let destination = segue.destination as! CreateEntryViewController
+//
+//
+//        case "addDonation":
+//            print("add donation button tapped")
+//             let destination = segue.destination as! DonationViewController
+//
+//
        
             
             
         default:
-            print("unexpected segue identifier")
+            print("unexpected segue identifier") // on addbutton skips past this, which it should actually
         }
     }
+    
+    @IBAction func createButtonTapped(_ sender: UIButton) {
+
+        if hourDonationSegmented.selectedSegmentIndex == 0
+        {
+            self.performSegue(withIdentifier: "addEntry", sender: addButton)
+            print("added entry")
+        }
+        else if hourDonationSegmented.selectedSegmentIndex == 1
+        {
+            self.performSegue(withIdentifier: "addDonation", sender: HoursTableViewController.self)
+            print("added donation")
+        }
+        else
+        {
+            print("unexpected addEntry/addDonation error occurred")
+        }
+        
+
+    }
+    
+    
 
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
         switch hourDonationSegmented.selectedSegmentIndex {
