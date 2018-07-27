@@ -57,7 +57,7 @@ class DonationViewController: UIViewController {
     
     
                 switch identifier {
-                case "save" where donation != nil:
+                case "done" where donation != nil: // need set save identifier
                     donation?.eventTitle = donationTitleTextField.text ?? ""
                     donation?.content = descriptionTextView.text ?? ""
                     donation?.club = clubTextField.text ?? ""
@@ -67,8 +67,8 @@ class DonationViewController: UIViewController {
     
     
     
-                case "save" where donation == nil:
-                    let donation = CoreDataHelper.newDonation()
+                case "done" where donation == nil: // why is it never hitting this
+                    let donation = CoreDataHelper.newDonation() //why no donations created...?
                     donation.eventTitle = donationTitleTextField.text ?? ""
                     donation.content = descriptionTextView.text ?? ""
                     donation.club = clubTextField.text ?? ""

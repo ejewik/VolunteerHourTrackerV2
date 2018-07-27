@@ -163,6 +163,7 @@
                                     <outlet property="dateLabel" destination="i5i-q3-Ikp" id="EMC-eb-HQj"/>
                                     <outlet property="eventLabel" destination="uEB-r7-l6G" id="lfA-tg-zNh"/>
                                     <outlet property="itemLabel" destination="eVp-p9-eY9" id="N8d-VJ-ERP"/>
+                                    <segue destination="56C-9z-JJs" kind="show" identifier="displayDonation" id="c50-iW-DO7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -302,7 +303,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="6qD-W8-sOQ" kind="unwind" unwindAction="unwindWithSegue:" id="5w9-9a-T40"/>
+                                    <segue destination="6qD-W8-sOQ" kind="unwind" identifier="done" unwindAction="unwindWithSegue:" id="5w9-9a-T40"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Ki-gh-48b">
@@ -381,6 +382,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="8S5-Oy-h3j"/>
         <segue reference="yUj-aF-2UJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -82,10 +82,8 @@ class HoursTableViewController : UITableViewController  {
            
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             
-            switch hourDonationSegmented.selectedSegmentIndex{ //switch statement hourDonationSegmented
-                
-            case 0:
-            
+          
+        
             let entry = entries[indexPath.row]
             
             let destination = segue.destination as! CreateEntryViewController 
@@ -94,7 +92,10 @@ class HoursTableViewController : UITableViewController  {
                 
             print("entry display segue")
                 
-            case 1:
+           
+            case "displayDonation":
+                
+                guard let indexPath = tableView.indexPathForSelectedRow else { return }
                 
                 let donation = donations[indexPath.row]
                 
@@ -103,11 +104,9 @@ class HoursTableViewController : UITableViewController  {
                 destination.donation = donation
                 
                 print("donation display segue")
-                
-            default:
-                print("Error when displaying entries")
-
-            }
+        default:
+            print("Unexpected display segue")
+            
             
 //        case "addEntry":
 //            print("create entry button tapped")
@@ -122,8 +121,7 @@ class HoursTableViewController : UITableViewController  {
        
             
             
-        default:
-            print("unexpected segue identifier") // on addbutton skips past this, which it should actually
+       
         }
     }
     
@@ -155,6 +153,7 @@ class HoursTableViewController : UITableViewController  {
             entries = CoreDataHelper.retrieveEntries()
         case 1:
             donations = CoreDataHelper.retrieveDonations()
+            print( "Num donations: \(donations.count)" )
             print("retrieving donations")
         
         default:

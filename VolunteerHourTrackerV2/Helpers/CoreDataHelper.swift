@@ -22,6 +22,17 @@ struct CoreDataHelper {
         return context
     }()
     
+    static let donationContext: NSManagedObjectContext = {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError()
+        }
+        
+        let persistentContainer = appDelegate.persistentContainer
+        let context = persistentContainer.viewContext
+        
+        return context
+    }()
+    
     static func newEntry() -> Entry {
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: context) as! Entry
         
@@ -29,7 +40,7 @@ struct CoreDataHelper {
     }
     
     static func newDonation() -> Donation {
-        let donation = NSEntityDescription.insertNewObject(forEntityName: "Donation", into: context) as! Donation
+        let donation = NSEntityDescription.insertNewObject(forEntityName: "Donation", into: donationContext) as! Donation
         
         return donation
     }
@@ -44,7 +55,7 @@ struct CoreDataHelper {
     
     static func saveDonation() { //will this work?????
         do {
-            try context.save()
+            try donationContext.save()
         } catch let error {
             print("Could not save \(error.localizedDescription)")
         }
@@ -57,7 +68,7 @@ struct CoreDataHelper {
     }
     
     static func delete(donation: Donation) {
-        context.delete(donation)
+        donationContext.delete(donation)
         
         saveDonation()
     }
@@ -78,7 +89,7 @@ struct CoreDataHelper {
     static func retrieveDonations() -> [Donation] {
         do {
             let fetchRequest = NSFetchRequest<Donation>(entityName: "Donation")
-            let results = try context.fetch(fetchRequest)
+            let results = try donationContext.fetch(fetchRequest)
             
             return results
         } catch let error {
