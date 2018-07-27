@@ -298,9 +298,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oW1-hE-yAc">
-                                <rect key="frame" x="164" y="588" width="46" height="30"/>
+                                <rect key="frame" x="169" y="588" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <segue destination="6qD-W8-sOQ" kind="unwind" unwindAction="unwindWithSegue:" id="5w9-9a-T40"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Ki-gh-48b">
                                 <rect key="frame" x="78" y="325" width="240" height="128"/>
@@ -335,6 +338,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93m-VD-ayg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6qD-W8-sOQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2649" y="829"/>
         </scene>
@@ -377,6 +381,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="L2B-sW-Be0"/>
+        <segue reference="yUj-aF-2UJ"/>
     </inferredMetricsTieBreakers>
 </document>

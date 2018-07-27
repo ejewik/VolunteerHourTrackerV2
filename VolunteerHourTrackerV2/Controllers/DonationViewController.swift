@@ -74,7 +74,7 @@ class DonationViewController: UIViewController {
                     donation.club = clubTextField.text ?? ""
                     donation.date = datePicker.date
     
-                    CoreDataHelper.saveEntry()
+                    CoreDataHelper.saveDonation()
     
                 case "cancel":
                     print("cancel button tapped")

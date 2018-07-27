@@ -17,6 +17,7 @@ class HoursTableViewController : UITableViewController  {
         didSet {
            
             tableView.reloadData()
+            print("reloading entry data")
             
             var totalHours : Int = 0
             for entry in entries {
@@ -32,15 +33,16 @@ class HoursTableViewController : UITableViewController  {
         didSet {
             
             tableView.reloadData()
+            print("reloading donation data")
             
             
-            var totalHours : Int = 0
-            for donation in donations {
-                totalHours += Int(donation.itemCount)
-            }
-            //self.navigationItem.title = "Total hours: \(String(totalHours))"
-            self.parent?.title = "Total hours: \(String(totalHours))"
-            self.tabBarItem.title = "testing"
+//            var totalHours : Int = 0
+//            for donation in donations {
+//                totalHours += Int(donation.itemCount)
+//            }
+//            //self.navigationItem.title = "Total hours: \(String(totalHours))"
+//            self.parent?.title = "Total hours: \(String(totalHours))"
+//            self.tabBarItem.title = "testing"
         }
     }
     
@@ -53,10 +55,14 @@ class HoursTableViewController : UITableViewController  {
         {
         case 0:
          entries = CoreDataHelper.retrieveEntries()
+            print("retrieve entries in viewDidLoad")
+            
         case 1:
          donations = CoreDataHelper.retrieveDonations()
+            print("retrieving donations in viewDidLoad")
+            
         default:
-        entries = CoreDataHelper.retrieveEntries()
+        print("Could not retrieve entries or donations")
         
         }
         
@@ -149,9 +155,10 @@ class HoursTableViewController : UITableViewController  {
             entries = CoreDataHelper.retrieveEntries()
         case 1:
             donations = CoreDataHelper.retrieveDonations()
+            print("retrieving donations")
         
         default:
-            entries = CoreDataHelper.retrieveEntries()
+            print("unexpected unwind segue")
         
     }
     }
@@ -181,7 +188,7 @@ extension HoursTableViewController {
             return donations.count
         default:
             print("unexpected table view numberOfRowsInSection error")
-            return entries.count
+            return 10
         }
     }
     
@@ -210,7 +217,7 @@ extension HoursTableViewController {
             return cell
             
             
-        case 1:
+        case 1: //we aren't even hitting case 1
             print("donations selected")
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "DonationTableViewCell", for: indexPath) as! DonationTableViewCell
@@ -246,6 +253,7 @@ extension HoursTableViewController {
             
             return cell
         }
+        
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
