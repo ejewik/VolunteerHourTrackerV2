@@ -81,7 +81,7 @@ class HoursTableViewController : UITableViewController  {
             
             let entry = entries[indexPath.row]
             
-            let destination = segue.destination as! CreateEntryViewController //TODO: Must change to DonationViewController
+            let destination = segue.destination as! CreateEntryViewController 
             
             destination.entry = entry
                 
@@ -89,21 +89,24 @@ class HoursTableViewController : UITableViewController  {
                 
                 let donation = donations[indexPath.row]
                 
-                let destination = segue.destination as! CreateEntryViewController //TODO: Must change to DonationViewController
+                let destination = segue.destination as! DonationViewController //TODO: Must change to DonationViewController
                 
-               // destination.donation = donation
+                destination.donation = donation
                 
             default:
-                
-                let entry = entries[indexPath.row]
-                
-                let destination = segue.destination as! CreateEntryViewController //TODO: Must change to DonationViewController
-                
-                destination.entry = entry
+                print("Error when displaying entries")
+//                let entry = entries[indexPath.row]
+//
+//                let destination = segue.destination as! CreateEntryViewController //TODO: Must change to DonationViewController
+//
+//                destination.entry = entry
             }
             
         case "addEntry":
             print("create entry button tapped")
+            
+       
+            
             
         default:
             print("unexpected segue identifier")

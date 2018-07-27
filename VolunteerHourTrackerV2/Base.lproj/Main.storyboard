@@ -35,7 +35,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Add"/>
                                     <connections>
-                                        <segue destination="LM4-Vo-9iZ" kind="show" identifier="addEntry" id="Yhr-Nx-yuw"/>
+                                        <segue destination="LM4-Vo-9iZ" kind="show" identifier="addEntry" id="3uV-3B-tb4"/>
                                     </connections>
                                 </button>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ig2-zq-mM1">
@@ -333,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93m-VD-ayg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2759.1999999999998" y="831.63418290854577"/>
+            <point key="canvasLocation" x="2756" y="985"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aFK-Kk-wbe">
@@ -374,6 +374,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Yhr-Nx-yuw"/>
+        <segue reference="3uV-3B-tb4"/>
     </inferredMetricsTieBreakers>
 </document>
