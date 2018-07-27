@@ -51,20 +51,18 @@ class HoursTableViewController : UITableViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        switch hourDonationSegmented.selectedSegmentIndex
-        {
-        case 0:
+
          entries = CoreDataHelper.retrieveEntries()
             print("retrieve entries in viewDidLoad")
             
-        case 1:
+ 
          donations = CoreDataHelper.retrieveDonations()
             print("retrieving donations in viewDidLoad")
             
-        default:
-        print("Could not retrieve entries or donations")
+ 
+       
         
-        }
+  
         
         
     }
