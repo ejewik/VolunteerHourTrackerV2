@@ -14,10 +14,12 @@ class DonationViewController: UIViewController {
     
     @IBOutlet weak var donationTitleTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var itemNumberPicker: UIPickerView!
+    @IBOutlet weak var itemCountTextField: UITextField!
     @IBOutlet weak var clubTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var doneButton: UIButton!
+    
+    
     
 
     var donation: Donation?
@@ -33,11 +35,14 @@ class DonationViewController: UIViewController {
         super.viewWillAppear(animated)
         
         
+        
+        
                 if let donation = donation {
                     descriptionTextView.text = donation.content
                     donationTitleTextField.text = donation.eventTitle
                     clubTextField.text = donation.club
                     datePicker.date = donation.date!
+                    itemCountTextField.text = String(donation.itemCount)
         
         
                 } else {
@@ -46,6 +51,7 @@ class DonationViewController: UIViewController {
                     donationTitleTextField.text = ""
                     clubTextField.text = ""
                     datePicker.date = Date()
+                    itemCountTextField.text = ""
                 }
             }
     
@@ -62,6 +68,7 @@ class DonationViewController: UIViewController {
                     donation?.content = descriptionTextView.text ?? ""
                     donation?.club = clubTextField.text ?? ""
                     donation?.date = datePicker.date
+                    donation?.itemCount = Int16(itemCountTextField.text!) ?? 0
     
                     CoreDataHelper.saveDonation()
     
@@ -73,6 +80,7 @@ class DonationViewController: UIViewController {
                     donation.content = descriptionTextView.text ?? ""
                     donation.club = clubTextField.text ?? ""
                     donation.date = datePicker.date
+                    donation.itemCount = Int16(itemCountTextField.text!) ?? 0
     
                     CoreDataHelper.saveDonation()
     

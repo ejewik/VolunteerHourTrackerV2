@@ -230,6 +230,7 @@ extension HoursTableViewController {
             cell.dateLabel.text = donation.date?.convertToString() ?? "unknown"
             cell.itemLabel.text = String(donation.itemCount)
             
+            
             return cell
             
             
