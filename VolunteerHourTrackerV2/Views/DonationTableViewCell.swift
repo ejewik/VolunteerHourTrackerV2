@@ -14,6 +14,7 @@ class DonationTableViewCell: UITableViewCell {
     @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var clubLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dollarLabel: UILabel!
     
     
     

@@ -18,6 +18,7 @@ class DonationViewController: UIViewController {
     @IBOutlet weak var clubTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var dollarCountTextField: UITextField!
     
     
     
@@ -43,6 +44,7 @@ class DonationViewController: UIViewController {
                     clubTextField.text = donation.club
                     datePicker.date = donation.date!
                     itemCountTextField.text = String(donation.itemCount)
+                    dollarCountTextField.text = String(donation.dollarCount)
         
         
                 } else {
@@ -52,6 +54,7 @@ class DonationViewController: UIViewController {
                     clubTextField.text = ""
                     datePicker.date = Date()
                     itemCountTextField.text = ""
+                    dollarCountTextField.text = ""
                 }
             }
     
@@ -69,6 +72,7 @@ class DonationViewController: UIViewController {
                     donation?.club = clubTextField.text ?? ""
                     donation?.date = datePicker.date
                     donation?.itemCount = Int16(itemCountTextField.text!) ?? 0
+                    donation?.dollarCount = Int16(dollarCountTextField.text!) ?? 0
     
                     CoreDataHelper.saveDonation()
     
@@ -81,6 +85,7 @@ class DonationViewController: UIViewController {
                     donation.club = clubTextField.text ?? ""
                     donation.date = datePicker.date
                     donation.itemCount = Int16(itemCountTextField.text!) ?? 0
+                    donation.dollarCount = Int16(dollarCountTextField.text!) ?? 0
     
                     CoreDataHelper.saveDonation()
     

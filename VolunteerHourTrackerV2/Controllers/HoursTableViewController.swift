@@ -13,19 +13,26 @@ class HoursTableViewController : UITableViewController  {
     @IBOutlet weak var hourDonationSegmented: UISegmentedControl!
     @IBOutlet weak var addButton: UIButton!
     
+    var totalHours : Int = 0
+    
+    var totalItems : Int = 0
+    var totalDollars : Int = 0
+    
     var entries = [Entry]() {
         didSet {
            
             tableView.reloadData()
             print("reloading entry data")
             
-            var totalHours : Int = 0
+           // var totalHours : Int = 0
             for entry in entries {
                 totalHours += Int(entry.hourCount)
             }
             //self.navigationItem.title = "Total hours: \(String(totalHours))"
             self.parent?.title = "Total hours: \(String(totalHours))"
             self.tabBarItem.title = "testing"
+            
+            totalHours = 0
         }
     }
     
@@ -34,6 +41,22 @@ class HoursTableViewController : UITableViewController  {
             
             tableView.reloadData()
             print("reloading donation data")
+            
+//            var totalItems : Int = 0
+//            var totalDollars : Int = 0
+            
+           
+            for donation in donations {
+                totalItems += Int(donation.itemCount)
+                totalDollars += Int(donation.dollarCount)
+            }
+            
+           // self.parent?.title = "Total items: \(String(totalItems)) Total dollars: \(String(totalDollars))"
+            
+            totalItems = 0
+            totalDollars = 0
+            
+            
             
             
 //            var totalHours : Int = 0
@@ -163,6 +186,37 @@ class HoursTableViewController : UITableViewController  {
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         tableView.reloadData()
+        
+        switch hourDonationSegmented.selectedSegmentIndex {
+        case 0:
+              totalHours = 0
+            for entry in entries {
+                totalHours += Int(entry.hourCount)
+            }
+            
+            self.parent?.title = "Total hours: \(String(totalHours))"
+            
+            totalHours = 0
+        
+        case 1:
+          totalDollars = 0
+          totalItems = 0
+        for donation in donations {
+            totalItems += Int(donation.itemCount)
+            totalDollars += Int(donation.dollarCount)
+            
+        }
+       
+          
+        self.parent?.title = "Total items: \(String(totalItems)) Total dollars: \(String(totalDollars))"
+            
+          totalDollars = 0
+          totalItems = 0
+            
+        default:
+            print("unexpected total error")
+        
+        }
     }
     
     
@@ -214,12 +268,12 @@ extension HoursTableViewController {
             return cell
             
             
-        case 1: //we aren't even hitting case 1
+        case 1:
             print("donations selected")
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "DonationTableViewCell", for: indexPath) as! DonationTableViewCell
             
-            let donation = donations[indexPath.row] //why is it letting me do this...?
+            let donation = donations[indexPath.row]
             
             
             cell.eventLabel.text = donation.eventTitle
@@ -228,7 +282,20 @@ extension HoursTableViewController {
             
             //cell..text = .content
             cell.dateLabel.text = donation.date?.convertToString() ?? "unknown"
+            
             cell.itemLabel.text = String(donation.itemCount)
+            
+            cell.dollarLabel.text = String(donation.dollarCount)
+            
+//            if let item = donation.itemCount {
+//            cell.itemLabel.text = String(donation.itemCount)
+//            }
+//            else if donation.dollarCount != nil {
+//                cell.itemLabel.text = String(donation.dollarCount)
+//            }
+//            else {
+//                print("nothing in item count or dollar count")
+//            }
             
             
             return cell
