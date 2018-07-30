@@ -272,7 +272,7 @@ extension HoursTableViewController {
             
             //cell..text = entry.content
             cell.dateLabel.text = entry.date?.convertToString() ?? "unknown"
-            cell.hourLabel.text = String(entry.hourCount)
+            cell.hourLabel.text = entry.stringHours
             
             return cell
             
@@ -295,6 +295,8 @@ extension HoursTableViewController {
             cell.itemLabel.text = String(donation.itemCount)
             
             cell.dollarLabel.text = String(donation.dollarCount)
+            
+            
             
 //            if let item = donation.itemCount {
 //            cell.itemLabel.text = String(donation.itemCount)

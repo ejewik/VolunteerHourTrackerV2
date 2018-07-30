@@ -81,6 +81,13 @@ class CreateEntryViewController : UIViewController {
             var interval = DateInterval(start: (entry?.timeFrom!)!, end: (entry?.timeTo!)!)
             let hours = interval.duration / 3600.0
             entry?.hourCount = Int16(hours)
+                
+                let formatter = DateComponentsFormatter()
+                formatter.unitsStyle = .full
+                formatter.allowedUnits = [.month, .day, .hour, .minute, .second]
+                formatter.maximumUnitCount = 2
+                let string = formatter.string(from: (entry?.timeFrom!)!, to: (entry?.timeTo!)!)
+                entry?.stringHours = string
             
             }
             else {
@@ -107,6 +114,13 @@ class CreateEntryViewController : UIViewController {
             var interval = DateInterval(start: entry.timeFrom!, end: entry.timeTo!)
             let hours = interval.duration / 3600.0
             entry.hourCount = Int16(round(hours))
+                
+                let formatter = DateComponentsFormatter()
+                formatter.unitsStyle = .full
+                formatter.allowedUnits = [.month, .day, .hour, .minute, .second]
+                formatter.maximumUnitCount = 2
+                let string = formatter.string(from: entry.timeFrom!, to: entry.timeTo!)
+            entry.stringHours = string
                 
                 //initialHours = entry.hourCount
                 
