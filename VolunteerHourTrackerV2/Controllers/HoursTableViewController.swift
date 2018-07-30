@@ -24,6 +24,13 @@ class HoursTableViewController : UITableViewController  {
             tableView.reloadData()
             print("reloading entry data")
             
+
+            
+            entries.sort(by: {$0.date! < $1.date!})
+            
+        
+
+            
            // var totalHours : Int = 0
             for entry in entries {
                 totalHours += Int(entry.hourCount)
@@ -44,6 +51,8 @@ class HoursTableViewController : UITableViewController  {
             
 //            var totalItems : Int = 0
 //            var totalDollars : Int = 0
+            
+            donations.sort(by: {$0.date! < $1.date!})
             
            
             for donation in donations {

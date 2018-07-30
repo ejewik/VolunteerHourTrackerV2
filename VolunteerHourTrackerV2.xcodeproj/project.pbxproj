@@ -77,7 +77,6 @@
 				4B683B80210654A5006EBF40 /* Helpers */,
 				4B683B6921065258006EBF40 /* AppDelegate.swift */,
 				4B683B6D21065258006EBF40 /* Main.storyboard */,
-				4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */,
 				4B683B7321065259006EBF40 /* Assets.xcassets */,
 				4B683B7521065259006EBF40 /* LaunchScreen.storyboard */,
 				4B683B7821065259006EBF40 /* Info.plist */,
@@ -98,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */,
+				4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
