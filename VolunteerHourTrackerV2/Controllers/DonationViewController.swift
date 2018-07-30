@@ -30,6 +30,11 @@ class DonationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
+        
+//        let keyboard = CreateEntryViewController()
+//        keyboard.hideKeyboardWhenTappedAround()
     }
 
 
@@ -111,3 +116,6 @@ class DonationViewController: UIViewController {
     
     
 }
+
+
+

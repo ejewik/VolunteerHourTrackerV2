@@ -7,17 +7,21 @@
 //
 
 import Foundation
+import UIKit
+import UIKit.UIGestureRecognizerSubclass
 
 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateEntryViewController.dismissKeyboard))
+        let tap2: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DonationViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        tap2.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap2)
+    }
 
-//extension CreateEntryViewController {
-//    func hideKeyboardWhenTappedAround() {
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-//        tap.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tap)
-//    }
-//
-//    @objc func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
-//}
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
