@@ -11,6 +11,9 @@ import UIKit
 
 class DonationViewController: UIViewController {
     
+    //static var totalItems : Int16 = 0
+    //static var totalDollars : Int16 = 0
+    
     
     @IBOutlet weak var donationTitleTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -73,6 +76,9 @@ class DonationViewController: UIViewController {
                     donation?.date = datePicker.date
                     donation?.itemCount = Int16(itemCountTextField.text!) ?? 0
                     donation?.dollarCount = Int16(dollarCountTextField.text!) ?? 0
+                    
+//                    DonationViewController.totalItems += (donation?.itemCount)!
+//                    DonationViewController.totalDollars += (donation?.dollarCount)!
     
                     CoreDataHelper.saveDonation()
     
@@ -86,6 +92,11 @@ class DonationViewController: UIViewController {
                     donation.date = datePicker.date
                     donation.itemCount = Int16(itemCountTextField.text!) ?? 0
                     donation.dollarCount = Int16(dollarCountTextField.text!) ?? 0
+                    
+//                    DonationViewController.totalItems += donation.itemCount
+//                    DonationViewController.totalDollars += donation.dollarCount
+                    
+                    
     
                     CoreDataHelper.saveDonation()
     

@@ -15,8 +15,8 @@ class CreateEntryViewController : UIViewController {
     
     
     
-    static var totalHours : Int16 = 0
-    var initialHours : Int16 = 0
+    //static var totalHours : Int16 = 0
+    //var initialHours : Int16 = 0
     
     var entry: Entry?
     
@@ -85,7 +85,7 @@ class CreateEntryViewController : UIViewController {
                 print("error - reverse interval")
             }
             
-            CreateEntryViewController.totalHours += (entry?.hourCount)!
+            //CreateEntryViewController.totalHours += (entry?.hourCount)!
             
             
             CoreDataHelper.saveEntry()
@@ -106,9 +106,9 @@ class CreateEntryViewController : UIViewController {
             let hours = interval.duration / 3600.0
             entry.hourCount = Int16(round(hours))
                 
-                initialHours = entry.hourCount
+                //initialHours = entry.hourCount
                 
-                CreateEntryViewController.totalHours += entry.hourCount
+                //CreateEntryViewController.totalHours += entry.hourCount
                 //print( CreateEntryViewController.totalHours)
             }
             else

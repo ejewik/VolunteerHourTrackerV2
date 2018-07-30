@@ -208,7 +208,7 @@ class HoursTableViewController : UITableViewController  {
         }
        
           
-        self.parent?.title = "Total items: \(String(totalItems)) Total dollars: \(String(totalDollars))"
+        self.parent?.title = "Total dollars: \(String(totalDollars)) Total items: \(String(totalItems))"
             
           totalDollars = 0
           totalItems = 0
