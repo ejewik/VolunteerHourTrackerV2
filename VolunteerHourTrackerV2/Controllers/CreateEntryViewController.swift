@@ -74,11 +74,16 @@ class CreateEntryViewController : UIViewController {
             entry?.timeTo = timeToPicker.date
             entry?.timeFrom = timeFromPicker.date
             entry?.date = datePicker.date
+            
+            if (entry?.timeFrom!)! < (entry?.timeTo!)! {
             var interval = DateInterval(start: (entry?.timeFrom!)!, end: (entry?.timeTo!)!)
             let hours = interval.duration / 3600.0
             entry?.hourCount = Int16(hours)
             
-           
+            }
+            else {
+                print("error - reverse interval")
+            }
             
             CreateEntryViewController.totalHours += (entry?.hourCount)!
             

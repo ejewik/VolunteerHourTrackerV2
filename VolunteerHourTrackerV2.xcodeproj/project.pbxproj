@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B19BFD0210BDA9300451CC9 /* KeyboardDismissExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */; };
 		4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B6921065258006EBF40 /* AppDelegate.swift */; };
 		4B683B6F21065258006EBF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B683B6D21065258006EBF40 /* Main.storyboard */; };
 		4B683B7221065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B7021065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissExtension.swift; sourceTree = "<group>"; };
 		4B683B6621065258006EBF40 /* VolunteerHourTrackerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolunteerHourTrackerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B683B6921065258006EBF40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B683B6E21065258006EBF40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				4B683B80210654A5006EBF40 /* Helpers */,
 				4B683B6921065258006EBF40 /* AppDelegate.swift */,
 				4B683B6D21065258006EBF40 /* Main.storyboard */,
+				4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */,
 				4B683B7321065259006EBF40 /* Assets.xcassets */,
 				4B683B7521065259006EBF40 /* LaunchScreen.storyboard */,
 				4B683B7821065259006EBF40 /* Info.plist */,
@@ -205,6 +208,7 @@
 				4B86132F210A4401006FF198 /* DonationTableViewCell.swift in Sources */,
 				4B683B7F2106537E006EBF40 /* HoursTableViewController.swift in Sources */,
 				4B683B8621065502006EBF40 /* HourTableViewCell.swift in Sources */,
+				4B19BFD0210BDA9300451CC9 /* KeyboardDismissExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
