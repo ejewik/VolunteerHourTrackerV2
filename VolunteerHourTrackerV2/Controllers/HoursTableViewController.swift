@@ -12,6 +12,9 @@ import UIKit
 class HoursTableViewController : UITableViewController  {
     @IBOutlet weak var hourDonationSegmented: UISegmentedControl!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
+    
+    
     
     var totalHours : Int = 0
     
@@ -36,7 +39,7 @@ class HoursTableViewController : UITableViewController  {
                 totalHours += Int(entry.hourCount)
             }
             //self.navigationItem.title = "Total hours: \(String(totalHours))"
-            self.parent?.title = "Total hours: \(String(totalHours))"
+            self.navigationItem.title = "Total hours: \(String(totalHours))"
             self.tabBarItem.title = "testing"
             
             totalHours = 0
@@ -217,7 +220,7 @@ class HoursTableViewController : UITableViewController  {
         }
        
           
-        self.parent?.title = "Total dollars: \(String(totalDollars)) Total items: \(String(totalItems))"
+        self.navigationItem.title = "Total dollars: \(String(totalDollars)) Total items: \(String(totalItems))"
             
           totalDollars = 0
           totalItems = 0
@@ -229,9 +232,20 @@ class HoursTableViewController : UITableViewController  {
     }
     
     
+    @IBAction func editButtonTapped(_ sender: UIButton) {
+        self.tableView.isEditing = !self.tableView.isEditing
+        if self.tableView.isEditing == false {
+        editButton.setTitle("Edit",for: .normal)
+        } else {
+        editButton.setTitle("Done",for: .normal)
+        }
+    }
+    
+        
+    }
     
     
-}
+
 
 
 
@@ -323,7 +337,7 @@ extension HoursTableViewController {
             
             cell.clubLabel.text = entry.club
             
-            //cell..text = entry.content
+            
             cell.dateLabel.text = entry.date?.convertToString() ?? "unknown"
             cell.hourLabel.text = String(entry.hourCount)
             
@@ -331,6 +345,7 @@ extension HoursTableViewController {
         }
         
     }
+
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch hourDonationSegmented.selectedSegmentIndex {
@@ -352,15 +367,30 @@ extension HoursTableViewController {
                 donations = CoreDataHelper.retrieveDonations()
             }
         default:
-            if editingStyle == .delete {
-                let entryToDelete = entries[indexPath.row]
-                CoreDataHelper.delete(entry: entryToDelete)
-                
-                entries = CoreDataHelper.retrieveEntries()
-            }
+            print("Unexpected delete error")
             
         }
     }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        switch hourDonationSegmented.selectedSegmentIndex {
+            
+        case 0:
+        let movedObjTemp = entries[sourceIndexPath.item]
+        entries.remove(at: sourceIndexPath.item)
+        entries.insert(movedObjTemp, at: destinationIndexPath.item)
+        case 1:
+        let movedObjTemp = donations[sourceIndexPath.item]
+        donations.remove(at: sourceIndexPath.item)
+        donations.insert(movedObjTemp, at: destinationIndexPath.item)
+            
+        default:
+            print("unexpected reordering error")
+        }
+    }
+    
+    
 }
 
 
