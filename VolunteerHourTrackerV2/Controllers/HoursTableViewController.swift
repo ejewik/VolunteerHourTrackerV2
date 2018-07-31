@@ -19,7 +19,7 @@ class HoursTableViewController : UITableViewController  {
     var totalHours : Int = 0
     
     var totalItems : Int = 0
-    var totalDollars : Int = 0
+    var totalDollars : Double = 0
     
     var entries = [Entry]() {
         didSet {
@@ -60,7 +60,7 @@ class HoursTableViewController : UITableViewController  {
            
             for donation in donations {
                 totalItems += Int(donation.itemCount)
-                totalDollars += Int(donation.dollarCount)
+                totalDollars += donation.dollarCount
             }
             
            // self.parent?.title = "Total items: \(String(totalItems)) Total dollars: \(String(totalDollars))"
@@ -215,12 +215,12 @@ class HoursTableViewController : UITableViewController  {
           totalItems = 0
         for donation in donations {
             totalItems += Int(donation.itemCount)
-            totalDollars += Int(donation.dollarCount)
+            totalDollars += donation.dollarCount
             
         }
        
           
-        self.navigationItem.title = "Total dollars: \(String(totalDollars)) Total items: \(String(totalItems))"
+          self.navigationItem.title = "Total dollars: \(doubleToString(doubleValue: totalDollars)) Total items: \(String(totalItems))"
             
           totalDollars = 0
           totalItems = 0
@@ -284,7 +284,7 @@ extension HoursTableViewController {
             
             cell.clubLabel.text = entry.club
             
-            //cell..text = entry.content
+         
             cell.dateLabel.text = entry.date?.convertToString() ?? "unknown"
             cell.hourLabel.text = entry.stringHours
             
@@ -303,12 +303,14 @@ extension HoursTableViewController {
             
             cell.clubLabel.text = donation.club
             
-            //cell..text = .content
+           
             cell.dateLabel.text = donation.date?.convertToString() ?? "unknown"
             
             cell.itemLabel.text = String(donation.itemCount)
             
-            cell.dollarLabel.text = String(donation.dollarCount)
+            cell.dollarLabel.text = doubleToString(doubleValue: donation.dollarCount)
+            
+            
             
             
             
@@ -391,6 +393,12 @@ extension HoursTableViewController {
     }
     
     
+}
+
+extension HoursTableViewController {
+    func doubleToString( doubleValue : Double ) -> String {
+    return String(format: "%.2f", doubleValue )
+    }
 }
 
 

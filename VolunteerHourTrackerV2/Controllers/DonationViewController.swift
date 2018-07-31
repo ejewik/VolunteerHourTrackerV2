@@ -82,7 +82,7 @@ class DonationViewController: UIViewController {
                     donation?.club = clubTextField.text ?? ""
                     donation?.date = datePicker.date
                     donation?.itemCount = Int16(itemCountTextField.text!) ?? 0
-                    donation?.dollarCount = Int16(dollarCountTextField.text!) ?? 0
+                    donation?.dollarCount = Double(dollarCountTextField.text!) ?? 0.0
                     
 //                    DonationViewController.totalItems += (donation?.itemCount)!
 //                    DonationViewController.totalDollars += (donation?.dollarCount)!
@@ -98,7 +98,7 @@ class DonationViewController: UIViewController {
                     donation.club = clubTextField.text ?? ""
                     donation.date = datePicker.date
                     donation.itemCount = Int16(itemCountTextField.text!) ?? 0
-                    donation.dollarCount = Int16(dollarCountTextField.text!) ?? 0
+                    donation.dollarCount = Double(dollarCountTextField.text!) ?? 0.0
                     
 //                    DonationViewController.totalItems += donation.itemCount
 //                    DonationViewController.totalDollars += donation.dollarCount
