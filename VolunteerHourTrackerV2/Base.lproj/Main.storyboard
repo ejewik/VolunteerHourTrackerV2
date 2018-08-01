@@ -204,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="3898.4000000000001" y="133.5832083958021"/>
         </scene>
-        <!--Title-->
+        <!--Create Entry View Controller-->
         <scene sceneID="Oa3-EE-PNo">
             <objects>
-                <viewController id="LM4-Vo-9iZ" customClass="CreateEntryViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Create Entry View Controller" id="LM4-Vo-9iZ" customClass="CreateEntryViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vMH-hz-Hyv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -476,11 +476,37 @@
                     </tabBar>
                     <connections>
                         <segue destination="CQj-5D-MXH" kind="relationship" relationship="viewControllers" id="T0J-um-njY"/>
+                        <segue destination="2th-ea-8Yf" kind="relationship" relationship="viewControllers" id="AAF-dS-m6V"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHq-6R-qfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2020" y="133.5832083958021"/>
+        </scene>
+        <!--pdf View Controller-->
+        <scene sceneID="J6O-Jy-sjG">
+            <objects>
+                <viewController title="pdf View Controller" id="2th-ea-8Yf" customClass="pdfViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Teq-ih-Ilh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Export a pdf " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndn-dd-9S6">
+                                <rect key="frame" x="105" y="35" width="169" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TeU-rs-lDL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="leP-Ut-F4L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SlB-eJ-ES8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2200.8000000000002" y="933.28335832083962"/>
         </scene>
         <!--Item-->
         <scene sceneID="yVe-xR-ytb">

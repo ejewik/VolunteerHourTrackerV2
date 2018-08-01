@@ -21,6 +21,7 @@
 		4B861331210A8AA6006FF198 /* DonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B861330210A8AA6006FF198 /* DonationViewController.swift */; };
 		4BA25E8C2107EC650044E4B2 /* Date+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */; };
 		4BA25E8E2108E5BA0044E4B2 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA25E8D2108E5BA0044E4B2 /* CoreDataHelper.swift */; };
+		4BE3467421120D470049D14D /* pdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3467321120D470049D14D /* pdfViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		4B861330210A8AA6006FF198 /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
 		4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+convertToString.swift"; sourceTree = "<group>"; };
 		4BA25E8D2108E5BA0044E4B2 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		4BE3467321120D470049D14D /* pdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pdfViewController.swift; sourceTree = "<group>"; };
 		B48939C697F6CC9B5201FA3F /* Pods_VolunteerHourTrackerV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VolunteerHourTrackerV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35E8BB0710A560DF92244A5 /* Pods-VolunteerHourTrackerV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolunteerHourTrackerV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-VolunteerHourTrackerV2/Pods-VolunteerHourTrackerV2.release.xcconfig"; sourceTree = "<group>"; };
 		EEEBE3CA20A106AA0B732E1E /* Pods-VolunteerHourTrackerV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolunteerHourTrackerV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VolunteerHourTrackerV2/Pods-VolunteerHourTrackerV2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				4B683B7E2106537E006EBF40 /* HoursTableViewController.swift */,
 				4B683B872106698A006EBF40 /* CreateEntryViewController.swift */,
 				4B861330210A8AA6006FF198 /* DonationViewController.swift */,
+				4BE3467321120D470049D14D /* pdfViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				4B683B7221065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld in Sources */,
 				4BA25E8E2108E5BA0044E4B2 /* CoreDataHelper.swift in Sources */,
 				4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */,
+				4BE3467421120D470049D14D /* pdfViewController.swift in Sources */,
 				4B86132F210A4401006FF198 /* DonationTableViewCell.swift in Sources */,
 				4B683B7F2106537E006EBF40 /* HoursTableViewController.swift in Sources */,
 				4B683B8621065502006EBF40 /* HourTableViewCell.swift in Sources */,
