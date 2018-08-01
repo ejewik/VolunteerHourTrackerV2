@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49704B2238F8C05C2E3C5FB7 /* Pods_VolunteerHourTrackerV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48939C697F6CC9B5201FA3F /* Pods_VolunteerHourTrackerV2.framework */; };
 		4B19BFD0210BDA9300451CC9 /* KeyboardDismissExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */; };
 		4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B6921065258006EBF40 /* AppDelegate.swift */; };
 		4B683B6F21065258006EBF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B683B6D21065258006EBF40 /* Main.storyboard */; };
@@ -38,6 +39,9 @@
 		4B861330210A8AA6006FF198 /* DonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationViewController.swift; sourceTree = "<group>"; };
 		4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+convertToString.swift"; sourceTree = "<group>"; };
 		4BA25E8D2108E5BA0044E4B2 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		B48939C697F6CC9B5201FA3F /* Pods_VolunteerHourTrackerV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VolunteerHourTrackerV2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35E8BB0710A560DF92244A5 /* Pods-VolunteerHourTrackerV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolunteerHourTrackerV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-VolunteerHourTrackerV2/Pods-VolunteerHourTrackerV2.release.xcconfig"; sourceTree = "<group>"; };
+		EEEBE3CA20A106AA0B732E1E /* Pods-VolunteerHourTrackerV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolunteerHourTrackerV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VolunteerHourTrackerV2/Pods-VolunteerHourTrackerV2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49704B2238F8C05C2E3C5FB7 /* Pods_VolunteerHourTrackerV2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0430865F6F22F7E13B1249D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B48939C697F6CC9B5201FA3F /* Pods_VolunteerHourTrackerV2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18DBEDD5D14BDC0C2B0895AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEEBE3CA20A106AA0B732E1E /* Pods-VolunteerHourTrackerV2.debug.xcconfig */,
+				C35E8BB0710A560DF92244A5 /* Pods-VolunteerHourTrackerV2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4B683B5D21065257006EBF40 = {
 			isa = PBXGroup;
 			children = (
 				4B683B6821065258006EBF40 /* VolunteerHourTrackerV2 */,
 				4B683B6721065258006EBF40 /* Products */,
+				18DBEDD5D14BDC0C2B0895AA /* Pods */,
+				0430865F6F22F7E13B1249D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B683B7B21065259006EBF40 /* Build configuration list for PBXNativeTarget "VolunteerHourTrackerV2" */;
 			buildPhases = (
+				50CF98FA5A97A0D31FE4F8E9 /* [CP] Check Pods Manifest.lock */,
 				4B683B6221065258006EBF40 /* Sources */,
 				4B683B6321065258006EBF40 /* Frameworks */,
 				4B683B6421065258006EBF40 /* Resources */,
+				828CA331F3AB03E2F7407717 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +219,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50CF98FA5A97A0D31FE4F8E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VolunteerHourTrackerV2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		828CA331F3AB03E2F7407717 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VolunteerHourTrackerV2/Pods-VolunteerHourTrackerV2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SimplePDF/SimplePDF.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimplePDF.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VolunteerHourTrackerV2/Pods-VolunteerHourTrackerV2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B683B6221065258006EBF40 /* Sources */ = {
@@ -350,6 +415,7 @@
 		};
 		4B683B7C21065259006EBF40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEEBE3CA20A106AA0B732E1E /* Pods-VolunteerHourTrackerV2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -367,6 +433,7 @@
 		};
 		4B683B7D21065259006EBF40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C35E8BB0710A560DF92244A5 /* Pods-VolunteerHourTrackerV2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

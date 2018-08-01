@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2DF66133672A2E74DF88790BDA78F5CF /* Pods-VolunteerHourTrackerV2-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8B65769C7EF2A797103A61EF6A1203D /* Pods-VolunteerHourTrackerV2-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		380CF08065DB91E3FED24A9C935E9B2E /* SimplePDF.h in Headers */ = {isa = PBXBuildFile; fileRef = AA2C42361F54176DB39F4B0CF9BCE80E /* SimplePDF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D55B7C2E26CE17A4500729E679964D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		87D6B754CFCA6E773DA785128C144D18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		AD0C16BF9C4D68C87C68E9E6727CB424 /* SimplePDF-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B51D50A90E76B3F1CD37B4C4EDD0F9 /* SimplePDF-dummy.m */; };
+		B6B7FC982166AF383EC267A07557BA7C /* SimplePDF-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98BDFCE9EAB83E9A8CB55A219234E25A /* SimplePDF-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8A909C9A278085C1E7A1371577E9880 /* Pods-VolunteerHourTrackerV2-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D73DD2FF0ABA8A945B16046539826ABB /* Pods-VolunteerHourTrackerV2-dummy.m */; };
+		FC43FDCE49EA89A68FE649D19A1A4C08 /* SimplePDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CEEC4F76788CCDB7EBFCB5A9072A65 /* SimplePDF.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		54DC58BBA04522A3B237BA40FA219468 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 228A14F8CFCA30A62B503AEFB4C45EFE;
+			remoteInfo = SimplePDF;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09CEEC4F76788CCDB7EBFCB5A9072A65 /* SimplePDF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SimplePDF.swift; path = SimplePDF/SimplePDF.swift; sourceTree = "<group>"; };
+		172C401497E8A32482B7FA64F8D1C601 /* Pods-VolunteerHourTrackerV2-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VolunteerHourTrackerV2-acknowledgements.plist"; sourceTree = "<group>"; };
+		1809806C860B3199C4D160AD515BB183 /* Pods-VolunteerHourTrackerV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VolunteerHourTrackerV2.debug.xcconfig"; sourceTree = "<group>"; };
+		18E7CBDD759F419F03A6C38A0D7B6298 /* SimplePDF-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimplePDF-prefix.pch"; sourceTree = "<group>"; };
+		2666558DE7517CBDDC4C63239D8C0001 /* Pods-VolunteerHourTrackerV2-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VolunteerHourTrackerV2-frameworks.sh"; sourceTree = "<group>"; };
+		37DA4C6A2403C3B208ED852BC514E1B1 /* SimplePDF.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SimplePDF.xcconfig; sourceTree = "<group>"; };
+		47DA8D5E3B5E2A1096FDE22D4DC03F6E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66B51D50A90E76B3F1CD37B4C4EDD0F9 /* SimplePDF-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SimplePDF-dummy.m"; sourceTree = "<group>"; };
+		737BD6CCCA1C77B1177E9895D9BAB34A /* Pods_VolunteerHourTrackerV2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_VolunteerHourTrackerV2.framework; path = "Pods-VolunteerHourTrackerV2.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83E7A70FDA57CE0331471B64927056E9 /* Pods-VolunteerHourTrackerV2-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VolunteerHourTrackerV2-resources.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98BDFCE9EAB83E9A8CB55A219234E25A /* SimplePDF-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimplePDF-umbrella.h"; sourceTree = "<group>"; };
+		AA2C42361F54176DB39F4B0CF9BCE80E /* SimplePDF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SimplePDF.h; path = SimplePDF/SimplePDF.h; sourceTree = "<group>"; };
+		ABE8320A80AC9491561FA51483BBF33D /* Pods-VolunteerHourTrackerV2.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-VolunteerHourTrackerV2.modulemap"; sourceTree = "<group>"; };
+		AFEE69741E970B2EBC592360A84334F7 /* SimplePDF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SimplePDF.framework; path = SimplePDF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B14DDB8B036DCD507B0ECFC6323BB19F /* SimplePDF.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SimplePDF.modulemap; sourceTree = "<group>"; };
+		B66E8D54C35C0ACE6EB562E86F047DF9 /* Pods-VolunteerHourTrackerV2-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-VolunteerHourTrackerV2-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BEA16E71636F08C35F716E66ACF7F4E2 /* Pods-VolunteerHourTrackerV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-VolunteerHourTrackerV2.release.xcconfig"; sourceTree = "<group>"; };
+		D73DD2FF0ABA8A945B16046539826ABB /* Pods-VolunteerHourTrackerV2-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VolunteerHourTrackerV2-dummy.m"; sourceTree = "<group>"; };
+		D8B65769C7EF2A797103A61EF6A1203D /* Pods-VolunteerHourTrackerV2-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VolunteerHourTrackerV2-umbrella.h"; sourceTree = "<group>"; };
+		E8972A63340BC05E7819729C24B254D0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E118BAE27E5EF308A97B07ED86DF034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D55B7C2E26CE17A4500729E679964D8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		674AA38E1386ADFD3EF70B0E5275F2D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D6B754CFCA6E773DA785128C144D18 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0967A084C37237EFB5E3D6082287BF69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				737BD6CCCA1C77B1177E9895D9BAB34A /* Pods_VolunteerHourTrackerV2.framework */,
+				AFEE69741E970B2EBC592360A84334F7 /* SimplePDF.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33D7331407E417C1E4677E62D63ED65E /* Pods-VolunteerHourTrackerV2 */ = {
+			isa = PBXGroup;
+			children = (
+				47DA8D5E3B5E2A1096FDE22D4DC03F6E /* Info.plist */,
+				ABE8320A80AC9491561FA51483BBF33D /* Pods-VolunteerHourTrackerV2.modulemap */,
+				B66E8D54C35C0ACE6EB562E86F047DF9 /* Pods-VolunteerHourTrackerV2-acknowledgements.markdown */,
+				172C401497E8A32482B7FA64F8D1C601 /* Pods-VolunteerHourTrackerV2-acknowledgements.plist */,
+				D73DD2FF0ABA8A945B16046539826ABB /* Pods-VolunteerHourTrackerV2-dummy.m */,
+				2666558DE7517CBDDC4C63239D8C0001 /* Pods-VolunteerHourTrackerV2-frameworks.sh */,
+				83E7A70FDA57CE0331471B64927056E9 /* Pods-VolunteerHourTrackerV2-resources.sh */,
+				D8B65769C7EF2A797103A61EF6A1203D /* Pods-VolunteerHourTrackerV2-umbrella.h */,
+				1809806C860B3199C4D160AD515BB183 /* Pods-VolunteerHourTrackerV2.debug.xcconfig */,
+				BEA16E71636F08C35F716E66ACF7F4E2 /* Pods-VolunteerHourTrackerV2.release.xcconfig */,
+			);
+			name = "Pods-VolunteerHourTrackerV2";
+			path = "Target Support Files/Pods-VolunteerHourTrackerV2";
+			sourceTree = "<group>";
+		};
+		48FDA7BD79BC9738B5E586EBE507B756 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				33D7331407E417C1E4677E62D63ED65E /* Pods-VolunteerHourTrackerV2 */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		79431D09EF65B45A54BB33F408D2ECA8 /* SimplePDF */ = {
+			isa = PBXGroup;
+			children = (
+				AA2C42361F54176DB39F4B0CF9BCE80E /* SimplePDF.h */,
+				09CEEC4F76788CCDB7EBFCB5A9072A65 /* SimplePDF.swift */,
+				A675A917AFB29D0B21BD73622FD54AF4 /* Support Files */,
+			);
+			name = SimplePDF;
+			path = SimplePDF;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				BB5870201C60248D69A41FE3CB200E6A /* Pods */,
+				0967A084C37237EFB5E3D6082287BF69 /* Products */,
+				48FDA7BD79BC9738B5E586EBE507B756 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A675A917AFB29D0B21BD73622FD54AF4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8972A63340BC05E7819729C24B254D0 /* Info.plist */,
+				B14DDB8B036DCD507B0ECFC6323BB19F /* SimplePDF.modulemap */,
+				37DA4C6A2403C3B208ED852BC514E1B1 /* SimplePDF.xcconfig */,
+				66B51D50A90E76B3F1CD37B4C4EDD0F9 /* SimplePDF-dummy.m */,
+				18E7CBDD759F419F03A6C38A0D7B6298 /* SimplePDF-prefix.pch */,
+				98BDFCE9EAB83E9A8CB55A219234E25A /* SimplePDF-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SimplePDF";
+			sourceTree = "<group>";
+		};
+		BB5870201C60248D69A41FE3CB200E6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79431D09EF65B45A54BB33F408D2ECA8 /* SimplePDF */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8216E57DC0B054E9231592369F732126 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6B7FC982166AF383EC267A07557BA7C /* SimplePDF-umbrella.h in Headers */,
+				380CF08065DB91E3FED24A9C935E9B2E /* SimplePDF.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC4D88B31881B4AC1776B49EB8956E85 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DF66133672A2E74DF88790BDA78F5CF /* Pods-VolunteerHourTrackerV2-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		228A14F8CFCA30A62B503AEFB4C45EFE /* SimplePDF */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97F336157C577B31F8F71A4B58B274AB /* Build configuration list for PBXNativeTarget "SimplePDF" */;
+			buildPhases = (
+				BF8A553D8DA50C367CC360220FBCF6C0 /* Sources */,
+				674AA38E1386ADFD3EF70B0E5275F2D4 /* Frameworks */,
+				8216E57DC0B054E9231592369F732126 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimplePDF;
+			productName = SimplePDF;
+			productReference = AFEE69741E970B2EBC592360A84334F7 /* SimplePDF.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2E957EFCE4964000359C33A7DE9D0E53 /* Pods-VolunteerHourTrackerV2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 944DA57723530033089E511BB2BB0FB0 /* Build configuration list for PBXNativeTarget "Pods-VolunteerHourTrackerV2" */;
+			buildPhases = (
+				331C2CE58F79455ACE85F7112E4EE0AD /* Sources */,
+				2E118BAE27E5EF308A97B07ED86DF034 /* Frameworks */,
+				CC4D88B31881B4AC1776B49EB8956E85 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01F2AA3B2E3E39F293419BFB343751CC /* PBXTargetDependency */,
+			);
+			name = "Pods-VolunteerHourTrackerV2";
+			productName = "Pods-VolunteerHourTrackerV2";
+			productReference = 737BD6CCCA1C77B1177E9895D9BAB34A /* Pods_VolunteerHourTrackerV2.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 0967A084C37237EFB5E3D6082287BF69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E957EFCE4964000359C33A7DE9D0E53 /* Pods-VolunteerHourTrackerV2 */,
+				228A14F8CFCA30A62B503AEFB4C45EFE /* SimplePDF */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		331C2CE58F79455ACE85F7112E4EE0AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8A909C9A278085C1E7A1371577E9880 /* Pods-VolunteerHourTrackerV2-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF8A553D8DA50C367CC360220FBCF6C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD0C16BF9C4D68C87C68E9E6727CB424 /* SimplePDF-dummy.m in Sources */,
+				FC43FDCE49EA89A68FE649D19A1A4C08 /* SimplePDF.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01F2AA3B2E3E39F293419BFB343751CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SimplePDF;
+			target = 228A14F8CFCA30A62B503AEFB4C45EFE /* SimplePDF */;
+			targetProxy = 54DC58BBA04522A3B237BA40FA219468 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10D267D4D0B1B4DBBFD23AEFD69B36FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37DA4C6A2403C3B208ED852BC514E1B1 /* SimplePDF.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SimplePDF/SimplePDF-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimplePDF/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SimplePDF/SimplePDF.modulemap";
+				PRODUCT_MODULE_NAME = SimplePDF;
+				PRODUCT_NAME = SimplePDF;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A1AD0713508F6D5ADCCFE99229CD5AAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37DA4C6A2403C3B208ED852BC514E1B1 /* SimplePDF.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SimplePDF/SimplePDF-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimplePDF/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SimplePDF/SimplePDF.modulemap";
+				PRODUCT_MODULE_NAME = SimplePDF;
+				PRODUCT_NAME = SimplePDF;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D8CE0B222ED984A2568E0BB82EF2E17A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEA16E71636F08C35F716E66ACF7F4E2 /* Pods-VolunteerHourTrackerV2.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VolunteerHourTrackerV2/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VolunteerHourTrackerV2/Pods-VolunteerHourTrackerV2.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DBA27DBA6F417A70180BA068A6725CD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1809806C860B3199C4D160AD515BB183 /* Pods-VolunteerHourTrackerV2.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-VolunteerHourTrackerV2/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-VolunteerHourTrackerV2/Pods-VolunteerHourTrackerV2.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		944DA57723530033089E511BB2BB0FB0 /* Build configuration list for PBXNativeTarget "Pods-VolunteerHourTrackerV2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBA27DBA6F417A70180BA068A6725CD4 /* Debug */,
+				D8CE0B222ED984A2568E0BB82EF2E17A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97F336157C577B31F8F71A4B58B274AB /* Build configuration list for PBXNativeTarget "SimplePDF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10D267D4D0B1B4DBBFD23AEFD69B36FB /* Debug */,
+				A1AD0713508F6D5ADCCFE99229CD5AAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
