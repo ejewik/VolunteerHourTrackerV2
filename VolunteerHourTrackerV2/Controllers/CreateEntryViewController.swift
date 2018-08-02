@@ -34,7 +34,14 @@ class CreateEntryViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
+        addBorder( textField: titleTextField)
+        addBorder( textField: clubTextField)
+        descriptionTextView!.layer.borderWidth = 1
+        descriptionTextView!.layer.borderColor = UIColor.darkGray.cgColor
+        
+        descriptionTextView.layer.cornerRadius = 5
+        descriptionTextView.clipsToBounds = true
     }
     
  
@@ -87,7 +94,7 @@ class CreateEntryViewController : UIViewController {
                 formatter.allowedUnits = [.month, .day, .hour, .minute, .second]
                 formatter.maximumUnitCount = 2
                 let string = formatter.string(from: (entry?.timeFrom!)!, to: (entry?.timeTo!)!)
-                entry?.stringHours = string
+                entry?.stringHours = string ?? ""
             
             }
             else {
@@ -120,7 +127,7 @@ class CreateEntryViewController : UIViewController {
                 formatter.allowedUnits = [.month, .day, .hour, .minute, .second]
                 formatter.maximumUnitCount = 2
                 let string = formatter.string(from: entry.timeFrom!, to: entry.timeTo!)
-            entry.stringHours = string
+            entry.stringHours = string ?? ""
                 
                 //initialHours = entry.hourCount
                 
@@ -142,6 +149,18 @@ class CreateEntryViewController : UIViewController {
     }
     @IBAction func datePickerTapped(_ sender: UIDatePicker) {
        // timeFromPicker.inputView
+    }
+    
+    func addBorder( textField: UITextField ) {
+        let border = CALayer()
+        let width = CGFloat(2.0)
+        border.borderColor = UIColor.darkGray.cgColor
+        border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width: textField.frame.size.width, height: textField.frame.size.height)
+        
+        border.borderWidth = width
+        textField.layer.addSublayer(border)
+        textField.layer.masksToBounds = true
+        
     }
 }
 

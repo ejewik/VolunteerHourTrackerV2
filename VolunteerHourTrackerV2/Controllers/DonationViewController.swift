@@ -37,6 +37,15 @@ class DonationViewController: UIViewController {
         
 //        let keyboard = CreateEntryViewController()
 //        keyboard.hideKeyboardWhenTappedAround()
+        addBorder(textField: donationTitleTextField)
+        addBorder(textField: itemCountTextField)
+        addBorder(textField: clubTextField)
+        addBorder(textField: dollarCountTextField)
+        descriptionTextView!.layer.borderWidth = 1
+        descriptionTextView!.layer.borderColor = UIColor.darkGray.cgColor
+        
+        descriptionTextView.layer.cornerRadius = 5
+        descriptionTextView.clipsToBounds = true
     }
 
 
@@ -114,6 +123,18 @@ class DonationViewController: UIViewController {
                 }
     
 
+    }
+    
+    func addBorder( textField: UITextField ) {
+        let border = CALayer()
+        let width = CGFloat(2.0)
+        border.borderColor = UIColor.darkGray.cgColor
+        border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width: textField.frame.size.width, height: textField.frame.size.height)
+        
+        border.borderWidth = width
+        textField.layer.addSublayer(border)
+        textField.layer.masksToBounds = true
+        
     }
     
     

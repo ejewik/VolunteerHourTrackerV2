@@ -10,15 +10,113 @@ import Foundation
 import SimplePDF
 import UIKit 
 
-class pdfViewController : UIViewController, UIDocumentInteractionControllerDelegate {
+class pdfViewController : UIViewController, UIDocumentInteractionControllerDelegate  {
+    
+    
     
     @IBOutlet weak var textField: UITextField!
-    
+    //weak var delegate : updateDelegate?
+    var tableView: UITableView = UITableView(frame: CGRect() )
     let pdfData2 : Data = Data()
-    
-    
+    var entriesArray = [Entry]() {
+        didSet {
+            
+            // observer that knows when the arrays gets new data
+            // reload data
+            CoreDataHelper.retrieveEntries()
+            tableView.reloadData()
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        let A4paperSize = CGSize(width: 595, height: 842)
+//        let pdf = SimplePDF(pageSize: A4paperSize)
+//
+//        pdf.addText("Hello World!")
+//        // or
+//        // pdf.addText("Hello World!", font: myFont, textColor: myTextColor)
+//
+//        //pdf.addImage( anImage )
+//        pdf.addText("Testing testing")
+//
+//        // CoreDataHelper should retrieve entries and populate the entries array
+//
+//
+//       // var dataArray = String[entriesArray.count][4]
+//       // var dataArray = [[String]](repeating: [String](repeating: 0, count: entriesArray.count), count: 4)
+//       // var dataArray = [[String]](repeating: [String](repeating: 0, count: 5), count: 4)
+//
+//        // Before you can write this arry to the file
+//        // First retrieve and reload data to the array
+//        // Then when you write to file, it should be up to date
+//        //is it only writing to file once...?
+//        CoreDataHelper.retrieveEntries()
+//        tableView.reloadData()
+////         self.delegate?.didUpdate()(self)
+////
+////        let updates = Updates()
+////        updates.delegate = self
+//
+//        var dataArray = Array(repeating: Array(repeating: "", count: 4), count: entriesArray.count)
+//
+//
+//        for col in 0...0 {
+//            for row in 0...entriesArray.count - 1{
+//                dataArray[row][col] = entriesArray[row].eventTitle ?? ""
+//            }
+//        }
+//
+//        for col in 1...1 {
+//            for row in 0...entriesArray.count - 1{
+//                dataArray[row][col] = entriesArray[row].stringHours ?? ""
+//            }
+//
+//            for col in 2...2 {
+//                for row in 0...entriesArray.count - 1 {
+//                    dataArray[row][col] = entriesArray[row].club!
+//                }
+//            }
+//
+//            for col in 3...3 {
+//                for row in 0...entriesArray.count - 1 {
+//                    dataArray[row][col] = (entriesArray[row].date?.convertToString())!
+//                }
+//            }
+//        }
+//        for entry in entriesArray {
+//            print("entry: \(String(describing: entry.eventTitle))")
+//        }
+//        //let dataArray = [["test1","test2"],["test3","test4"]]
+//        pdf.addTable(entriesArray.count, columnCount: 4, rowHeight: 50.0, columnWidth: 100.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: dataArray)
+//
+//        let pdfData = pdf.generatePDFdata()
+//
+//        if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last {
+//            let fileURL = documentsDirectory.appendingPathComponent("myDocument.pdf")
+//            print("path is \(fileURL)")
+//            do {
+//                try pdfData.write( to: fileURL , options: .atomic)
+//            }
+//            catch {
+//                print("catch error",error.localizedDescription)
+//            }
+//        }
+//
+//
+//    }
+//
+    
+    
+    @IBAction func shareDataButtonTapped(_ sender: Any) {
+        
         
         let A4paperSize = CGSize(width: 595, height: 842)
         let pdf = SimplePDF(pageSize: A4paperSize)
@@ -30,8 +128,55 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         //pdf.addImage( anImage )
         pdf.addText("Testing testing")
         
-        let dataArray = [["Test1", "Test2"],["Test3", "Test4"]]
-        pdf.addTable(2, columnCount: 2, rowHeight: 20.0, columnWidth: 30.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 5.0), dataArray: dataArray)
+        // CoreDataHelper should retrieve entries and populate the entries array
+        
+        
+        // var dataArray = String[entriesArray.count][4]
+        // var dataArray = [[String]](repeating: [String](repeating: 0, count: entriesArray.count), count: 4)
+        // var dataArray = [[String]](repeating: [String](repeating: 0, count: 5), count: 4)
+        
+        // Before you can write this arry to the file
+        // First retrieve and reload data to the array
+        // Then when you write to file, it should be up to date
+        //is it only writing to file once...?
+        CoreDataHelper.retrieveEntries()
+        tableView.reloadData()
+        //         self.delegate?.didUpdate()(self)
+        //
+        //        let updates = Updates()
+        //        updates.delegate = self
+        
+        var dataArray = Array(repeating: Array(repeating: "", count: 4), count: entriesArray.count)
+        
+        
+        for col in 0...0 {
+            for row in 0...entriesArray.count - 1{
+                dataArray[row][col] = entriesArray[row].eventTitle ?? ""
+            }
+        }
+        
+        for col in 1...1 {
+            for row in 0...entriesArray.count - 1{
+                dataArray[row][col] = entriesArray[row].stringHours ?? ""
+            }
+            
+            for col in 2...2 {
+                for row in 0...entriesArray.count - 1 {
+                    dataArray[row][col] = entriesArray[row].club!
+                }
+            }
+            
+            for col in 3...3 {
+                for row in 0...entriesArray.count - 1 {
+                    dataArray[row][col] = (entriesArray[row].date?.convertToString())!
+                }
+            }
+        }
+        for entry in entriesArray {
+            print("entry: \(String(describing: entry.eventTitle))")
+        }
+        //let dataArray = [["test1","test2"],["test3","test4"]]
+        pdf.addTable(entriesArray.count, columnCount: 4, rowHeight: 50.0, columnWidth: 100.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: dataArray)
         
         let pdfData = pdf.generatePDFdata()
         
@@ -47,11 +192,8 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         }
         
         
-    }
-    
-    
-    
-    @IBAction func shareDataButtonTapped(_ sender: Any) {
+        
+        
         
 //        let activityController = UIActivityViewController(activityItems: [textField.text!],
 //                                                          applicationActivities: nil)
@@ -86,6 +228,28 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
     
     
 }
+
+protocol updateDelegate {
+    func didUpdate()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -9,10 +9,17 @@
 import Foundation
 import UIKit
 
-class HoursTableViewController : UITableViewController  {
+class HoursTableViewController : UITableViewController, updateDelegate   {
+    func didUpdate() {
+        
+            self.tableView.reloadData()
+        
+    }
+    
     @IBOutlet weak var hourDonationSegmented: UISegmentedControl!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
+    
     
     
     
@@ -23,10 +30,10 @@ class HoursTableViewController : UITableViewController  {
     
     var entries = [Entry]() {
         didSet {
-           
+            CoreDataHelper.retrieveEntries()
             tableView.reloadData()
             print("reloading entry data")
-            
+            CoreDataHelper.retrieveEntries()
 
             
             entries.sort(by: {$0.date! < $1.date!})
@@ -43,6 +50,17 @@ class HoursTableViewController : UITableViewController  {
             self.tabBarItem.title = "testing"
             
             totalHours = 0
+            
+            //will send entry info to pdfViewController
+            
+//            let secondTab = self.tabBarController?.viewControllers![1] as! pdfViewController
+//            secondTab.entriesArray = entries
+            
+            let secondTab = self.tabBarController?.viewControllers![1] as! pdfViewController
+            secondTab.entriesArray = entries
+            secondTab.tableView = tableView 
+            
+            CoreDataHelper.saveEntry()
         }
     }
     
@@ -95,7 +113,7 @@ class HoursTableViewController : UITableViewController  {
             print("retrieving donations in viewDidLoad")
             
  
-       
+        
         
   
         
@@ -137,6 +155,9 @@ class HoursTableViewController : UITableViewController  {
                 destination.donation = donation
                 
                 print("donation display segue")
+            
+        
+            
         default:
             print("Unexpected display segue")
             
@@ -241,6 +262,8 @@ class HoursTableViewController : UITableViewController  {
         }
     }
     
+    
+    
         
     }
     
@@ -287,6 +310,8 @@ extension HoursTableViewController {
          
             cell.dateLabel.text = entry.date?.convertToString() ?? "unknown"
             cell.hourLabel.text = entry.stringHours
+            
+            
             
             return cell
             
@@ -400,5 +425,7 @@ extension HoursTableViewController {
     return String(format: "%.2f", doubleValue )
     }
 }
+
+
 
 
