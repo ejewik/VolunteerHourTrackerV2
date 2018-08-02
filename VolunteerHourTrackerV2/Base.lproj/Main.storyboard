@@ -226,6 +226,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="554077916.10263801">
                                     <!--2018-07-23 22:31:56 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerTapped:" destination="LM4-Vo-9iZ" eventType="touchUpInside" id="O8J-ro-ak5"/>
+                                </connections>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zCk-0T-f5N">
                                 <rect key="frame" x="27" y="151" width="320" height="53"/>

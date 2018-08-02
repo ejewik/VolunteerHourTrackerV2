@@ -140,6 +140,9 @@ class CreateEntryViewController : UIViewController {
         default: print("unexpected segue identifier")
         }
     }
+    @IBAction func datePickerTapped(_ sender: UIDatePicker) {
+       // timeFromPicker.inputView
+    }
 }
 
 //extension CreateEntryViewController {
