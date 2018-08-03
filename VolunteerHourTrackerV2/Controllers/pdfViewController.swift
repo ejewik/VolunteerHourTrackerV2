@@ -146,8 +146,10 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         //        let updates = Updates()
         //        updates.delegate = self
         
-        var dataArray = Array(repeating: Array(repeating: "", count: 4), count: entriesArray.count)
+        if entriesArray.count > 0 {
         
+        var dataArray = Array(repeating: Array(repeating: "", count: 4), count: entriesArray.count)
+        //crashes when no entries at all
         
         for col in 0...0 {
             for row in 0...entriesArray.count - 1{
@@ -296,7 +298,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         
         
         pdf.addTable(row2, columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
-        
+        }
         
         let pdfData = pdf.generatePDFdata()
         
