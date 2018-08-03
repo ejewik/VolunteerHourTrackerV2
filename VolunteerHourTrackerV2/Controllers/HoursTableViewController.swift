@@ -30,10 +30,10 @@ class HoursTableViewController : UITableViewController, updateDelegate   {
     
     var entries = [Entry]() {
         didSet {
-            CoreDataHelper.retrieveEntries()
+           
             tableView.reloadData()
             print("reloading entry data")
-            CoreDataHelper.retrieveEntries()
+            
 
             
             entries.sort(by: {$0.date! < $1.date!})
