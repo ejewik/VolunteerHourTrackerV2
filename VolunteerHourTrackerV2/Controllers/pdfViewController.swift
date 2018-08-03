@@ -121,12 +121,12 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         let A4paperSize = CGSize(width: 595, height: 842)
         let pdf = SimplePDF(pageSize: A4paperSize)
         
-        pdf.addText("Hello World!")
+        pdf.addText("Hour table")
         // or
         // pdf.addText("Hello World!", font: myFont, textColor: myTextColor)
         
         //pdf.addImage( anImage )
-        pdf.addText("Testing testing")
+        
         
         // CoreDataHelper should retrieve entries and populate the entries array
         
@@ -176,7 +176,65 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
             print("entry: \(String(describing: entry.eventTitle))")
         }
         //let dataArray = [["test1","test2"],["test3","test4"]]
-        pdf.addTable(entriesArray.count, columnCount: 4, rowHeight: 50.0, columnWidth: 100.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: dataArray)
+        
+        var tableCount = 0
+        //var sprites = [SKSpriteNode?](count: 64, repeatedValue: nil)
+        
+        var oneTableArray = Array(repeating: Array(repeating: "", count: 4), count: 9)
+        var tableRow = 0
+        repeat {
+        
+        if dataArray.count > tableCount + 9 {
+//            for i in tableCount...dataArray.count - 1 {
+//                oneTableArray[tableCount] = dataArray[]
+//            }
+            
+            for col in 0...0 {
+                for row in tableCount...tableCount+9 - 1{
+                    oneTableArray[tableRow][col] = dataArray[row][col]
+                    tableRow += 1
+                    if tableRow == 9 {
+                        tableRow = 0
+                    }
+                }
+            }
+            
+            for col in 1...1 {
+                for row in tableCount...tableCount+9 - 1{
+                    oneTableArray[tableRow][col] = dataArray[row][col]
+                    if tableRow == 9 {
+                        tableRow = 0
+                    }
+                }
+            }
+                
+                for col in 2...2 {
+                    for row in tableCount...tableCount+9 - 1 {
+                        oneTableArray[tableRow][col] = dataArray[row][col]
+                        if tableRow == 9 {
+                            tableRow = 0
+                        }
+                    }
+                }
+                
+                for col in 3...3 {
+                    for row in tableCount...tableCount+9 - 1 {
+                        oneTableArray[tableRow][col] = dataArray[row][col]
+                        if tableRow == 9 {
+                            tableRow = 0
+                        }
+                    }
+                }
+            
+                pdf.addTable(9, columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+            tableCount += 9
+                pdf.beginNewPage()
+            }
+//         else {
+//             pdf.addTable(entriesArray.count, columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: dataArray)
+//        }
+            
+        } while entriesArray.count - tableCount > 9
         
         let pdfData = pdf.generatePDFdata()
         
@@ -229,9 +287,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
     
 }
 
-protocol updateDelegate {
-    func didUpdate()
-}
+
 
 
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HoursTableViewController : UITableViewController, updateDelegate   {
+class HoursTableViewController : UITableViewController   {
     func didUpdate() {
         
             self.tableView.reloadData()
@@ -35,7 +35,7 @@ class HoursTableViewController : UITableViewController, updateDelegate   {
             print("reloading entry data")
             
 
-            
+            //this may be why it's not reordering
             entries.sort(by: {$0.date! < $1.date!})
             
         
