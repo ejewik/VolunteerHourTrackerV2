@@ -159,6 +159,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
             for row in 0...entriesArray.count - 1{
                 dataArray[row][col] = entriesArray[row].stringHours ?? ""
             }
+        }
             
             for col in 2...2 {
                 for row in 0...entriesArray.count - 1 {
@@ -171,7 +172,8 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
                     dataArray[row][col] = (entriesArray[row].date?.convertToString())!
                 }
             }
-        }
+        //dataArray is fine
+        
         for entry in entriesArray {
             print("entry: \(String(describing: entry.eventTitle))")
         }
@@ -192,7 +194,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
             for col in 0...0 {
                 for row in tableCount...tableCount+9 - 1{
                     oneTableArray[tableRow][col] = dataArray[row][col]
-                    tableRow += 1
+                    tableRow += 1 //actually why is this working haha
                     if tableRow == 9 {
                         tableRow = 0
                     }
@@ -202,6 +204,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
             for col in 1...1 {
                 for row in tableCount...tableCount+9 - 1{
                     oneTableArray[tableRow][col] = dataArray[row][col]
+                    tableRow += 1
                     if tableRow == 9 {
                         tableRow = 0
                     }
@@ -211,6 +214,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
                 for col in 2...2 {
                     for row in tableCount...tableCount+9 - 1 {
                         oneTableArray[tableRow][col] = dataArray[row][col]
+                        tableRow += 1
                         if tableRow == 9 {
                             tableRow = 0
                         }
@@ -220,6 +224,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
                 for col in 3...3 {
                     for row in tableCount...tableCount+9 - 1 {
                         oneTableArray[tableRow][col] = dataArray[row][col]
+                        tableRow += 1
                         if tableRow == 9 {
                             tableRow = 0
                         }
@@ -227,14 +232,71 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
                 }
             
                 pdf.addTable(9, columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+            
             tableCount += 9
+            
                 pdf.beginNewPage()
             }
-//         else {
-//             pdf.addTable(entriesArray.count, columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: dataArray)
-//        }
+//        } else if tableCount > 9 {
+//
+//            pdf.addTable(entriesArray.count - tableCount, columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+//
+//        }  else {
+//            pdf.addTable(entriesArray.count , columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: dataArray)
+//            }
+            
             
         } while entriesArray.count - tableCount > 9
+        
+        
+        // 25 entries rn so 18 should appear 2 pages 1 half pg
+        var row2 = 0
+        
+        for col in 0...0 {
+            row2 = 0
+            for row in tableCount...entriesArray.count - 1{
+                
+                oneTableArray[row2][col] = dataArray[row][col] // row is out of bounds
+                row2 += 1
+                
+                
+            }
+        }
+        
+        for col in 1...1 {
+            row2 = 0
+            for row in tableCount...entriesArray.count - 1{
+                
+                oneTableArray[row2][col] = dataArray[row][col]
+                row2 += 1
+                
+            }
+        }
+        
+        for col in 2...2 {
+            row2 = 0
+            for row in tableCount...entriesArray.count - 1 {
+                
+                oneTableArray[row2][col] = dataArray[row][col]
+                row2 += 1
+               
+            }
+        }
+        
+        for col in 3...3 {
+            row2 = 0
+            for row in tableCount...entriesArray.count - 1 {
+                
+                oneTableArray[row2][col] = dataArray[row][col]
+                row2 += 1
+                
+            }
+        
+        }
+        
+        
+        pdf.addTable(row2, columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+        
         
         let pdfData = pdf.generatePDFdata()
         
