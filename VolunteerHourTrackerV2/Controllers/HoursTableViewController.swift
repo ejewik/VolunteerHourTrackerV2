@@ -28,6 +28,46 @@ class HoursTableViewController : UITableViewController   {
     var totalItems : Int = 0
     var totalDollars : Double = 0
     
+    
+    var donations = [Donation]() { // i think this executes whenever I retrieve donations with Core Data?
+        didSet {
+            
+            tableView.reloadData()
+            print("reloading donation data")
+            
+            //            var totalItems : Int = 0
+            //            var totalDollars : Int = 0
+            
+            donations.sort(by: {$0.date! < $1.date!})
+            
+            
+            for donation in donations {
+                totalItems += Int(donation.itemCount)
+                totalDollars += donation.dollarCount
+            }
+            
+            self.navigationItem.title = "Total items: \(String(totalItems)) Total dollars: \(String(totalDollars))"
+            
+            totalItems = 0
+            totalDollars = 0
+            
+            
+            
+            
+            //            var totalHours : Int = 0
+            //            for donation in donations {
+            //                totalHours += Int(donation.itemCount)
+            //            }
+            //            //self.navigationItem.title = "Total hours: \(String(totalHours))"
+            //            self.parent?.title = "Total hours: \(String(totalHours))"
+            //            self.tabBarItem.title = "testing"
+        }
+    }
+    
+    
+    
+    
+    
     var entries = [Entry]() {
         didSet {
            
@@ -64,53 +104,21 @@ class HoursTableViewController : UITableViewController   {
         }
     }
     
-    var donations = [Donation]() {
-        didSet {
-            
-            tableView.reloadData()
-            print("reloading donation data")
-            
-//            var totalItems : Int = 0
-//            var totalDollars : Int = 0
-            
-            donations.sort(by: {$0.date! < $1.date!})
-            
-           
-            for donation in donations {
-                totalItems += Int(donation.itemCount)
-                totalDollars += donation.dollarCount
-            }
-            
-           // self.parent?.title = "Total items: \(String(totalItems)) Total dollars: \(String(totalDollars))"
-            
-            totalItems = 0
-            totalDollars = 0
-            
-            
-            
-            
-//            var totalHours : Int = 0
-//            for donation in donations {
-//                totalHours += Int(donation.itemCount)
-//            }
-//            //self.navigationItem.title = "Total hours: \(String(totalHours))"
-//            self.parent?.title = "Total hours: \(String(totalHours))"
-//            self.tabBarItem.title = "testing"
-        }
-    }
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        donations = CoreDataHelper.retrieveDonations()
+        print("retrieving donations in viewDidLoad")
+        
 
          entries = CoreDataHelper.retrieveEntries()
             print("retrieve entries in viewDidLoad")
             
  
-         donations = CoreDataHelper.retrieveDonations()
-            print("retrieving donations in viewDidLoad")
+        
             
  
         
@@ -227,7 +235,7 @@ class HoursTableViewController : UITableViewController   {
                 totalHours += Int(entry.hourCount)
             }
             
-            self.parent?.title = "Total hours: \(String(totalHours))"
+            self.navigationItem.title = "Total hours: \(String(totalHours))"
             
             totalHours = 0
         
