@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49704B2238F8C05C2E3C5FB7 /* Pods_VolunteerHourTrackerV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48939C697F6CC9B5201FA3F /* Pods_VolunteerHourTrackerV2.framework */; };
+		4B07AFDF211512F10010109C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07AFDE211512F10010109C /* InfoViewController.swift */; };
 		4B19BFD0210BDA9300451CC9 /* KeyboardDismissExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */; };
 		4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B6921065258006EBF40 /* AppDelegate.swift */; };
 		4B683B6F21065258006EBF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B683B6D21065258006EBF40 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B07AFDE211512F10010109C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissExtension.swift; sourceTree = "<group>"; };
 		4B683B6621065258006EBF40 /* VolunteerHourTrackerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolunteerHourTrackerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B683B6921065258006EBF40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				4B683B872106698A006EBF40 /* CreateEntryViewController.swift */,
 				4B861330210A8AA6006FF198 /* DonationViewController.swift */,
 				4BE3467321120D470049D14D /* pdfViewController.swift */,
+				4B07AFDE211512F10010109C /* InfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */,
 				4BE3467421120D470049D14D /* pdfViewController.swift in Sources */,
 				4B86132F210A4401006FF198 /* DonationTableViewCell.swift in Sources */,
+				4B07AFDF211512F10010109C /* InfoViewController.swift in Sources */,
 				4B683B7F2106537E006EBF40 /* HoursTableViewController.swift in Sources */,
 				4B683B8621065502006EBF40 /* HourTableViewCell.swift in Sources */,
 				4B19BFD0210BDA9300451CC9 /* KeyboardDismissExtension.swift in Sources */,
@@ -427,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGAF8QBXHU;
 				INFOPLIST_FILE = VolunteerHourTrackerV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -445,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PGAF8QBXHU;
 				INFOPLIST_FILE = VolunteerHourTrackerV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
