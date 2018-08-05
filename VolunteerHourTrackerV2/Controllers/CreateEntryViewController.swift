@@ -76,6 +76,10 @@ class CreateEntryViewController : UIViewController {
             timeFromPicker.date = entry.timeFrom!
             datePicker.date = entry.date!
             
+            timeToTextField.text = entry.timeTo?.convertTimeToString()
+            timeFromTextField.text = entry.timeFrom?.convertTimeToString()
+            dateTextField.text = entry.date?.convertToString()
+            
             
         } else {
         
@@ -85,6 +89,10 @@ class CreateEntryViewController : UIViewController {
             timeToPicker.date = Date()
             timeFromPicker.date = Date()
             datePicker.date = Date()
+            
+            timeToTextField.text = ""
+            timeFromTextField.text = ""
+            dateTextField.text = ""
         }
     }
     

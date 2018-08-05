@@ -73,6 +73,8 @@ class DonationViewController: UIViewController {
                     datePicker.date = donation.date!
                     itemCountTextField.text = String(donation.itemCount)
                     dollarCountTextField.text = String(donation.dollarCount)
+                    
+                    dateTextField.text = datePicker.date.convertToString()
         
         
                 } else {
@@ -83,6 +85,8 @@ class DonationViewController: UIViewController {
                     datePicker.date = Date()
                     itemCountTextField.text = ""
                     dollarCountTextField.text = ""
+                    
+                    dateTextField.text = ""
                 }
             }
     
