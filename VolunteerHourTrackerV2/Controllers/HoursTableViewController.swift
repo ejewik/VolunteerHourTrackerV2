@@ -46,7 +46,7 @@ class HoursTableViewController : UITableViewController   {
                 totalDollars += donation.dollarCount
             }
             
-            self.navigationItem.title = "Total items: \(String(totalItems)) Total dollars: \(String(totalDollars))"
+            self.navigationItem.title = "Total dollars: \(String(totalDollars)) Total items: \(String(totalItems))"
             
             totalItems = 0
             totalDollars = 0
