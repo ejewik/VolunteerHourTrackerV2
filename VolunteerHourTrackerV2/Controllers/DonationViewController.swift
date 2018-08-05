@@ -15,15 +15,16 @@ class DonationViewController: UIViewController {
     //static var totalDollars : Int16 = 0
     
     
+    @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var donationTitleTextField: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    
     @IBOutlet weak var itemCountTextField: UITextField!
     @IBOutlet weak var clubTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var dollarCountTextField: UITextField!
     
-    
+    var datePicker: UIDatePicker = UIDatePicker()
     
 
     var donation: Donation?
@@ -46,6 +47,14 @@ class DonationViewController: UIViewController {
         
         descriptionTextView.layer.cornerRadius = 5
         descriptionTextView.clipsToBounds = true
+        
+        
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(DonationViewController.dateChanged(datePicker:)), for: .valueChanged)
+        dateTextField.inputView = datePicker
+        
+        
     }
 
 
@@ -135,6 +144,11 @@ class DonationViewController: UIViewController {
         textField.layer.addSublayer(border)
         textField.layer.masksToBounds = true
         
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        
+        dateTextField.text = datePicker.date.convertToString()
     }
     
     

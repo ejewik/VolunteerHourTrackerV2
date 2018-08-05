@@ -20,13 +20,16 @@ class CreateEntryViewController : UIViewController {
     
     var entry: Entry?
     
-    
+    var datePicker : UIDatePicker = UIDatePicker()
+    var timeToPicker : UIDatePicker = UIDatePicker()
+    var timeFromPicker : UIDatePicker = UIDatePicker()
     
    
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var timeFromTextField: UITextField!
+    @IBOutlet weak var timeToTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var timeToPicker: UIDatePicker!
-    @IBOutlet weak var timeFromPicker: UIDatePicker!
+    
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var clubTextField: UITextField!
     
@@ -42,6 +45,21 @@ class CreateEntryViewController : UIViewController {
         
         descriptionTextView.layer.cornerRadius = 5
         descriptionTextView.clipsToBounds = true
+        
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(CreateEntryViewController.dateChanged(datePicker:)), for: .valueChanged)
+        dateTextField.inputView = datePicker
+        
+        timeFromPicker = UIDatePicker()
+        timeFromPicker.datePickerMode = .time
+        timeFromPicker.addTarget(self, action: #selector(CreateEntryViewController.timeFromChanged(datePicker:)), for: .valueChanged)
+        timeFromTextField.inputView = timeFromPicker
+        
+        timeToPicker = UIDatePicker()
+        timeToPicker.datePickerMode = .time
+        timeToPicker.addTarget(self, action: #selector(CreateEntryViewController.timeToChanged(datePicker:)), for: .valueChanged)
+        timeToTextField.inputView = timeToPicker
     }
     
  
@@ -162,19 +180,21 @@ class CreateEntryViewController : UIViewController {
         textField.layer.masksToBounds = true
         
     }
+    
+    @objc func timeToChanged(datePicker: UIDatePicker) {
+        timeToTextField.text = timeToPicker.date.convertTimeToString()
+    }
+    
+    @objc func timeFromChanged(datePicker: UIDatePicker) {
+        timeFromTextField.text = timeFromPicker.date.convertTimeToString()
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        
+        dateTextField.text = datePicker.date.convertToString()
+    }
 }
 
-//extension CreateEntryViewController {
-//    func hideKeyboardWhenTappedAround() {
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateEntryViewController.dismissKeyboard))
-//        tap.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tap)
-//    }
-//    
-//    @objc func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
-//}
-//
+
 
 

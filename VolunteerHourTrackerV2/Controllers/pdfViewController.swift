@@ -155,7 +155,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
                     }
                 }
             
-                pdf.addTable(9, columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+                pdf.addTable(9, columnCount: 4, rowHeight: 76.0, columnWidth: 140.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
             
             tableCount += 9
             

@@ -14,6 +14,12 @@ extension Date {
     }
 }
 
+extension Date {
+    func convertTimeToString() -> String {
+        return DateFormatter.localizedString(from: self, dateStyle: DateFormatter.Style.none, timeStyle: DateFormatter.Style.short)
+    }
+}
+
 extension NSDate {
     func convertToString() -> String {
         return DateFormatter.localizedString(from: (self as Date), dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium)
