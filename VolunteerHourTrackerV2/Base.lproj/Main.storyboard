@@ -502,9 +502,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-0Q-VzU">
-                                <rect key="frame" x="169" y="212" width="40" height="30"/>
+                                <rect key="frame" x="147" y="212" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Share"/>
+                                <state key="normal" title="Share Hours"/>
                                 <connections>
                                     <action selector="shareDataButtonTapped:" destination="2th-ea-8Yf" eventType="touchUpInside" id="6xn-at-OJh"/>
                                 </connections>
@@ -517,11 +517,22 @@
                                     <segue destination="o5h-b7-jf5" kind="show" id="R2L-C6-UvU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUp-0g-CsW">
+                                <rect key="frame" x="131" y="271" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Share Donations"/>
+                                <connections>
+                                    <action selector="donationsButtonTapped:" destination="2th-ea-8Yf" eventType="touchUpInside" id="ayN-Rj-QIC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TeU-rs-lDL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="leP-Ut-F4L"/>
+                    <connections>
+                        <outlet property="shareDonationsButton" destination="vUp-0g-CsW" id="01b-ll-aXt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SlB-eJ-ES8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -550,7 +561,7 @@
                                         <rect key="frame" x="16" y="24" width="208" height="452"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <mutableString key="text">The MIT License (MIT)
+                                        <string key="text">The MIT License (MIT)
 
 Copyright (c) 2016 Nutchaphon Rewik
 
@@ -570,7 +581,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</mutableString>
+SOFTWARE.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>

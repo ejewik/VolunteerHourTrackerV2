@@ -51,6 +51,12 @@ class HoursTableViewController : UITableViewController   {
             totalItems = 0
             totalDollars = 0
             
+            let secondTab = self.tabBarController?.viewControllers![1] as! pdfViewController
+            secondTab.donationsArray = donations
+            secondTab.tableView = tableView
+            
+            CoreDataHelper.saveDonation()
+            
             
             
             
