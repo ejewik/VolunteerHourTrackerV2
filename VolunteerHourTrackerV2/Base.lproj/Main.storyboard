@@ -23,28 +23,12 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add new event!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8h-Dj-CYU">
-                                    <rect key="frame" x="44" y="87" width="119" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ig2-zq-mM1">
-                                    <rect key="frame" x="26" y="8" width="324" height="29"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <segments>
-                                        <segment title="Hours"/>
-                                        <segment title="Donations"/>
-                                    </segments>
-                                    <connections>
-                                        <action selector="segmentedControlChanged:" destination="o0S-5d-PZP" eventType="valueChanged" id="wLU-pQ-gOw"/>
-                                    </connections>
-                                </segmentedControl>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycc-xD-UA7">
-                                    <rect key="frame" x="289" y="76" width="43" height="38"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycc-xD-UA7">
+                                    <rect key="frame" x="280" y="78" width="50" height="38"/>
                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="1jZ-a9-zvN"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                     <state key="normal" title="+">
                                         <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,8 +37,34 @@
                                         <action selector="createButtonTapped:" destination="o0S-5d-PZP" eventType="touchUpInside" id="74T-kx-Uzb"/>
                                     </connections>
                                 </button>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ig2-zq-mM1">
+                                    <rect key="frame" x="25" y="10" width="325" height="29"/>
+                                    <segments>
+                                        <segment title="Hours"/>
+                                        <segment title="Donations"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="segmentedControlChanged:" destination="o0S-5d-PZP" eventType="valueChanged" id="wLU-pQ-gOw"/>
+                                    </connections>
+                                </segmentedControl>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new event!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8h-Dj-CYU">
+                                    <rect key="frame" x="25" y="82" width="145" height="27"/>
+                                    <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ycc-xD-UA7" secondAttribute="trailing" constant="45" id="4FB-Yy-2Ae"/>
+                                <constraint firstAttribute="trailing" secondItem="ig2-zq-mM1" secondAttribute="trailing" constant="25" id="Aoz-Xw-w87"/>
+                                <constraint firstItem="ig2-zq-mM1" firstAttribute="leading" secondItem="NbZ-NC-8Bs" secondAttribute="leading" constant="25" id="EXQ-ba-C2n"/>
+                                <constraint firstItem="Z8h-Dj-CYU" firstAttribute="leading" secondItem="NbZ-NC-8Bs" secondAttribute="leading" constant="25" id="Y1r-ly-HVP"/>
+                                <constraint firstItem="Z8h-Dj-CYU" firstAttribute="top" secondItem="ig2-zq-mM1" secondAttribute="bottom" constant="44" id="cuv-fe-mex"/>
+                                <constraint firstItem="ycc-xD-UA7" firstAttribute="top" secondItem="ig2-zq-mM1" secondAttribute="bottom" constant="40" id="p7g-03-JNJ"/>
+                                <constraint firstItem="ycc-xD-UA7" firstAttribute="leading" secondItem="Z8h-Dj-CYU" secondAttribute="trailing" constant="110" id="vDB-QV-iCF"/>
+                                <constraint firstItem="ig2-zq-mM1" firstAttribute="top" secondItem="NbZ-NC-8Bs" secondAttribute="top" constant="10" id="z9V-5q-BVl"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HourTableViewCell" rowHeight="90" id="z03-xy-5c8" customClass="HourTableViewCell" customModule="VolunteerHourTrackerV2" customModuleProvider="target">
