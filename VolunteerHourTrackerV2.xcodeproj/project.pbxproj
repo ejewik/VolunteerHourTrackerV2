@@ -10,6 +10,7 @@
 		49704B2238F8C05C2E3C5FB7 /* Pods_VolunteerHourTrackerV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B48939C697F6CC9B5201FA3F /* Pods_VolunteerHourTrackerV2.framework */; };
 		4B07AFDF211512F10010109C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07AFDE211512F10010109C /* InfoViewController.swift */; };
 		4B19BFD0210BDA9300451CC9 /* KeyboardDismissExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */; };
+		4B3ED2942118AB7B00F52481 /* InputAccessoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ED2932118AB7B00F52481 /* InputAccessoryExtension.swift */; };
 		4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B6921065258006EBF40 /* AppDelegate.swift */; };
 		4B683B6F21065258006EBF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B683B6D21065258006EBF40 /* Main.storyboard */; };
 		4B683B7221065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B7021065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		4B07AFDE211512F10010109C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissExtension.swift; sourceTree = "<group>"; };
+		4B3ED2932118AB7B00F52481 /* InputAccessoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAccessoryExtension.swift; sourceTree = "<group>"; };
 		4B683B6621065258006EBF40 /* VolunteerHourTrackerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolunteerHourTrackerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B683B6921065258006EBF40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B683B6E21065258006EBF40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				4BA25E8B2107EC650044E4B2 /* Date+convertToString.swift */,
 				4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */,
+				4B3ED2932118AB7B00F52481 /* InputAccessoryExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				4BA25E8C2107EC650044E4B2 /* Date+convertToString.swift in Sources */,
 				4B683B882106698A006EBF40 /* CreateEntryViewController.swift in Sources */,
 				4B683B7221065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld in Sources */,
+				4B3ED2942118AB7B00F52481 /* InputAccessoryExtension.swift in Sources */,
 				4BA25E8E2108E5BA0044E4B2 /* CoreDataHelper.swift in Sources */,
 				4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */,
 				4BE3467421120D470049D14D /* pdfViewController.swift in Sources */,

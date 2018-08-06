@@ -116,6 +116,8 @@ class HoursTableViewController : UITableViewController   {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addButton.layer.cornerRadius = 20.0
+        
         donations = CoreDataHelper.retrieveDonations()
         print("retrieving donations in viewDidLoad")
         

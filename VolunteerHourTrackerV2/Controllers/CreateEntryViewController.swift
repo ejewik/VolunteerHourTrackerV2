@@ -40,7 +40,7 @@ class CreateEntryViewController : UIViewController {
         self.hideKeyboardWhenTappedAround()
         addBorder( textField: titleTextField)
         addBorder( textField: clubTextField)
-        descriptionTextView!.layer.borderWidth = 1
+        descriptionTextView!.layer.borderWidth = 0.5
         descriptionTextView!.layer.borderColor = UIColor.darkGray.cgColor
         
         descriptionTextView.layer.cornerRadius = 5
@@ -60,6 +60,18 @@ class CreateEntryViewController : UIViewController {
         timeToPicker.datePickerMode = .time
         timeToPicker.addTarget(self, action: #selector(CreateEntryViewController.timeToChanged(datePicker:)), for: .valueChanged)
         timeToTextField.inputView = timeToPicker
+        
+        let toolBar = UIToolbar().ToolbarPicker(mySelect: #selector(CreateEntryViewController.dismissPicker))
+        
+        dateTextField.inputAccessoryView = toolBar
+        
+        timeFromTextField.inputAccessoryView = toolBar
+        
+        timeToTextField.inputAccessoryView = toolBar
+        
+        addBorder(textField: dateTextField)
+        addBorder(textField: timeFromTextField)
+        addBorder(textField: timeToTextField)
     }
     
  
@@ -179,7 +191,7 @@ class CreateEntryViewController : UIViewController {
     
     func addBorder( textField: UITextField ) {
         let border = CALayer()
-        let width = CGFloat(2.0)
+        let width = CGFloat(1.0)
         border.borderColor = UIColor.darkGray.cgColor
         border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width: textField.frame.size.width, height: textField.frame.size.height)
         
@@ -200,6 +212,12 @@ class CreateEntryViewController : UIViewController {
     @objc func dateChanged(datePicker: UIDatePicker) {
         
         dateTextField.text = datePicker.date.convertToString()
+    }
+    
+    @objc func dismissPicker() {
+        
+        view.endEditing(true)
+        
     }
 }
 

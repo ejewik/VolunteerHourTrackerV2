@@ -14,6 +14,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
     
     
     
+    @IBOutlet weak var shareHoursButton: UIButton!
     @IBOutlet weak var shareDonationsButton: UIButton!
     
     //weak var delegate : updateDelegate?
@@ -31,6 +32,9 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        shareHoursButton.layer.cornerRadius = 20.0
+        shareDonationsButton.layer.cornerRadius = 20.0
     }
     
     

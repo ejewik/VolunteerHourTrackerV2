@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+
+//need to do default value for timeFrom, timeTo, date text fields and inputBar
+
 class DonationViewController: UIViewController {
     
     //static var totalItems : Int16 = 0
@@ -42,6 +45,7 @@ class DonationViewController: UIViewController {
         addBorder(textField: itemCountTextField)
         addBorder(textField: clubTextField)
         addBorder(textField: dollarCountTextField)
+        addBorder(textField: dateTextField)
         descriptionTextView!.layer.borderWidth = 1
         descriptionTextView!.layer.borderColor = UIColor.darkGray.cgColor
         
@@ -53,7 +57,32 @@ class DonationViewController: UIViewController {
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(DonationViewController.dateChanged(datePicker:)), for: .valueChanged)
         dateTextField.inputView = datePicker
+//        datePicker.date = Date()
         
+//
+//        let date = Date()
+//        let formatter = DateFormatter()
+//        Give the format you want to the formatter:
+//
+//        formatter.dateFormat = "dd.MM.yyyy"
+//        Get the result string:
+//
+//        let result = formatter.string(from: date)
+//        Set your label:
+//
+//        label.text = result
+        
+//         let date = Date()
+//         let formatter = DateFormatter()
+//         formatter.dateFormat = "dd/MM/yyyy"
+//         let result = formatter.string(from: date)
+//         dateTextField.text = result
+        
+        
+        let toolBar = UIToolbar().ToolbarPicker(mySelect: #selector(DonationViewController.dismissPicker))
+        
+        dateTextField.inputAccessoryView = toolBar
+
         
     }
 
@@ -154,6 +183,13 @@ class DonationViewController: UIViewController {
         
         dateTextField.text = datePicker.date.convertToString()
     }
+    
+    @objc func dismissPicker() {
+        
+        view.endEditing(true)
+        
+    }
+
     
     
 }
