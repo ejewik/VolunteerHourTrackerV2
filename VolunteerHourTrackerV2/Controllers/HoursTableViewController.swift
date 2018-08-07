@@ -23,6 +23,7 @@ class HoursTableViewController : UITableViewController   {
     
     
     
+    
     var totalHours : Int = 0
     
     var totalItems : Int = 0
@@ -127,7 +128,7 @@ class HoursTableViewController : UITableViewController   {
             
  
         
-            
+    
  
         
         
@@ -326,7 +327,8 @@ extension HoursTableViewController {
          
             cell.dateLabel.text = entry.date?.convertToString() ?? "unknown"
             cell.hourLabel.text = entry.stringHours
-            
+            cell.hourLabel.layer.masksToBounds = true
+            cell.hourLabel.layer.cornerRadius = 20.0
             
             
             return cell
@@ -348,9 +350,12 @@ extension HoursTableViewController {
             cell.dateLabel.text = donation.date?.convertToString() ?? "unknown"
             
             cell.itemLabel.text = String(donation.itemCount)
+            cell.itemLabel.layer.masksToBounds = true
+            cell.itemLabel.layer.cornerRadius = 10.0
             
             cell.dollarLabel.text = doubleToString(doubleValue: donation.dollarCount)
-            
+            cell.dollarLabel.layer.masksToBounds = true
+            cell.dollarLabel.layer.cornerRadius = 10.0
             
             
             
@@ -415,24 +420,24 @@ extension HoursTableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-        switch hourDonationSegmented.selectedSegmentIndex {
-            
-        case 0:
-        let movedObjTemp = entries[sourceIndexPath.item]
-        entries.remove(at: sourceIndexPath.item)
-        entries.insert(movedObjTemp, at: destinationIndexPath.item)
-        case 1:
-        let movedObjTemp = donations[sourceIndexPath.item]
-        donations.remove(at: sourceIndexPath.item)
-        donations.insert(movedObjTemp, at: destinationIndexPath.item)
-            
-        default:
-            print("unexpected reordering error")
-        }
-    }
-    
+//    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//
+//        switch hourDonationSegmented.selectedSegmentIndex {
+//
+//        case 0:
+//        let movedObjTemp = entries[sourceIndexPath.item]
+//        entries.remove(at: sourceIndexPath.item)
+//        entries.insert(movedObjTemp, at: destinationIndexPath.item)
+//        case 1:
+//        let movedObjTemp = donations[sourceIndexPath.item]
+//        donations.remove(at: sourceIndexPath.item)
+//        donations.insert(movedObjTemp, at: destinationIndexPath.item)
+//
+//        default:
+//            print("unexpected reordering error")
+//        }
+//    }
+//
     
 }
 

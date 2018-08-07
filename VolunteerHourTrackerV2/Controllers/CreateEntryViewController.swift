@@ -25,6 +25,7 @@ class CreateEntryViewController : UIViewController {
     var timeFromPicker : UIDatePicker = UIDatePicker()
     
    
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeFromTextField: UITextField!
     @IBOutlet weak var timeToTextField: UITextField!
@@ -44,23 +45,29 @@ class CreateEntryViewController : UIViewController {
         addBorder( textField: titleTextField)
         addBorder( textField: clubTextField)
         descriptionTextView!.layer.borderWidth = 0.5
-        descriptionTextView!.layer.borderColor = UIColor.darkGray.cgColor
+        descriptionTextView!.layer.borderColor = UIColor.white.cgColor
         
         descriptionTextView.layer.cornerRadius = 5
         descriptionTextView.clipsToBounds = true
         
+        doneButton.layer.cornerRadius = 20.0
+        
+        
         datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
+        dateTextField.text = datePicker.date.convertToString()
         datePicker.addTarget(self, action: #selector(CreateEntryViewController.dateChanged(datePicker:)), for: .valueChanged)
         dateTextField.inputView = datePicker
         
         timeFromPicker = UIDatePicker()
         timeFromPicker.datePickerMode = .time
+        timeFromTextField.text = timeFromPicker.date.convertTimeToString()
         timeFromPicker.addTarget(self, action: #selector(CreateEntryViewController.timeFromChanged(datePicker:)), for: .valueChanged)
         timeFromTextField.inputView = timeFromPicker
         
         timeToPicker = UIDatePicker()
         timeToPicker.datePickerMode = .time
+        timeToTextField.text = timeToPicker.date.convertTimeToString()
         timeToPicker.addTarget(self, action: #selector(CreateEntryViewController.timeToChanged(datePicker:)), for: .valueChanged)
         timeToTextField.inputView = timeToPicker
         
@@ -75,6 +82,8 @@ class CreateEntryViewController : UIViewController {
         addBorder(textField: dateTextField)
         addBorder(textField: timeFromTextField)
         addBorder(textField: timeToTextField)
+        
+        self.navigationItem.title = "Create"
     }
     
  
@@ -105,9 +114,9 @@ class CreateEntryViewController : UIViewController {
             timeFromPicker.date = Date()
             datePicker.date = Date()
             
-            timeToTextField.text = ""
-            timeFromTextField.text = ""
-            dateTextField.text = ""
+            timeToTextField.text = timeToPicker.date.convertTimeToString()
+            timeFromTextField.text = timeFromPicker.date.convertTimeToString()
+            dateTextField.text = datePicker.date.convertToString()
         }
     }
     
@@ -132,7 +141,7 @@ class CreateEntryViewController : UIViewController {
                 
                 let formatter = DateComponentsFormatter()
                 formatter.unitsStyle = .full
-                formatter.allowedUnits = [.month, .day, .hour, .minute, .second]
+                formatter.allowedUnits = [.month, .day, .hour, .minute]
                 formatter.maximumUnitCount = 2
                 let string = formatter.string(from: (entry?.timeFrom!)!, to: (entry?.timeTo!)!)
                 entry?.stringHours = string ?? ""
@@ -140,6 +149,7 @@ class CreateEntryViewController : UIViewController {
             }
             else {
                 print("error - reverse interval")
+                entry?.stringHours = "0 hours"
             }
             
             //CreateEntryViewController.totalHours += (entry?.hourCount)!
@@ -178,6 +188,7 @@ class CreateEntryViewController : UIViewController {
             else
             {
                 print("error - reverse interval")
+                entry.stringHours = "0 hours"
             }
             
             CoreDataHelper.saveEntry()
@@ -195,7 +206,7 @@ class CreateEntryViewController : UIViewController {
     func addBorder( textField: UITextField ) {
         let border = CALayer()
         let width = CGFloat(1.0)
-        border.borderColor = UIColor.darkGray.cgColor
+        border.borderColor = UIColor.white.cgColor
         border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width: textField.frame.size.width, height: textField.frame.size.height)
         
         border.borderWidth = width

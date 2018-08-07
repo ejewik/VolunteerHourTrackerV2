@@ -35,7 +35,7 @@ class DonationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+       self.navigationItem.title = "Create"
         
         self.hideKeyboardWhenTappedAround()
         
