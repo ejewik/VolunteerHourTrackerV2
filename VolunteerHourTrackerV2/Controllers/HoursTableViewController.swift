@@ -19,8 +19,16 @@ class HoursTableViewController : UITableViewController   {
     @IBOutlet weak var hourDonationSegmented: UISegmentedControl!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
+   
+    
+    let titleLabel = UILabel()
     
     
+    
+    let textAttributes:[NSAttributedStringKey:Any] = [
+        
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "PingFangHK-Semibold", size: 30)!,
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeWidth.rawValue): 0 ]
     
     
     
@@ -47,7 +55,11 @@ class HoursTableViewController : UITableViewController   {
                 totalDollars += donation.dollarCount
             }
             
-            self.navigationItem.title = "Total dollars: \(String(totalDollars)) Total items: \(String(totalItems))"
+            //self.navigationItem.title = "Total dollars: \(String(totalDollars)) Total items: \(String(totalItems))"
+            
+            titleLabel.attributedText = NSAttributedString(string: "Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
+            
+            self.navigationItem.titleView = titleLabel
             
             totalItems = 0
             totalDollars = 0
@@ -92,9 +104,22 @@ class HoursTableViewController : UITableViewController   {
             for entry in entries {
                 totalHours += Int(entry.hourCount)
             }
-            //self.navigationItem.title = "Total hours: \(String(totalHours))"
-            self.navigationItem.title = "Total hours: \(String(totalHours))"
-            self.tabBarItem.title = "testing"
+           
+            
+            
+            
+            
+            
+            
+                
+                titleLabel.attributedText = NSAttributedString(string: "Total Hours: \(totalHours)", attributes: textAttributes)
+
+            self.navigationItem.titleView = titleLabel
+            
+            
+            
+            //elf.navigationItem
+            //self.tabBarItem.title = titleLabe
             
             totalHours = 0
             
@@ -117,6 +142,8 @@ class HoursTableViewController : UITableViewController   {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationItem.titleView?.frame = CGRect(x: 0, y: 0, width: 400, height: 50)
+        
         addButton.layer.cornerRadius = 20.0
         
         donations = CoreDataHelper.retrieveDonations()
@@ -137,6 +164,16 @@ class HoursTableViewController : UITableViewController   {
         
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        //self.centerYConstraint.constant = 500.0
+//        self.navigationItem.titleView?.layoutIfNeeded()
+//
+//        UIView.animate(withDuration: Double(0.5), animations: {
+//            //self.centerYConstraint.constant = 0
+//            self.navigationItem.titleView?.layoutIfNeeded()
+//        })
+//    }
+//
     
     
         
@@ -244,7 +281,10 @@ class HoursTableViewController : UITableViewController   {
                 totalHours += Int(entry.hourCount)
             }
             
-            self.navigationItem.title = "Total hours: \(String(totalHours))"
+            //self.navigationItem.title = "Total hours: \(String(totalHours))"
+              titleLabel.attributedText = NSAttributedString(string: "Total Hours: \(totalHours)", attributes: textAttributes)
+              
+              self.navigationItem.titleView = titleLabel
             
             totalHours = 0
         
@@ -258,7 +298,11 @@ class HoursTableViewController : UITableViewController   {
         }
        
           
-          self.navigationItem.title = "Total dollars: \(doubleToString(doubleValue: totalDollars)) Total items: \(String(totalItems))"
+          //self.navigationItem.title = "Total dollars: \(doubleToString(doubleValue: totalDollars)) Total items: \(String(totalItems))"
+          titleLabel.attributedText = NSAttributedString(string: "Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
+          
+          self.navigationItem.titleView = titleLabel
+         
             
           totalDollars = 0
           totalItems = 0
@@ -445,8 +489,15 @@ extension HoursTableViewController {
     func doubleToString( doubleValue : Double ) -> String {
     return String(format: "%.2f", doubleValue )
     }
+    
+//    func navItemSize() {
+////        self.navigationItem.frame = CGRectMake(0, 0, 320, 50)  // Here you can set you Width and Height for your navBar
+////        self.navigationItem.backgroundColor = (UIColor.blackColor())
+////        self.view.addSubview(navigationItem)
+//        self.navigationItem.titleView?.frame = CGRect(x: 0, y: 0, width: 320, height: 50)
+//    }
+//}
+
 }
-
-
 
 

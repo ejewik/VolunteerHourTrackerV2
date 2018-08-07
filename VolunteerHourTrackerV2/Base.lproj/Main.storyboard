@@ -224,10 +224,10 @@
                             <outlet property="delegate" destination="o0S-5d-PZP" id="Yyy-yT-QWb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Entries" id="abp-5w-MR7">
+                    <navigationItem key="navigationItem" title="Entries" prompt="  " id="abp-5w-MR7">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="cfH-ac-Sbq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hLw-4U-bGf">
-                                <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                <rect key="frame" x="313" y="41" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
