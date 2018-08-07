@@ -57,6 +57,8 @@ class DonationViewController: UIViewController {
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(DonationViewController.dateChanged(datePicker:)), for: .valueChanged)
         dateTextField.inputView = datePicker
+        
+        doneButton.layer.cornerRadius = 20.0
 //        datePicker.date = Date()
         
 //
@@ -115,7 +117,7 @@ class DonationViewController: UIViewController {
                     itemCountTextField.text = ""
                     dollarCountTextField.text = ""
                     
-                    dateTextField.text = ""
+                    dateTextField.text = datePicker.date.convertToString()
                 }
             }
     
