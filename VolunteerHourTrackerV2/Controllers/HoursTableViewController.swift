@@ -57,7 +57,7 @@ class HoursTableViewController : UITableViewController   {
             
             //self.navigationItem.title = "Total dollars: \(String(totalDollars)) Total items: \(String(totalItems))"
             
-            titleLabel.attributedText = NSAttributedString(string: "Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
+            titleLabel.attributedText = NSAttributedString(string: "  Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
             
             self.navigationItem.titleView = titleLabel
             
@@ -112,7 +112,7 @@ class HoursTableViewController : UITableViewController   {
             
             
                 
-                titleLabel.attributedText = NSAttributedString(string: "Total Hours: \(totalHours)", attributes: textAttributes)
+                titleLabel.attributedText = NSAttributedString(string: "  Total Hours: \(totalHours)", attributes: textAttributes)
 
             self.navigationItem.titleView = titleLabel
             
@@ -282,7 +282,7 @@ class HoursTableViewController : UITableViewController   {
             }
             
             //self.navigationItem.title = "Total hours: \(String(totalHours))"
-              titleLabel.attributedText = NSAttributedString(string: "Total Hours: \(totalHours)", attributes: textAttributes)
+              titleLabel.attributedText = NSAttributedString(string: "  Total Hours: \(totalHours)", attributes: textAttributes)
               
               self.navigationItem.titleView = titleLabel
             
@@ -299,7 +299,7 @@ class HoursTableViewController : UITableViewController   {
        
           
           //self.navigationItem.title = "Total dollars: \(doubleToString(doubleValue: totalDollars)) Total items: \(String(totalItems))"
-          titleLabel.attributedText = NSAttributedString(string: "Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
+          titleLabel.attributedText = NSAttributedString(string: "  Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
           
           self.navigationItem.titleView = titleLabel
          
@@ -374,6 +374,9 @@ extension HoursTableViewController {
             cell.hourLabel.layer.masksToBounds = true
             cell.hourLabel.layer.cornerRadius = 20.0
             
+            cell.minuteLabel.text = entry.stringMinutes
+            
+            
             
             return cell
             
@@ -432,6 +435,8 @@ extension HoursTableViewController {
             
             cell.dateLabel.text = entry.date?.convertToString() ?? "unknown"
             cell.hourLabel.text = String(entry.hourCount)
+            
+            
             
             return cell
         }

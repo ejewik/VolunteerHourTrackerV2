@@ -20,6 +20,13 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
     //weak var delegate : updateDelegate?
     var tableView: UITableView = UITableView(frame: CGRect() )
     let pdfData2 : Data = Data()
+    
+    let textAttributes:[NSAttributedStringKey:Any] = [
+        
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "Times New Roman", size: 20)!,
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeWidth.rawValue): 0 ]
+    
+    
     var entriesArray = [Entry]() {
         didSet {
             
@@ -37,6 +44,28 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         shareDonationsButton.layer.cornerRadius = 20.0
     }
     
+    let tableDef = TableDefinition(alignments: [ .center, .center, .center, .center], //alignment not working???
+                                   columnWidths: [150, 150, 110, 110],
+                                   fonts: [UIFont.systemFont(ofSize: 12),
+                                           UIFont.systemFont(ofSize: 12),
+                                           UIFont.systemFont(ofSize: 12),
+                                           UIFont.systemFont(ofSize: 12)],
+                                   
+                                   textColors: [UIColor.black,
+                                                UIColor.black, UIColor.black, UIColor.black])
+    
+    let shortTableDef = TableDefinition(alignments: [.center, .center, .center, .center], //alignment not working???
+        columnWidths: [150, 150, 110, 110],
+        fonts: [UIFont.boldSystemFont(ofSize: 15),
+                UIFont.boldSystemFont(ofSize: 15),
+                UIFont.boldSystemFont(ofSize: 15),
+                UIFont.boldSystemFont(ofSize: 15)],
+        
+        textColors: [UIColor.black,
+                     UIColor.black, UIColor.black, UIColor.black])
+    
+    
+    
     
     
 
@@ -44,10 +73,19 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
     @IBAction func shareDataButtonTapped(_ sender: Any) {
         
         
-        let A4paperSize = CGSize(width: 595, height: 842)
+        let A4paperSize = CGSize(width: 595, height: 842) // need animated font on nav bar
         let pdf = SimplePDF(pageSize: A4paperSize)
         
-        pdf.addText("Hour table")
+        let string = NSAttributedString(string: "Hour Table" , attributes: textAttributes)
+            
+//             titleLabel.attributedText = NSAttributedString(string: "  Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
+        pdf.addText(string.string)
+        pdf.addLineSeparator()
+        pdf.addLineSpace( 20.0 )
+        
+        let keyArray = [["              Title", "               Club", "         Hours", "          Date"]] // 4 tabs / 3 tabs
+        pdf.addTable(1, columnCount: 4, rowHeight: 76.0, tableLineWidth: 0.5, tableDefinition: shortTableDef, dataArray: keyArray)
+        //pdf.addTable(1, columnCount: 4, rowHeight: 76.0, columnWidth: 140.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: keyArray)
         // or
         // pdf.addText("Hello World!", font: myFont, textColor: myTextColor)
         
@@ -79,25 +117,26 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         
         for col in 0...0 {
             for row in 0...entriesArray.count - 1{
-                dataArray[row][col] = entriesArray[row].eventTitle ?? ""
+                dataArray[row][col] = " \(entriesArray[row].eventTitle!)"
             }
         }
         
         for col in 1...1 {
             for row in 0...entriesArray.count - 1{
-                dataArray[row][col] = entriesArray[row].stringHours ?? ""
+                dataArray[row][col] = " \(entriesArray[row].club!)"
             }
         }
             
             for col in 2...2 {
                 for row in 0...entriesArray.count - 1 {
-                    dataArray[row][col] = entriesArray[row].club!
+                    dataArray[row][col] =
+                    " \(entriesArray[row].stringHours!)"
                 }
             }
             
             for col in 3...3 {
                 for row in 0...entriesArray.count - 1 {
-                    dataArray[row][col] = (entriesArray[row].date?.convertToString())!
+                    dataArray[row][col] = " \((entriesArray[row].date?.convertToString())!)"
                 }
             }
         //dataArray is fine
@@ -110,58 +149,62 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         var tableCount = 0
         //var sprites = [SKSpriteNode?](count: 64, repeatedValue: nil)
         
-        var oneTableArray = Array(repeating: Array(repeating: "", count: 4), count: 9)
+        var oneTableArray = Array(repeating: Array(repeating: "", count: 4), count: 8)
         var tableRow = 0
         repeat {
         
-        if dataArray.count > tableCount + 9 {
+        if dataArray.count > tableCount + 8 {
 //            for i in tableCount...dataArray.count - 1 {
 //                oneTableArray[tableCount] = dataArray[]
 //            }
             
             for col in 0...0 {
-                for row in tableCount...tableCount+9 - 1{
+                for row in tableCount...tableCount+8 - 1{
                     oneTableArray[tableRow][col] = dataArray[row][col]
                     tableRow += 1 //actually why is this working haha
-                    if tableRow == 9 {
+                    if tableRow == 8 {
                         tableRow = 0
                     }
                 }
             }
             
             for col in 1...1 {
-                for row in tableCount...tableCount+9 - 1{
+                for row in tableCount...tableCount+8 - 1{
                     oneTableArray[tableRow][col] = dataArray[row][col]
                     tableRow += 1
-                    if tableRow == 9 {
+                    if tableRow == 8 {
                         tableRow = 0
                     }
                 }
             }
                 
                 for col in 2...2 {
-                    for row in tableCount...tableCount+9 - 1 {
+                    for row in tableCount...tableCount+8 - 1 {
                         oneTableArray[tableRow][col] = dataArray[row][col]
                         tableRow += 1
-                        if tableRow == 9 {
+                        if tableRow == 8 {
                             tableRow = 0
                         }
                     }
                 }
                 
                 for col in 3...3 {
-                    for row in tableCount...tableCount+9 - 1 {
+                    for row in tableCount...tableCount+8 - 1 {
                         oneTableArray[tableRow][col] = dataArray[row][col]
                         tableRow += 1
-                        if tableRow == 9 {
+                        if tableRow == 8 {
                             tableRow = 0
                         }
                     }
                 }
             
-                pdf.addTable(9, columnCount: 4, rowHeight: 76.0, columnWidth: 140.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+           
             
-            tableCount += 9
+           
+            
+            pdf.addTable(8, columnCount: 4, rowHeight: 76.0, tableLineWidth: 0.5, tableDefinition: tableDef, dataArray: oneTableArray)
+            
+            tableCount += 8
             
                 pdf.beginNewPage()
             }
@@ -174,7 +217,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
 //            }
             
             
-        } while entriesArray.count - tableCount > 9
+        } while entriesArray.count - tableCount > 8
         
         
         // 25 entries rn so 18 should appear 2 pages 1 half pg
@@ -223,7 +266,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         }
         
         
-        pdf.addTable(row2, columnCount: 4, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+            pdf.addTable(row2, columnCount: 4, rowHeight: 76.0, tableLineWidth: 1.0, tableDefinition: tableDef,  dataArray: oneTableArray)
         }
         
         let pdfData = pdf.generatePDFdata()

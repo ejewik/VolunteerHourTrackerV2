@@ -15,6 +15,7 @@ class HourTableViewCell : UITableViewCell {
     @IBOutlet weak var clubLabel: UILabel!
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var minuteLabel: UILabel!
     
 
 }

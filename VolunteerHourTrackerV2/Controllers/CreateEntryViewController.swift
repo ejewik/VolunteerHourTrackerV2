@@ -139,17 +139,31 @@ class CreateEntryViewController : UIViewController {
             let hours = interval.duration / 3600.0
             entry?.hourCount = Int16(hours)
                 
+                
+                
                 let formatter = DateComponentsFormatter()
                 formatter.unitsStyle = .full
                 formatter.allowedUnits = [.month, .day, .hour, .minute]
                 formatter.maximumUnitCount = 2
                 let string = formatter.string(from: (entry?.timeFrom!)!, to: (entry?.timeTo!)!)
-                entry?.stringHours = string ?? ""
+                
+                if string?.index(of: "h") != nil {
+                
+                let index = string?.index(of: "h")
+                let substring = string?.split(separator: "h")
+                entry?.stringMinutes = "h\(String((substring?[1])!))"
+                entry?.stringHours = String((substring?[0])!)
+                    
+                } else {
+                    entry?.stringHours = "0"
+                    entry?.stringMinutes = string
+                }
             
             }
             else {
                 print("error - reverse interval")
-                entry?.stringHours = "0 hours"
+                entry?.stringHours = "0"
+                entry?.stringMinutes = "hours"
             }
             
             //CreateEntryViewController.totalHours += (entry?.hourCount)!
@@ -178,17 +192,26 @@ class CreateEntryViewController : UIViewController {
                 formatter.allowedUnits = [.month, .day, .hour, .minute, .second]
                 formatter.maximumUnitCount = 2
                 let string = formatter.string(from: entry.timeFrom!, to: entry.timeTo!)
-            entry.stringHours = string ?? ""
+            //entry.stringHours = string ?? ""
                 
-                //initialHours = entry.hourCount
+                if string?.index(of: "h") != nil {
+                    
+                let index = string?.index(of: "h")
+                let substring = string?.split(separator: "h")
+                entry.stringMinutes = "h\(String((substring![1])))"
+                entry.stringHours = String((substring![0]))
+                    
+                } else {
+                    entry.stringHours = "0"
+                    entry.stringMinutes = string
+                }
                 
-                //CreateEntryViewController.totalHours += entry.hourCount
-                //print( CreateEntryViewController.totalHours)
             }
             else
             {
                 print("error - reverse interval")
-                entry.stringHours = "0 hours"
+                entry.stringHours = "0"
+                entry.stringMinutes = "hours"
             }
             
             CoreDataHelper.saveEntry()
@@ -206,7 +229,7 @@ class CreateEntryViewController : UIViewController {
     func addBorder( textField: UITextField ) {
         let border = CALayer()
         let width = CGFloat(1.0)
-        border.borderColor = UIColor.white.cgColor
+        border.borderColor = UIColor.darkGray.cgColor
         border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width: textField.frame.size.width, height: textField.frame.size.height)
         
         border.borderWidth = width
