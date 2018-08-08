@@ -200,13 +200,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-MX-qJz">
                                                     <rect key="frame" x="31.5" y="0.0" width="10.5" height="38"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Light" family="PingFang HK" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fml-rF-NGY">
                                                     <rect key="frame" x="4" y="56" width="38" height="20"/>
                                                     <fontDescription key="fontDescription" name="PingFangHK-Light" family="PingFang HK" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -242,7 +242,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Entries" prompt="  " id="abp-5w-MR7">
                         <barButtonItem key="rightBarButtonItem" title="Edit" style="plain" id="cfH-ac-Sbq">
-                            <color key="tintColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="editButtonTapped:" destination="o0S-5d-PZP" id="fWR-Re-iNf"/>
                             </connections>
@@ -362,7 +362,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-Jm-jMk">
                                 <rect key="frame" x="65" y="489" width="245" height="45"/>
-                                <color key="backgroundColor" red="0.98431372549019602" green="0.45098039215686275" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="jTK-wd-IBe"/>
                                 </constraints>
@@ -417,7 +417,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ZWW-Jn-VsF">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="TX7-gn-gu0">
-                            <color key="tintColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="Oyj-SH-6sD" kind="unwind" identifier="cancel" unwindAction="unwindWithSegue:" id="xQg-W1-Agr"/>
                             </connections>
@@ -588,7 +588,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oW1-hE-yAc">
                                 <rect key="frame" x="65" y="535" width="245" height="45"/>
-                                <color key="backgroundColor" red="0.98431372549999996" green="0.45098039220000002" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="arp-Zr-nGs"/>
                                 </constraints>
@@ -677,10 +677,11 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-0Q-VzU">
                                         <rect key="frame" x="0.0" y="0.0" width="155" height="50"/>
-                                        <color key="backgroundColor" red="0.39747053859999998" green="0.85468482639999999" blue="0.86276250170000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="mFC-8a-Sx6"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                         <state key="normal" title="Share Hours">
                                             <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -690,10 +691,11 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUp-0g-CsW">
                                         <rect key="frame" x="0.0" y="95" width="155" height="50"/>
-                                        <color key="backgroundColor" red="0.39747053859999998" green="0.85468482639999999" blue="0.86276250170000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2CN-lF-W2l"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
                                         <state key="normal" title="Share Donations">
                                             <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -730,7 +732,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TeU-rs-lDL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" id="leP-Ut-F4L"/>
+                    <tabBarItem key="tabBarItem" title="Export" image="Export icon" selectedImage="Export icon" id="leP-Ut-F4L"/>
                     <connections>
                         <outlet property="shareDonationsButton" destination="vUp-0g-CsW" id="01b-ll-aXt"/>
                         <outlet property="shareHoursButton" destination="EdT-0Q-VzU" id="iA2-nS-Vgj"/>
@@ -748,13 +750,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxf-3Q-69E">
-                                <rect key="frame" x="28" y="24" width="56" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="0BZ-DY-bLE" kind="unwind" unwindAction="unwindFromInfo:" id="M5a-8i-eHM"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attribution page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGi-jG-GaN">
                                 <rect key="frame" x="123" y="30" width="129" height="24"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
@@ -811,15 +806,26 @@ SOFTWARE.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxf-3Q-69E">
+                                <rect key="frame" x="23" y="17" width="56" height="50"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="0BZ-DY-bLE" kind="unwind" unwindAction="unwindFromInfo:" id="M5a-8i-eHM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fGi-jG-GaN" firstAttribute="top" secondItem="tQJ-ZX-xOc" secondAttribute="top" constant="10" id="4JA-PP-0uG"/>
+                            <constraint firstItem="yxf-3Q-69E" firstAttribute="top" secondItem="y4D-Mt-ocv" secondAttribute="top" constant="17" id="TgE-t0-iTJ"/>
                             <constraint firstItem="tQJ-ZX-xOc" firstAttribute="trailing" secondItem="gDM-FK-umy" secondAttribute="trailing" constant="53" id="XJ6-rU-C5E"/>
+                            <constraint firstItem="tQJ-ZX-xOc" firstAttribute="bottom" secondItem="yxf-3Q-69E" secondAttribute="bottom" constant="600" id="a9c-3h-jeJ"/>
+                            <constraint firstItem="yxf-3Q-69E" firstAttribute="leading" secondItem="tQJ-ZX-xOc" secondAttribute="leading" constant="23" id="fcj-d2-Crv"/>
                             <constraint firstItem="tQJ-ZX-xOc" firstAttribute="trailing" secondItem="fGi-jG-GaN" secondAttribute="trailing" constant="123" id="hrc-9r-KjF"/>
                             <constraint firstItem="gDM-FK-umy" firstAttribute="leading" secondItem="tQJ-ZX-xOc" secondAttribute="leading" constant="53" id="imY-2X-Ila"/>
                             <constraint firstItem="fGi-jG-GaN" firstAttribute="leading" secondItem="tQJ-ZX-xOc" secondAttribute="leading" constant="123" id="opC-Or-Qli"/>
                             <constraint firstItem="gDM-FK-umy" firstAttribute="top" secondItem="tQJ-ZX-xOc" secondAttribute="top" constant="70" id="q3E-1j-Qq2"/>
+                            <constraint firstItem="tQJ-ZX-xOc" firstAttribute="trailing" secondItem="yxf-3Q-69E" secondAttribute="trailing" constant="296" id="zmQ-og-8WS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tQJ-ZX-xOc"/>
                     </view>
@@ -832,11 +838,11 @@ SOFTWARE.</mutableString>
             </objects>
             <point key="canvasLocation" x="2928.8000000000002" y="930.58470764617698"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="yVe-xR-ytb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CQj-5D-MXH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="iry-sd-pPH"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home icon" selectedImage="home icon" id="iry-sd-pPH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hr0-ah-zWo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -852,6 +858,10 @@ SOFTWARE.</mutableString>
             <point key="canvasLocation" x="2943" y="113"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Export icon" width="30" height="30"/>
+        <image name="home icon" width="275" height="282"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8S5-Oy-h3j"/>
         <segue reference="yUj-aF-2UJ"/>

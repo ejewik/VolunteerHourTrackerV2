@@ -160,7 +160,7 @@ class HoursTableViewController : UITableViewController   {
             
  
         
-    
+        self.tabBarItem.title = "export"
  
         
         
