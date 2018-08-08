@@ -137,6 +137,7 @@ class DonationViewController: UIViewController {
                     donation?.itemCount = Int16(itemCountTextField.text!) ?? 0
                     donation?.dollarCount = Double(dollarCountTextField.text!) ?? 0.0
                     
+                    
 //                    DonationViewController.totalItems += (donation?.itemCount)!
 //                    DonationViewController.totalDollars += (donation?.dollarCount)!
     
@@ -171,7 +172,7 @@ class DonationViewController: UIViewController {
     
     func addBorder( textField: UITextField ) {
         let border = CALayer()
-        let width = CGFloat(2.0)
+        let width = CGFloat(1.0)
         border.borderColor = UIColor.darkGray.cgColor
         border.frame = CGRect(x: 0, y: textField.frame.size.height - width, width: textField.frame.size.width, height: textField.frame.size.height)
         

@@ -27,7 +27,7 @@ class HoursTableViewController : UITableViewController   {
     
     let textAttributes:[NSAttributedStringKey:Any] = [
         
-        NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "PingFangHK-Semibold", size: 30)!,
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "PingFang HK", size: 30)!,
         NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeWidth.rawValue): 0 ]
     
     
@@ -144,7 +144,12 @@ class HoursTableViewController : UITableViewController   {
         
         self.navigationController?.navigationItem.titleView?.frame = CGRect(x: 0, y: 0, width: 400, height: 50)
         
+        self.navigationItem.leftBarButtonItem?.setBackgroundVerticalPositionAdjustment( 5.0, for: UIBarMetrics.default  )
         addButton.layer.cornerRadius = 20.0
+        
+        let font = UIFont(name: "PingFang HK", size: 12.0)
+        hourDonationSegmented.setTitleTextAttributes([NSAttributedStringKey.font: font],
+                                                for: .normal)
         
         donations = CoreDataHelper.retrieveDonations()
         print("retrieving donations in viewDidLoad")

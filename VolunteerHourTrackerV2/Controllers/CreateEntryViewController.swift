@@ -44,10 +44,10 @@ class CreateEntryViewController : UIViewController {
         self.hideKeyboardWhenTappedAround()
         addBorder( textField: titleTextField)
         addBorder( textField: clubTextField)
-        descriptionTextView!.layer.borderWidth = 0.5
-        descriptionTextView!.layer.borderColor = UIColor.white.cgColor
+        descriptionTextView!.layer.borderWidth = 0.4
+        descriptionTextView!.layer.borderColor = UIColor.lightGray.cgColor
         
-        descriptionTextView.layer.cornerRadius = 5
+        descriptionTextView.layer.cornerRadius = 3
         descriptionTextView.clipsToBounds = true
         
         doneButton.layer.cornerRadius = 20.0
