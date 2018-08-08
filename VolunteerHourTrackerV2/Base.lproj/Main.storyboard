@@ -241,8 +241,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Entries" prompt="  " id="abp-5w-MR7">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="cfH-ac-Sbq">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" style="plain" id="cfH-ac-Sbq">
                             <color key="tintColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="editButtonTapped:" destination="o0S-5d-PZP" id="fWR-Re-iNf"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -503,8 +506,12 @@
                                     </textView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5Ki-gh-48b" secondAttribute="trailing" id="ccU-7K-qkf"/>
+                                    <constraint firstItem="5Ki-gh-48b" firstAttribute="leading" secondItem="9TB-uh-tB5" secondAttribute="leading" id="eCy-vo-yLa"/>
                                     <constraint firstAttribute="height" constant="100" id="eye-6c-xcd"/>
                                     <constraint firstAttribute="width" constant="230" id="wW0-bk-Y9V"/>
+                                    <constraint firstItem="5Ki-gh-48b" firstAttribute="top" secondItem="flB-ew-dRX" secondAttribute="bottom" id="xXr-AR-pdJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Ki-gh-48b" secondAttribute="bottom" id="zbo-NW-qEj"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ick-1i-mxk">

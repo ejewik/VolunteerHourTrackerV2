@@ -319,18 +319,16 @@ class HoursTableViewController : UITableViewController   {
     }
     
     
-    @IBAction func editButtonTapped(_ sender: UIButton) {
-        self.tableView.isEditing = !self.tableView.isEditing
-        if self.tableView.isEditing == false {
-        editButton.setTitle("Edit",for: .normal)
-        } else {
-        editButton.setTitle("Done",for: .normal)
-        }
-    }
     
-    
-    
+    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
         
+        self.tableView.isEditing = !self.tableView.isEditing
+//        if self.tableView.isEditing == false {
+//            editButton.setTitle("Edit",for: .normal)
+//        } else {
+//            editButton.setTitle("Done",for: .normal)
+//        }
+    }
     }
     
     
