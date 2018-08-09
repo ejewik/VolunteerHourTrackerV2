@@ -30,6 +30,11 @@ class HoursTableViewController : UITableViewController   {
         NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "PingFang HK", size: 30)!,
         NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeWidth.rawValue): 0 ]
     
+    let donationTextAttributes:[NSAttributedStringKey:Any] = [
+        
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "PingFang HK", size: 20)!,
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeWidth.rawValue): 0 ]
+    
     
     
     var totalHours : Int = 0
@@ -57,7 +62,9 @@ class HoursTableViewController : UITableViewController   {
             
             //self.navigationItem.title = "Total dollars: \(String(totalDollars)) Total items: \(String(totalItems))"
             
-            titleLabel.attributedText = NSAttributedString(string: "  Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
+            titleLabel.attributedText = NSAttributedString(string: "  Total $: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: donationTextAttributes)
+            
+            //titleLabel.numberOfLines = 2
             
             self.navigationItem.titleView = titleLabel
             
@@ -142,6 +149,8 @@ class HoursTableViewController : UITableViewController   {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleLabel.adjustsFontSizeToFitWidth = true
+        
         self.navigationController?.navigationItem.titleView?.frame = CGRect(x: 0, y: 0, width: 400, height: 50)
         
         self.navigationItem.leftBarButtonItem?.setBackgroundVerticalPositionAdjustment( 5.0, for: UIBarMetrics.default  )
@@ -157,8 +166,11 @@ class HoursTableViewController : UITableViewController   {
 
          entries = CoreDataHelper.retrieveEntries()
             print("retrieve entries in viewDidLoad")
-            
- 
+        
+        //self.titleLabel.lineBreakMode = .byWordWrapping
+        //self.titleLabel.numberOfLines = 2
+        //self.titleLabel.
+        //self.navigationItem.titleView.
         
         self.tabBarItem.title = "export"
  
@@ -296,6 +308,9 @@ class HoursTableViewController : UITableViewController   {
         case 1:
           totalDollars = 0
           totalItems = 0
+          
+          
+          
         for donation in donations {
             totalItems += Int(donation.itemCount)
             totalDollars += donation.dollarCount
@@ -304,7 +319,7 @@ class HoursTableViewController : UITableViewController   {
        
           
           //self.navigationItem.title = "Total dollars: \(doubleToString(doubleValue: totalDollars)) Total items: \(String(totalItems))"
-          titleLabel.attributedText = NSAttributedString(string: "  Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
+          titleLabel.attributedText = NSAttributedString(string: "  Total $: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: donationTextAttributes)
           
           self.navigationItem.titleView = titleLabel
          
