@@ -11,6 +11,7 @@
 		4B07AFDF211512F10010109C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07AFDE211512F10010109C /* InfoViewController.swift */; };
 		4B19BFD0210BDA9300451CC9 /* KeyboardDismissExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */; };
 		4B3ED2942118AB7B00F52481 /* InputAccessoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ED2932118AB7B00F52481 /* InputAccessoryExtension.swift */; };
+		4B552EAF211CEBD700339530 /* scrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B552EAE211CEBD700339530 /* scrollViewController.swift */; };
 		4B683B6A21065258006EBF40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B6921065258006EBF40 /* AppDelegate.swift */; };
 		4B683B6F21065258006EBF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B683B6D21065258006EBF40 /* Main.storyboard */; };
 		4B683B7221065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B683B7021065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 		4B07AFDE211512F10010109C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4B19BFCF210BDA9300451CC9 /* KeyboardDismissExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissExtension.swift; sourceTree = "<group>"; };
 		4B3ED2932118AB7B00F52481 /* InputAccessoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAccessoryExtension.swift; sourceTree = "<group>"; };
+		4B552EAE211CEBD700339530 /* scrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scrollViewController.swift; sourceTree = "<group>"; };
 		4B683B6621065258006EBF40 /* VolunteerHourTrackerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VolunteerHourTrackerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B683B6921065258006EBF40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B683B6E21065258006EBF40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				4B861330210A8AA6006FF198 /* DonationViewController.swift */,
 				4BE3467321120D470049D14D /* pdfViewController.swift */,
 				4B07AFDE211512F10010109C /* InfoViewController.swift */,
+				4B552EAE211CEBD700339530 /* scrollViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			files = (
 				4BE3467621121BD10049D14D /* DataProviderHelper.swift in Sources */,
 				4B861331210A8AA6006FF198 /* DonationViewController.swift in Sources */,
+				4B552EAF211CEBD700339530 /* scrollViewController.swift in Sources */,
 				4BA25E8C2107EC650044E4B2 /* Date+convertToString.swift in Sources */,
 				4B683B882106698A006EBF40 /* CreateEntryViewController.swift in Sources */,
 				4B683B7221065258006EBF40 /* VolunteerHourTrackerV2.xcdatamodeld in Sources */,

@@ -16,6 +16,7 @@ class HoursTableViewController : UITableViewController   {
         
     }
     
+    @IBOutlet weak var scrollButton: UIButton!
     @IBOutlet weak var hourDonationSegmented: UISegmentedControl!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
