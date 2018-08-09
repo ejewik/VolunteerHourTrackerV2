@@ -46,7 +46,7 @@ class DonationViewController: UIViewController {
         addBorder(textField: clubTextField)
         addBorder(textField: dollarCountTextField)
         addBorder(textField: dateTextField)
-        descriptionTextView!.layer.borderWidth = 1
+        descriptionTextView!.layer.borderWidth = 0.4
         descriptionTextView!.layer.borderColor = UIColor.lightGray.cgColor
         
         descriptionTextView.layer.cornerRadius = 5

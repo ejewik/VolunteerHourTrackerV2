@@ -66,6 +66,31 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
     
     
     
+    let donationTableDef = TableDefinition(alignments: [ .center, .center, .center, .center, .center], //alignment not working???
+        columnWidths: [150, 150, 80, 80, 80],
+        fonts: [UIFont.systemFont(ofSize: 12),
+                UIFont.systemFont(ofSize: 12),
+                UIFont.systemFont(ofSize: 12),
+                UIFont.systemFont(ofSize: 12),
+                UIFont.systemFont(ofSize: 12)],
+        
+        textColors: [UIColor.black,
+                     UIColor.black, UIColor.black, UIColor.black, UIColor.black ])
+    
+    let donationShortTableDef = TableDefinition(alignments: [.center, .center, .center, .center, .center], //alignment not working???
+        columnWidths: [150, 150, 80, 80, 80],
+        fonts: [UIFont.boldSystemFont(ofSize: 15),
+                UIFont.boldSystemFont(ofSize: 15),
+                UIFont.boldSystemFont(ofSize: 15),
+                UIFont.boldSystemFont(ofSize: 15),
+            UIFont.boldSystemFont(ofSize: 15)],
+        
+        textColors: [UIColor.black,
+                     UIColor.black, UIColor.black, UIColor.black, UIColor.black])
+    
+    
+    
+    
     
     
 
@@ -272,7 +297,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         let pdfData = pdf.generatePDFdata()
         
         if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last {
-            let fileURL = documentsDirectory.appendingPathComponent("myDocument.pdf")
+            let fileURL = documentsDirectory.appendingPathComponent("Hours.pdf")
             print("path is \(fileURL)")
             do {
                 try pdfData.write( to: fileURL , options: .atomic)
@@ -292,7 +317,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
 //        let url = Bundle.main.url(forResource: "file:///Users/emilyjewik/Library/Developer/CoreSimulator/Devices/1F648723-F5E2-428A-9411-C5F01E89D745/data/Containers/Data/Application/A2364309-6D8D-45D0-8B4A-A7F15901286B/Documents/" , withExtension: nil )
         
        if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last {
-            let fileURL = documentsDirectory.appendingPathComponent("myDocument.pdf")
+            let fileURL = documentsDirectory.appendingPathComponent("Hours.pdf")
             print("url: \(fileURL)")
     //        guard let url = Bundle.main.url(forResource: "file:///Users/emilyjewik/Library/Developer/CoreSimulator/Devices/1F648723-F5E2-428A-9411-C5F01E89D745/data/Containers/Data/Application/A2364309-6D8D-45D0-8B4A-A7F15901286B/Documents/myFile", withExtension: "pdf" ) else { return }
             let controller = UIDocumentInteractionController(url: fileURL)
@@ -346,7 +371,17 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         let A4paperSize2 = CGSize(width: 595, height: 842)
         let pdf = SimplePDF(pageSize: A4paperSize2)
         
-        pdf.addText("Donations table")
+      
+        
+        let string = NSAttributedString(string: "Donation Table" , attributes: textAttributes)
+        
+        //             titleLabel.attributedText = NSAttributedString(string: "  Total Dollars: \(doubleToString(doubleValue: totalDollars)) Total Items: \(totalItems)", attributes: textAttributes)
+        pdf.addText(string.string)
+        pdf.addLineSeparator()
+        pdf.addLineSpace( 20.0 )
+        
+        let keyArray = [["            Title", "             Club", "     Dollars", "      Items", "      Date"]] // 4 tabs / 3 tabs
+        pdf.addTable(1, columnCount: 5, rowHeight: 76.0, tableLineWidth: 0.5, tableDefinition: donationShortTableDef, dataArray: keyArray)
         
         CoreDataHelper.retrieveDonations()
         tableView.reloadData()
@@ -359,32 +394,32 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
             
             for col in 0...0 {
                 for row in 0...donationsArray.count - 1{
-                    dataArray[row][col] = donationsArray[row].eventTitle ?? ""
+                    dataArray[row][col] = " \(donationsArray[row].eventTitle! )"
                 }
             }
             
             for col in 1...1 {
                 for row in 0...donationsArray.count - 1{
-                    dataArray[row][col] = String(donationsArray[row].dollarCount)
+                    dataArray[row][col] = " \(donationsArray[row].club!)"
                 }
             }
             
             
             for col in 2...2 {
                 for row in 0...donationsArray.count - 1 {
-                    dataArray[row][col] = String(donationsArray[row].itemCount)
+                    dataArray[row][col] = " \(String(donationsArray[row].dollarCount))"
                 }
             }
             
             for col in 3...3 {
                 for row in 0...donationsArray.count - 1 {
-                    dataArray[row][col] = donationsArray[row].club!
+                    dataArray[row][col] = " \(String(donationsArray[row].itemCount))"
                 }
             }
             
             for col in 4...4 {
                 for row in 0...donationsArray.count - 1 {
-                    dataArray[row][col] = (donationsArray[row].date?.convertToString())!
+                    dataArray[row][col] = " \((donationsArray[row].date?.convertToString())!)"
                 }
             }
             //dataArray is fine
@@ -393,71 +428,73 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
             var tableCount = 0
            
             
-            var oneTableArray = Array(repeating: Array(repeating: "", count: 5), count: 9)
+            var oneTableArray = Array(repeating: Array(repeating: "", count: 5), count: 8)
             var tableRow = 0
             repeat {
                 
-                if dataArray.count > tableCount + 9 {
+                if dataArray.count > tableCount + 8 {
                    
                     for col in 0...0 {
-                        for row in tableCount...tableCount+9 - 1{
+                        for row in tableCount...tableCount+8 - 1{
                             oneTableArray[tableRow][col] = dataArray[row][col]
                             tableRow += 1
-                            if tableRow == 9 {
+                            if tableRow == 8 {
                                 tableRow = 0
                             }
                         }
                     }
                     
                     for col in 1...1 {
-                        for row in tableCount...tableCount+9 - 1{
+                        for row in tableCount...tableCount+8 - 1{
                             oneTableArray[tableRow][col] = dataArray[row][col]
                             tableRow += 1
-                            if tableRow == 9 {
+                            if tableRow == 8 {
                                 tableRow = 0
                             }
                         }
                     }
                     
                     for col in 2...2 {
-                        for row in tableCount...tableCount+9 - 1 {
+                        for row in tableCount...tableCount+8 - 1 {
                             oneTableArray[tableRow][col] = dataArray[row][col]
                             tableRow += 1
-                            if tableRow == 9 {
+                            if tableRow == 8 {
                                 tableRow = 0
                             }
                         }
                     }
                     
                     for col in 3...3 {
-                        for row in tableCount...tableCount+9 - 1 {
+                        for row in tableCount...tableCount+8 - 1 {
                             oneTableArray[tableRow][col] = dataArray[row][col]
                             tableRow += 1
-                            if tableRow == 9 {
+                            if tableRow == 8 {
                                 tableRow = 0
                             }
                         }
                     }
                     for col in 4...4 {
-                        for row in tableCount...tableCount+9 - 1 {
+                        for row in tableCount...tableCount+8 - 1 {
                             oneTableArray[tableRow][col] = dataArray[row][col]
                             tableRow += 1
-                            if tableRow == 9 {
+                            if tableRow == 8 {
                                 tableRow = 0
                             }
                         }
                     }
                     
-                    pdf.addTable(9, columnCount: 5, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+                    pdf.addTable(8, columnCount: 5, rowHeight: 76.0, tableLineWidth: 0.5, tableDefinition: donationTableDef, dataArray: oneTableArray)
                     
-                    tableCount += 9
+//                    pdf.addTable(8, columnCount: 5, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+                    
+                    tableCount += 8
                     
                     pdf.beginNewPage()
                 }
                 
                 
                 
-            } while donationsArray.count - tableCount > 9
+            } while donationsArray.count - tableCount > 8
             
             var row2 = 0
             
@@ -514,7 +551,9 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
             }
             
             
-            pdf.addTable(row2, columnCount: 5, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+            //pdf.addTable(row2, columnCount: 5, rowHeight: 76.0, columnWidth: 136.0, tableLineWidth: 1.0, font: UIFont.systemFont(ofSize: 20.0), dataArray: oneTableArray)
+            
+            pdf.addTable(row2, columnCount: 5, rowHeight: 76.0, tableLineWidth: 0.5, tableDefinition: donationTableDef, dataArray: oneTableArray)
         }
         
         let pdfData = pdf.generatePDFdata()
@@ -522,7 +561,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         
         
         if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last {
-            let fileURL = documentsDirectory.appendingPathComponent("myDonations.pdf")
+            let fileURL = documentsDirectory.appendingPathComponent("Donations.pdf")
             print("path is \(fileURL)")
             do {
                 try pdfData.write( to: fileURL , options: .atomic)
@@ -538,7 +577,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         
        
         if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last {
-            let fileURL = documentsDirectory.appendingPathComponent("myDonations.pdf")
+            let fileURL = documentsDirectory.appendingPathComponent("Donations.pdf")
             print("url: \(fileURL)")
           
             let controller = UIDocumentInteractionController(url: fileURL)
