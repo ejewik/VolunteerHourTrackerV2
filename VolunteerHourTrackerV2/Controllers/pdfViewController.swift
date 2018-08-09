@@ -23,7 +23,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
     
     let textAttributes:[NSAttributedStringKey:Any] = [
         
-        NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "Times New Roman", size: 20)!,
+        NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "PingFang HK", size: 20)!,
         NSAttributedStringKey(rawValue: NSAttributedStringKey.strokeWidth.rawValue): 0 ]
     
     
