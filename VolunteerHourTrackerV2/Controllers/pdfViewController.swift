@@ -32,7 +32,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
             
             // observer that knows when the arrays gets new data
             // reload data
-            CoreDataHelper.retrieveEntries()
+            //CoreDataHelper.retrieveEntries()
             tableView.reloadData()
             
         }
@@ -128,7 +128,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         // First retrieve and reload data to the array
         // Then when you write to file, it should be up to date
         //is it only writing to file once...?
-        CoreDataHelper.retrieveEntries()
+        //CoreDataHelper.retrieveEntries()
         tableView.reloadData()
         //         self.delegate?.didUpdate()(self)
         //
@@ -357,7 +357,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
             
             // observer that knows when the arrays gets new data
             // reload data
-            CoreDataHelper.retrieveDonations()
+            //CoreDataHelper.retrieveDonations()
             tableView.reloadData()
             
         }
@@ -383,7 +383,7 @@ class pdfViewController : UIViewController, UIDocumentInteractionControllerDeleg
         let keyArray = [["            Title", "             Club", "     Dollars", "      Items", "      Date"]] // 4 tabs / 3 tabs
         pdf.addTable(1, columnCount: 5, rowHeight: 76.0, tableLineWidth: 0.5, tableDefinition: donationShortTableDef, dataArray: keyArray)
         
-        CoreDataHelper.retrieveDonations()
+        //CoreDataHelper.retrieveDonations()
         tableView.reloadData()
        
         

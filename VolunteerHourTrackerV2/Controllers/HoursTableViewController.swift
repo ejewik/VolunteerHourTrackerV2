@@ -153,7 +153,7 @@ class HoursTableViewController : UITableViewController   {
         
         self.navigationController?.navigationItem.titleView?.frame = CGRect(x: 0, y: 0, width: 400, height: 50)
         
-        self.navigationItem.leftBarButtonItem?.setBackgroundVerticalPositionAdjustment( 5.0, for: UIBarMetrics.default  )
+        
         addButton.layer.cornerRadius = 20.0
         
         let font = UIFont(name: "PingFang HK", size: 12.0)
@@ -190,7 +190,11 @@ class HoursTableViewController : UITableViewController   {
 //            self.navigationItem.titleView?.layoutIfNeeded()
 //        })
 //    }
-//
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.leftBarButtonItem?.setBackgroundVerticalPositionAdjustment( 40.0, for: UIBarMetrics.default  )
+    }
     
     
         

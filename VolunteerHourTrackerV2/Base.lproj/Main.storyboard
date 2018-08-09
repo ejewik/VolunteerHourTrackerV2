@@ -665,41 +665,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="838-1Q-d7M">
-                                <rect key="frame" x="110" y="173" width="155" height="145"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-0Q-VzU">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="mFC-8a-Sx6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                        <state key="normal" title="Share Hours">
-                                            <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="shareDataButtonTapped:" destination="2th-ea-8Yf" eventType="touchUpInside" id="6xn-at-OJh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUp-0g-CsW">
-                                        <rect key="frame" x="0.0" y="95" width="155" height="50"/>
-                                        <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2CN-lF-W2l"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                        <state key="normal" title="Share Donations">
-                                            <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="donationsButtonTapped:" destination="2th-ea-8Yf" eventType="touchUpInside" id="ayN-Rj-QIC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Export a pdf " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndn-dd-9S6">
-                                <rect key="frame" x="118" y="60" width="139" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdT-0Q-VzU">
+                                <rect key="frame" x="66" y="173" width="244" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="iTY-C3-gZa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
+                                <state key="normal" title="Share Hours">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareDataButtonTapped:" destination="2th-ea-8Yf" eventType="touchUpInside" id="6xn-at-OJh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Export a pdf " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndn-dd-9S6">
+                                <rect key="frame" x="90" y="60" width="195" height="31"/>
                                 <fontDescription key="fontDescription" name="PingFangHK-Semibold" family="PingFang HK" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -710,18 +691,35 @@
                                     <segue destination="o5h-b7-jf5" kind="show" id="R2L-C6-UvU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUp-0g-CsW">
+                                <rect key="frame" x="66" y="288" width="244" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5Xs-61-1I9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
+                                <state key="normal" title="Share Donations">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="donationsButtonTapped:" destination="2th-ea-8Yf" eventType="touchUpInside" id="ayN-Rj-QIC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="EdT-0Q-VzU" firstAttribute="top" secondItem="TeU-rs-lDL" secondAttribute="top" constant="153" id="07F-Tb-GeK"/>
                             <constraint firstItem="TeU-rs-lDL" firstAttribute="trailing" secondItem="i9k-ji-e6p" secondAttribute="trailing" constant="42" id="A9h-BL-V30"/>
-                            <constraint firstItem="838-1Q-d7M" firstAttribute="leading" secondItem="TeU-rs-lDL" secondAttribute="leading" constant="110" id="Ezy-eb-mD9"/>
-                            <constraint firstItem="TeU-rs-lDL" firstAttribute="trailing" secondItem="838-1Q-d7M" secondAttribute="trailing" constant="110" id="LmD-UX-VJu"/>
+                            <constraint firstItem="vUp-0g-CsW" firstAttribute="leading" secondItem="TeU-rs-lDL" secondAttribute="leading" constant="66" id="IlI-1Q-GBy"/>
+                            <constraint firstItem="TeU-rs-lDL" firstAttribute="trailing" secondItem="vUp-0g-CsW" secondAttribute="trailing" constant="65" id="L1S-kK-gBr"/>
+                            <constraint firstItem="EdT-0Q-VzU" firstAttribute="leading" secondItem="TeU-rs-lDL" secondAttribute="leading" constant="66" id="P68-eE-RB7"/>
                             <constraint firstItem="i9k-ji-e6p" firstAttribute="leading" secondItem="TeU-rs-lDL" secondAttribute="leading" constant="310" id="Pe4-Ah-ibf"/>
                             <constraint firstItem="i9k-ji-e6p" firstAttribute="top" secondItem="TeU-rs-lDL" secondAttribute="top" constant="44" id="c6G-T6-puc"/>
-                            <constraint firstItem="TeU-rs-lDL" firstAttribute="bottom" secondItem="838-1Q-d7M" secondAttribute="bottom" constant="300" id="fTu-N0-nrr"/>
                             <constraint firstItem="Ndn-dd-9S6" firstAttribute="top" secondItem="TeU-rs-lDL" secondAttribute="top" constant="40" id="fjl-nI-jda"/>
-                            <constraint firstItem="TeU-rs-lDL" firstAttribute="trailing" secondItem="Ndn-dd-9S6" secondAttribute="trailing" constant="118" id="ijU-AV-jNd"/>
-                            <constraint firstItem="Ndn-dd-9S6" firstAttribute="leading" secondItem="TeU-rs-lDL" secondAttribute="leading" constant="118" id="mCU-gr-DKJ"/>
+                            <constraint firstItem="TeU-rs-lDL" firstAttribute="bottom" secondItem="vUp-0g-CsW" secondAttribute="bottom" constant="270" id="iec-ig-uZz"/>
+                            <constraint firstItem="TeU-rs-lDL" firstAttribute="trailing" secondItem="Ndn-dd-9S6" secondAttribute="trailing" constant="90" id="ijU-AV-jNd"/>
+                            <constraint firstItem="Ndn-dd-9S6" firstAttribute="leading" secondItem="TeU-rs-lDL" secondAttribute="leading" constant="90" id="mCU-gr-DKJ"/>
+                            <constraint firstItem="TeU-rs-lDL" firstAttribute="trailing" secondItem="EdT-0Q-VzU" secondAttribute="trailing" constant="65" id="nak-3q-Aj5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TeU-rs-lDL"/>
                     </view>
@@ -755,7 +753,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="470" id="AEg-Jt-fVZ"/>
                                 </constraints>
-                                <string key="text">The MIT License (MIT)
+                                <mutableString key="text">SimplePDF
+
+The MIT License (MIT)
 
 Copyright (c) 2016 Nutchaphon Rewik
 
@@ -777,6 +777,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.                                            The MIT License (MIT)
 
+EZSwiftExtensions
+
 Copyright (c) 2015 Goktug Yilmaz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -795,7 +797,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</string>
+SOFTWARE.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
