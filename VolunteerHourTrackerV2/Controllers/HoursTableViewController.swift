@@ -72,7 +72,8 @@ class HoursTableViewController : UITableViewController   {
             totalItems = 0
             totalDollars = 0
             
-            let secondTab = self.tabBarController?.viewControllers![1] as! pdfViewController
+            let navCon = self.tabBarController?.viewControllers![1] as! UINavigationController
+            let secondTab = navCon.viewControllers[0] as! pdfViewController
             secondTab.donationsArray = donations
             secondTab.tableView = tableView
             
@@ -136,9 +137,14 @@ class HoursTableViewController : UITableViewController   {
 //            let secondTab = self.tabBarController?.viewControllers![1] as! pdfViewController
 //            secondTab.entriesArray = entries
             
-            let secondTab = self.tabBarController?.viewControllers![1] as! pdfViewController
-            secondTab.entriesArray = entries
-            secondTab.tableView = tableView 
+//            let secondTab = self.tabBarController?.viewControllers![1] as! pdfViewController
+//            secondTab.entriesArray = entries
+//            secondTab.tableView = tableView
+            
+            let navCon = self.tabBarController?.viewControllers![1] as! UINavigationController
+            let secondTab = navCon.viewControllers[0] as! pdfViewController
+            secondTab.entriesArray = entries 
+            secondTab.tableView = tableView
             
             CoreDataHelper.saveEntry()
         }
