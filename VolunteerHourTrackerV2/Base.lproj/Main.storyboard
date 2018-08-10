@@ -35,7 +35,6 @@
                                     </state>
                                     <connections>
                                         <action selector="createButtonTapped:" destination="o0S-5d-PZP" eventType="touchUpInside" id="74T-kx-Uzb"/>
-                                        <segue destination="Nsh-41-muS" kind="show" identifier="addEntry" id="8Sg-6x-vkM"/>
                                     </connections>
                                 </button>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ig2-zq-mM1">
@@ -268,6 +267,7 @@
                         <outlet property="addButton" destination="ycc-xD-UA7" id="hIT-UV-2fN"/>
                         <outlet property="hourDonationSegmented" destination="ig2-zq-mM1" id="W92-68-S2M"/>
                         <segue destination="f31-00-T9h" kind="show" identifier="addDonation" id="EK0-ld-ro5"/>
+                        <segue destination="Nsh-41-muS" kind="show" identifier="addEntry" id="kE9-df-iTW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOR-V6-KYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -774,7 +774,7 @@ SOFTWARE.</string>
                                                 </constraints>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-dA-flw">
                                                 <rect key="frame" x="183" y="206" width="100" height="17"/>
@@ -783,7 +783,7 @@ SOFTWARE.</string>
                                                 </constraints>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a description here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-uq-QSW">
                                                 <rect key="frame" x="38" y="385" width="240" height="201"/>
@@ -916,7 +916,7 @@ SOFTWARE.</string>
         <image name="home icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6Gk-1j-ZCy"/>
-        <segue reference="8Sg-6x-vkM"/>
+        <segue reference="EK0-ld-ro5"/>
+        <segue reference="kE9-df-iTW"/>
     </inferredMetricsTieBreakers>
 </document>
