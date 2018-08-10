@@ -37,6 +37,7 @@ class DonationViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var middleLabel: UILabel!
     
     
     var datePicker: UIDatePicker = UIDatePicker()
@@ -49,6 +50,7 @@ class DonationViewController: UIViewController {
         descriptionTextView.isScrollEnabled = false
         bottomLabel.isHidden = true
         topLabel.isHidden = true
+        middleLabel.isHidden = true
        self.navigationItem.title = "Create"
         
         self.hideKeyboardWhenTappedAround()

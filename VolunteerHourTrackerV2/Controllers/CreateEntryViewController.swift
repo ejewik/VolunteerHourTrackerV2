@@ -42,6 +42,7 @@ class CreateEntryViewController : UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var middleLabel: UILabel!
     
     
     
@@ -49,7 +50,8 @@ class CreateEntryViewController : UIViewController {
         super.viewDidLoad()
         
         bottomLabel.isHidden = true
-        topLabel.isHidden = true 
+        topLabel.isHidden = true
+        middleLabel.isHidden = true
         
         descriptionTextView.isScrollEnabled = false
         //NotificationCenter.default.addObserver(self, selector: #selector(CreateEntryViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
