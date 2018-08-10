@@ -235,7 +235,7 @@ class HoursTableViewController : UITableViewController   {
         
             
         default:
-            print("Unexpected display segue")
+            print("Unexpected display segue") //runs twice?
             
             
 //        case "addEntry":
