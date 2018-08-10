@@ -35,6 +35,7 @@
                                     </state>
                                     <connections>
                                         <action selector="createButtonTapped:" destination="o0S-5d-PZP" eventType="touchUpInside" id="74T-kx-Uzb"/>
+                                        <segue destination="Nsh-41-muS" kind="show" identifier="addEntry" id="8Sg-6x-vkM"/>
                                     </connections>
                                 </button>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ig2-zq-mM1">
@@ -62,17 +63,11 @@
                                     <rect key="frame" x="198" y="65" width="46" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
-                                    <connections>
-                                        <segue destination="Nsh-41-muS" kind="show" id="tOt-wN-jUd"/>
-                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yA-R0-fIT">
                                     <rect key="frame" x="198" y="93" width="46" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
-                                    <connections>
-                                        <segue destination="f31-00-T9h" kind="show" id="RbR-UN-2Z6"/>
-                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,7 +147,7 @@
                                     <outlet property="eventLabel" destination="Vk2-O3-JEW" id="eNM-6L-gSL"/>
                                     <outlet property="hourLabel" destination="4Gi-ZH-oK9" id="l4j-uI-bSB"/>
                                     <outlet property="minuteLabel" destination="84A-rt-MP7" id="0Jr-KI-H0x"/>
-                                    <segue destination="LM4-Vo-9iZ" kind="show" identifier="displayEntry" id="yUj-aF-2UJ"/>
+                                    <segue destination="Nsh-41-muS" kind="show" identifier="displayEntry" id="da2-Y1-9gc"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DonationTableViewCell" rowHeight="110" id="Ped-8C-Bqi" customClass="DonationTableViewCell" customModule="VolunteerHourTrackerV2" customModuleProvider="target">
@@ -252,7 +247,7 @@
                                     <outlet property="dollarLabel" destination="rqt-2a-KW5" id="UZc-Mc-SeD"/>
                                     <outlet property="eventLabel" destination="uEB-r7-l6G" id="lfA-tg-zNh"/>
                                     <outlet property="itemLabel" destination="eVp-p9-eY9" id="N8d-VJ-ERP"/>
-                                    <segue destination="56C-9z-JJs" kind="show" identifier="displayDonation" id="c50-iW-DO7"/>
+                                    <segue destination="f31-00-T9h" kind="show" identifier="displayDonation" id="6Gk-1j-ZCy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -272,8 +267,7 @@
                     <connections>
                         <outlet property="addButton" destination="ycc-xD-UA7" id="hIT-UV-2fN"/>
                         <outlet property="hourDonationSegmented" destination="ig2-zq-mM1" id="W92-68-S2M"/>
-                        <segue destination="56C-9z-JJs" kind="show" identifier="addDonation" id="8S5-Oy-h3j"/>
-                        <segue destination="LM4-Vo-9iZ" kind="show" identifier="addEntry" id="L2B-sW-Be0"/>
+                        <segue destination="f31-00-T9h" kind="show" identifier="addDonation" id="EK0-ld-ro5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOR-V6-KYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,188 +275,9 @@
             <point key="canvasLocation" x="3898.4000000000001" y="133.5832083958021"/>
         </scene>
         <!--Create Entry View Controller-->
-        <scene sceneID="Oa3-EE-PNo">
-            <objects>
-                <viewController title="Create Entry View Controller" id="LM4-Vo-9iZ" customClass="CreateEntryViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vMH-hz-Hyv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4PZ-Sh-6mj">
-                                <rect key="frame" x="25" y="99" width="325" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="bap-0T-5ga"/>
-                                </constraints>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWg-xW-dlC">
-                                <rect key="frame" x="25" y="304" width="315" height="26"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SF-iR-jsp">
-                                <rect key="frame" x="25" y="350" width="150" height="20"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8z-4r-5PL">
-                                <rect key="frame" x="25" y="212" width="50" height="20"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-zw-PVx">
-                                <rect key="frame" x="197" y="200" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmO-pg-8hk">
-                                <rect key="frame" x="25" y="144" width="30.5" height="20"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZa-lP-WdH">
-                                <rect key="frame" x="205" y="212" width="25" height="20"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJl-aX-lFv">
-                                <rect key="frame" x="25" y="280" width="30" height="20"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amH-lJ-SEC">
-                                <rect key="frame" x="25" y="74" width="65.5" height="20"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-C7-tUN">
-                                <rect key="frame" x="25" y="244" width="100" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="KJo-d4-Iqz"/>
-                                </constraints>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QHe-AF-QMh">
-                                <rect key="frame" x="205" y="244" width="100" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Kg0-UB-Dzx"/>
-                                </constraints>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2FS-C0-4R6">
-                                <rect key="frame" x="25" y="164" width="315" height="26"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a5r-Ef-zdr">
-                                <rect key="frame" x="25" y="374" width="315" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Ie6-Br-iqw"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-Jm-jMk">
-                                <rect key="frame" x="65" y="484" width="245" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="jTK-wd-IBe"/>
-                                </constraints>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Oyj-SH-6sD" kind="unwind" identifier="save" unwindAction="unwindWithSegue:" id="6eb-GQ-D0f"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="eaJ-C7-tUN" firstAttribute="leading" secondItem="m8z-4r-5PL" secondAttribute="leading" id="0Oy-Ux-15t"/>
-                            <constraint firstItem="X5j-IS-hhr" firstAttribute="trailing" secondItem="dWg-xW-dlC" secondAttribute="trailing" constant="35" id="1ah-So-buv"/>
-                            <constraint firstItem="a5r-Ef-zdr" firstAttribute="leading" secondItem="8SF-iR-jsp" secondAttribute="leading" id="2Dc-Od-rye"/>
-                            <constraint firstItem="amH-lJ-SEC" firstAttribute="top" secondItem="X5j-IS-hhr" secondAttribute="top" constant="10" id="4WH-Sc-i26"/>
-                            <constraint firstItem="AZa-lP-WdH" firstAttribute="top" secondItem="m8z-4r-5PL" secondAttribute="top" id="4ad-Z3-6VU"/>
-                            <constraint firstItem="QHe-AF-QMh" firstAttribute="top" secondItem="AZa-lP-WdH" secondAttribute="bottom" constant="12" id="4vh-n8-7ok"/>
-                            <constraint firstItem="amH-lJ-SEC" firstAttribute="leading" secondItem="X5j-IS-hhr" secondAttribute="leading" constant="25" id="5eU-fF-zN1"/>
-                            <constraint firstItem="4PZ-Sh-6mj" firstAttribute="leading" secondItem="amH-lJ-SEC" secondAttribute="leading" id="5gI-pz-Dn1"/>
-                            <constraint firstItem="m8z-4r-5PL" firstAttribute="leading" secondItem="X5j-IS-hhr" secondAttribute="leading" constant="25" id="5ja-Qm-2My"/>
-                            <constraint firstItem="2FS-C0-4R6" firstAttribute="leading" secondItem="xmO-pg-8hk" secondAttribute="leading" id="Apw-Di-mHm"/>
-                            <constraint firstItem="dWg-xW-dlC" firstAttribute="leading" secondItem="X5j-IS-hhr" secondAttribute="leading" constant="25" id="Bnn-44-Bja"/>
-                            <constraint firstItem="dWg-xW-dlC" firstAttribute="top" secondItem="eaJ-C7-tUN" secondAttribute="bottom" constant="34" id="Ces-6I-1H1"/>
-                            <constraint firstItem="X5j-IS-hhr" firstAttribute="trailing" secondItem="aMo-Jm-jMk" secondAttribute="trailing" constant="65" id="Ehw-eD-ItT"/>
-                            <constraint firstItem="hJl-aX-lFv" firstAttribute="top" secondItem="eaJ-C7-tUN" secondAttribute="bottom" constant="10" id="Enx-z3-3W5"/>
-                            <constraint firstItem="4PZ-Sh-6mj" firstAttribute="centerX" secondItem="vMH-hz-Hyv" secondAttribute="centerX" id="FhO-SH-0zN"/>
-                            <constraint firstItem="X5j-IS-hhr" firstAttribute="trailing" secondItem="2FS-C0-4R6" secondAttribute="trailing" constant="35" id="HMD-GZ-zfr"/>
-                            <constraint firstItem="hJl-aX-lFv" firstAttribute="leading" secondItem="X5j-IS-hhr" secondAttribute="leading" constant="25" id="KBl-3z-O5q"/>
-                            <constraint firstItem="8SF-iR-jsp" firstAttribute="top" secondItem="dWg-xW-dlC" secondAttribute="bottom" constant="20" id="MAh-zC-Lvs"/>
-                            <constraint firstItem="QHe-AF-QMh" firstAttribute="leading" secondItem="eaJ-C7-tUN" secondAttribute="trailing" constant="80" id="NUC-K6-Glc"/>
-                            <constraint firstItem="AZa-lP-WdH" firstAttribute="top" secondItem="2FS-C0-4R6" secondAttribute="bottom" constant="22" id="OmO-ra-fMV"/>
-                            <constraint firstItem="m8z-4r-5PL" firstAttribute="top" secondItem="2FS-C0-4R6" secondAttribute="bottom" constant="22" id="Q39-7J-VeO"/>
-                            <constraint firstItem="xmO-pg-8hk" firstAttribute="leading" secondItem="X5j-IS-hhr" secondAttribute="leading" constant="25" id="V9C-Ji-XD6"/>
-                            <constraint firstItem="a5r-Ef-zdr" firstAttribute="top" secondItem="8SF-iR-jsp" secondAttribute="bottom" constant="4" id="Zbg-ln-rwa"/>
-                            <constraint firstItem="AZa-lP-WdH" firstAttribute="leading" secondItem="m8z-4r-5PL" secondAttribute="trailing" constant="130" id="ZuW-b6-gCt"/>
-                            <constraint firstItem="eaJ-C7-tUN" firstAttribute="top" secondItem="m8z-4r-5PL" secondAttribute="bottom" constant="12" id="cFI-YX-XGa"/>
-                            <constraint firstItem="aMo-Jm-jMk" firstAttribute="top" secondItem="a5r-Ef-zdr" secondAttribute="bottom" constant="60" id="fTM-AJ-6Zl"/>
-                            <constraint firstItem="8SF-iR-jsp" firstAttribute="leading" secondItem="X5j-IS-hhr" secondAttribute="leading" constant="25" id="g3e-fz-d1w"/>
-                            <constraint firstItem="2FS-C0-4R6" firstAttribute="top" secondItem="vMH-hz-Hyv" secondAttribute="topMargin" constant="100" id="hNU-0u-bh5"/>
-                            <constraint firstItem="4PZ-Sh-6mj" firstAttribute="top" secondItem="X5j-IS-hhr" secondAttribute="top" constant="35" id="i4F-lI-Bb4"/>
-                            <constraint firstItem="X5j-IS-hhr" firstAttribute="trailing" secondItem="a5r-Ef-zdr" secondAttribute="trailing" constant="35" id="iI1-vM-9SZ"/>
-                            <constraint firstItem="QHe-AF-QMh" firstAttribute="leading" secondItem="AZa-lP-WdH" secondAttribute="leading" id="nSo-6n-8zT"/>
-                            <constraint firstItem="eaJ-C7-tUN" firstAttribute="leading" secondItem="X5j-IS-hhr" secondAttribute="leading" constant="25" id="prJ-fV-5DF"/>
-                            <constraint firstItem="X5j-IS-hhr" firstAttribute="trailing" secondItem="8SF-iR-jsp" secondAttribute="trailing" constant="200" id="qut-vK-blB"/>
-                            <constraint firstItem="a5r-Ef-zdr" firstAttribute="leading" secondItem="X5j-IS-hhr" secondAttribute="leading" constant="25" id="r59-sI-DU4"/>
-                            <constraint firstItem="xmO-pg-8hk" firstAttribute="top" secondItem="4PZ-Sh-6mj" secondAttribute="bottom" constant="20" id="vGK-gN-QCj"/>
-                            <constraint firstItem="aMo-Jm-jMk" firstAttribute="leading" secondItem="X5j-IS-hhr" secondAttribute="leading" constant="65" id="viy-0L-xYk"/>
-                            <constraint firstItem="dWg-xW-dlC" firstAttribute="leading" secondItem="hJl-aX-lFv" secondAttribute="leading" id="xoD-96-ioA"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="X5j-IS-hhr"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Title" id="ZWW-Jn-VsF">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="TX7-gn-gu0">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="Oyj-SH-6sD" kind="unwind" identifier="cancel" unwindAction="unwindWithSegue:" id="xQg-W1-Agr"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="clubTextField" destination="dWg-xW-dlC" id="fDf-C2-5FI"/>
-                        <outlet property="dateTextField" destination="2FS-C0-4R6" id="R9e-tl-yO9"/>
-                        <outlet property="descriptionTextView" destination="a5r-Ef-zdr" id="R9H-K9-Kcv"/>
-                        <outlet property="doneButton" destination="aMo-Jm-jMk" id="FHv-0R-Vex"/>
-                        <outlet property="timeFromTextField" destination="eaJ-C7-tUN" id="1OT-ME-2Mi"/>
-                        <outlet property="timeToTextField" destination="QHe-AF-QMh" id="7Ce-eF-HnV"/>
-                        <outlet property="titleTextField" destination="4PZ-Sh-6mj" id="pMc-9X-YtI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T3I-rW-bsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Oyj-SH-6sD" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="4764" y="-9.4452773613193415"/>
-        </scene>
-        <!--Title-->
         <scene sceneID="BJq-k2-Wky">
             <objects>
-                <viewController id="Nsh-41-muS" customClass="scrollViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Create Entry View Controller" id="Nsh-41-muS" customClass="CreateEntryViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P87-by-E9r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -498,73 +313,74 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wuq-db-da0">
-                                                <rect key="frame" x="41" y="111" width="30.5" height="20"/>
+                                                <rect key="frame" x="41" y="98" width="30.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW5-dA-Lv0">
-                                                <rect key="frame" x="43" y="204" width="32" height="20"/>
+                                                <rect key="frame" x="43" y="178" width="32" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHk-Mr-LmZ">
-                                                <rect key="frame" x="175" y="204" width="25" height="20"/>
+                                                <rect key="frame" x="175" y="178" width="25" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xrp-Li-e91">
-                                                <rect key="frame" x="43" y="50" width="282" height="30"/>
-                                                <nil key="textColor"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xrp-Li-e91">
+                                                <rect key="frame" x="43" y="50" width="282" height="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cT8-2U-IAc">
-                                                <rect key="frame" x="43" y="139" width="282" height="30"/>
-                                                <nil key="textColor"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cT8-2U-IAc">
+                                                <rect key="frame" x="43" y="126" width="282" height="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkM-sh-bLz">
-                                                <rect key="frame" x="43" y="232" width="100" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rkM-sh-bLz">
+                                                <rect key="frame" x="43" y="206" width="100" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="N0a-yT-nka"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="va0-gU-GLY">
-                                                <rect key="frame" x="183" y="232" width="100" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="va0-gU-GLY">
+                                                <rect key="frame" x="183" y="206" width="100" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="ic1-5z-lQ3"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a description here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hdG-Fm-i0v">
-                                                <rect key="frame" x="38" y="437" width="240" height="149"/>
+                                                <rect key="frame" x="38" y="385" width="240" height="201"/>
                                                 <color key="backgroundColor" red="0.39747053859999998" green="0.85468482639999999" blue="0.86276250170000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3N-pz-QMt">
-                                                <rect key="frame" x="43" y="403" width="74" height="20"/>
+                                                <rect key="frame" x="43" y="351" width="74" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rZ-4g-U6f">
-                                                <rect key="frame" x="43" y="330" width="282" height="30"/>
-                                                <nil key="textColor"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rZ-4g-U6f">
+                                                <rect key="frame" x="43" y="291" width="282" height="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYP-Nr-exO">
-                                                <rect key="frame" x="43" y="302" width="30" height="20"/>
+                                                <rect key="frame" x="43" y="263" width="30" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -575,6 +391,9 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="Qto-7F-Lqs" kind="unwind" unwindAction="unwindWithSegue:" id="qEM-B9-jlF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -641,214 +460,30 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c8b-pa-zFL"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="IkQ-oq-spf"/>
-                    <size key="freeformSize" width="375" height="1000"/>
-                    <connections>
-                        <outlet property="descriptionTextView" destination="hdG-Fm-i0v" id="qFy-AH-qJO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D0U-Fk-MuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4764" y="929.2353823088456"/>
-        </scene>
-        <!--Title-->
-        <scene sceneID="SDq-pW-1ng">
-            <objects>
-                <viewController id="56C-9z-JJs" customClass="DonationViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JVI-AV-gCC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="a7E-m9-Ajd">
-                                <rect key="frame" x="25" y="73" width="315" height="45"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donation Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBd-vw-dbv">
-                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZ5-sd-eWA">
-                                        <rect key="frame" x="0.0" y="20" width="300" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="ht2-A6-NjD"/>
-                                            <constraint firstAttribute="height" constant="25" id="yDK-cg-NAA"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="HOL-cY-HeR">
-                                <rect key="frame" x="25" y="143" width="315" height="45"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duf-e8-Nt4">
-                                        <rect key="frame" x="0.0" y="0.0" width="30.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbe-UA-0J2">
-                                        <rect key="frame" x="0.0" y="20" width="300" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="Dr4-Eh-h0N"/>
-                                            <constraint firstAttribute="width" constant="300" id="gyX-ER-cM2"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flB-ew-dRX">
-                                <rect key="frame" x="25" y="336" width="150" height="20"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ick-1i-mxk">
-                                <rect key="frame" x="25" y="279" width="300" height="45"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Z3-0V-hDg">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="20"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sRd-65-gZV">
-                                        <rect key="frame" x="0.0" y="20" width="300" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="87L-89-ex3"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="sRd-65-gZV" secondAttribute="trailing" id="5hT-Gk-igl"/>
-                                    <constraint firstAttribute="width" constant="300" id="qBB-Jc-jzB"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="KLw-HA-n9Y">
-                                <rect key="frame" x="25" y="211" width="100" height="45"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollar count " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPG-ZV-bGJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBY-mz-v7k">
-                                        <rect key="frame" x="0.0" y="20" width="100" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="NRo-ne-bQs"/>
-                                            <constraint firstAttribute="height" constant="25" id="QXx-tJ-Vti"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="864-22-ccP"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jPt-1o-d2P">
-                                <rect key="frame" x="165" y="211" width="100" height="45"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHQ-w7-cEc">
-                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qeh-tM-9ff">
-                                        <rect key="frame" x="0.0" y="20" width="100" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="X3z-OL-tlO"/>
-                                            <constraint firstAttribute="height" constant="25" id="snc-FU-1qf"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Bk3-5r-2Bi"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oW1-hE-yAc">
-                                <rect key="frame" x="65" y="470" width="245" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="arp-Zr-nGs"/>
-                                </constraints>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="6qD-W8-sOQ" kind="unwind" identifier="done" unwindAction="unwindWithSegue:" id="5w9-9a-T40"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Ki-gh-48b">
-                                <rect key="frame" x="25" y="369" width="310" height="51"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="flB-ew-dRX" firstAttribute="top" secondItem="ick-1i-mxk" secondAttribute="bottom" constant="12" id="3Qd-hZ-ob6"/>
-                            <constraint firstItem="FyP-QW-WQO" firstAttribute="trailing" secondItem="HOL-cY-HeR" secondAttribute="trailing" constant="35" id="4G2-tY-4cH"/>
-                            <constraint firstItem="a7E-m9-Ajd" firstAttribute="leading" secondItem="FyP-QW-WQO" secondAttribute="leading" constant="25" id="9Ig-3E-16S"/>
-                            <constraint firstItem="jPt-1o-d2P" firstAttribute="top" secondItem="HOL-cY-HeR" secondAttribute="bottom" constant="23" id="9bE-CQ-M53"/>
-                            <constraint firstItem="FyP-QW-WQO" firstAttribute="trailing" secondItem="flB-ew-dRX" secondAttribute="trailing" constant="200" id="A7b-M0-nVa"/>
-                            <constraint firstItem="oW1-hE-yAc" firstAttribute="top" secondItem="flB-ew-dRX" secondAttribute="bottom" constant="114" id="BFq-vh-p5E"/>
-                            <constraint firstItem="FyP-QW-WQO" firstAttribute="trailing" secondItem="oW1-hE-yAc" secondAttribute="trailing" constant="65" id="C7p-Wu-NMF"/>
-                            <constraint firstItem="oW1-hE-yAc" firstAttribute="leading" secondItem="FyP-QW-WQO" secondAttribute="leading" constant="65" id="GtB-hn-aKp"/>
-                            <constraint firstItem="HOL-cY-HeR" firstAttribute="leading" secondItem="FyP-QW-WQO" secondAttribute="leading" constant="25" id="J0c-dg-Aqs"/>
-                            <constraint firstItem="ick-1i-mxk" firstAttribute="top" secondItem="KLw-HA-n9Y" secondAttribute="bottom" constant="23" id="M3s-7p-kJz"/>
-                            <constraint firstItem="a7E-m9-Ajd" firstAttribute="top" secondItem="FyP-QW-WQO" secondAttribute="top" constant="9" id="Tuf-hY-o6j"/>
-                            <constraint firstItem="KLw-HA-n9Y" firstAttribute="top" secondItem="HOL-cY-HeR" secondAttribute="bottom" constant="23" id="Us2-Gm-oVH"/>
-                            <constraint firstItem="ick-1i-mxk" firstAttribute="leading" secondItem="FyP-QW-WQO" secondAttribute="leading" constant="25" id="V30-xC-bVa"/>
-                            <constraint firstItem="KLw-HA-n9Y" firstAttribute="leading" secondItem="FyP-QW-WQO" secondAttribute="leading" constant="25" id="YtJ-Je-fS5"/>
-                            <constraint firstItem="5Ki-gh-48b" firstAttribute="leading" secondItem="FyP-QW-WQO" secondAttribute="leading" constant="25" id="Z5W-J5-fiL"/>
-                            <constraint firstItem="jPt-1o-d2P" firstAttribute="leading" secondItem="KLw-HA-n9Y" secondAttribute="trailing" constant="40" id="bUt-ai-zwB"/>
-                            <constraint firstItem="HOL-cY-HeR" firstAttribute="top" secondItem="a7E-m9-Ajd" secondAttribute="bottom" constant="25" id="gH8-sX-9xb"/>
-                            <constraint firstItem="oW1-hE-yAc" firstAttribute="top" secondItem="5Ki-gh-48b" secondAttribute="bottom" constant="50" id="iHA-Jc-qeG"/>
-                            <constraint firstItem="flB-ew-dRX" firstAttribute="leading" secondItem="FyP-QW-WQO" secondAttribute="leading" constant="25" id="kJL-Rq-b9E"/>
-                            <constraint firstItem="FyP-QW-WQO" firstAttribute="trailing" secondItem="a7E-m9-Ajd" secondAttribute="trailing" constant="35" id="p29-KE-CO4"/>
-                            <constraint firstItem="FyP-QW-WQO" firstAttribute="trailing" secondItem="5Ki-gh-48b" secondAttribute="trailing" constant="40" id="rp5-Mm-cNG"/>
-                            <constraint firstItem="5Ki-gh-48b" firstAttribute="top" secondItem="flB-ew-dRX" secondAttribute="bottom" constant="13" id="xi0-nn-5H0"/>
-                            <constraint firstItem="jPt-1o-d2P" firstAttribute="top" secondItem="KLw-HA-n9Y" secondAttribute="top" id="zLa-8P-p2e"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="FyP-QW-WQO"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Title" id="9ng-dh-rNb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="cEI-jl-2bl">
+                    <navigationItem key="navigationItem" title="Title" id="IkQ-oq-spf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="3HM-ag-HAh">
                             <connections>
-                                <segue destination="6qD-W8-sOQ" kind="unwind" unwindAction="unwindWithSegue:" id="fy0-T7-KLV"/>
+                                <segue destination="Qto-7F-Lqs" kind="unwind" unwindAction="unwindWithSegue:" id="l8J-Kf-Y4M"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
-                        <outlet property="clubTextField" destination="sRd-65-gZV" id="NLe-ch-142"/>
-                        <outlet property="dateTextField" destination="xbe-UA-0J2" id="plX-zO-EBu"/>
-                        <outlet property="descriptionTextView" destination="5Ki-gh-48b" id="UPq-9w-62W"/>
-                        <outlet property="dollarCountTextField" destination="GBY-mz-v7k" id="ixS-xc-Ksr"/>
-                        <outlet property="donationTitleTextField" destination="xZ5-sd-eWA" id="Cot-pj-tMm"/>
-                        <outlet property="doneButton" destination="oW1-hE-yAc" id="ZVF-WO-mV1"/>
-                        <outlet property="itemCountTextField" destination="qeh-tM-9ff" id="we1-On-Ad7"/>
+                        <outlet property="bottomLabel" destination="BZW-2W-VPN" id="BFY-79-GOm"/>
+                        <outlet property="clubTextField" destination="5rZ-4g-U6f" id="FLQ-qS-d0p"/>
+                        <outlet property="dateTextField" destination="cT8-2U-IAc" id="j5Q-Ea-Ioo"/>
+                        <outlet property="descriptionTextView" destination="hdG-Fm-i0v" id="rAC-uN-ncL"/>
+                        <outlet property="doneButton" destination="OeE-sO-hfe" id="jEE-8P-NWP"/>
+                        <outlet property="timeFromTextField" destination="rkM-sh-bLz" id="Anp-F9-vJC"/>
+                        <outlet property="timeToTextField" destination="va0-gU-GLY" id="W44-YN-iDg"/>
+                        <outlet property="titleTextField" destination="xrp-Li-e91" id="KUA-F0-55W"/>
+                        <outlet property="topLabel" destination="cPI-6n-B73" id="JfJ-fl-mFw"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="93m-VD-ayg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="6qD-W8-sOQ" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0U-Fk-MuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Qto-7F-Lqs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5521" y="-9"/>
+            <point key="canvasLocation" x="4807" y="1156"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WhT-x7-Gub">
@@ -1064,10 +699,10 @@ SOFTWARE.</string>
             </objects>
             <point key="canvasLocation" x="2943" y="113"/>
         </scene>
-        <!--Title-->
+        <!--Donation View Controller-->
         <scene sceneID="1II-Ao-ivK">
             <objects>
-                <viewController id="f31-00-T9h" customClass="scrollViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Donation View Controller" id="f31-00-T9h" customClass="DonationViewController" customModule="VolunteerHourTrackerV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y6N-2J-9nW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1103,73 +738,74 @@ SOFTWARE.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzK-ch-bhf">
-                                                <rect key="frame" x="41" y="111" width="30.5" height="20"/>
+                                                <rect key="frame" x="41" y="98" width="30.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dollars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ib-8Y-VJG">
-                                                <rect key="frame" x="43" y="204" width="45" height="20"/>
+                                                <rect key="frame" x="43" y="178" width="45" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYR-Tg-4ir">
-                                                <rect key="frame" x="188" y="204" width="35.5" height="20"/>
+                                                <rect key="frame" x="188" y="178" width="35.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uJ9-yu-32a">
-                                                <rect key="frame" x="43" y="50" width="282" height="30"/>
-                                                <nil key="textColor"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uJ9-yu-32a">
+                                                <rect key="frame" x="43" y="50" width="282" height="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-mz-9Is">
-                                                <rect key="frame" x="43" y="139" width="282" height="30"/>
-                                                <nil key="textColor"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-mz-9Is">
+                                                <rect key="frame" x="43" y="126" width="282" height="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyk-FC-nlH">
-                                                <rect key="frame" x="43" y="232" width="100" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pyk-FC-nlH">
+                                                <rect key="frame" x="43" y="206" width="100" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="Bpq-e2-TZN"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-dA-flw">
-                                                <rect key="frame" x="183" y="232" width="100" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hve-dA-flw">
+                                                <rect key="frame" x="183" y="206" width="100" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="8Re-6v-sqk"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a description here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-uq-QSW">
-                                                <rect key="frame" x="38" y="437" width="240" height="149"/>
+                                                <rect key="frame" x="38" y="385" width="240" height="201"/>
                                                 <color key="backgroundColor" red="0.39747053859999998" green="0.85468482639999999" blue="0.86276250170000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4k1-xT-Jsj">
-                                                <rect key="frame" x="43" y="403" width="74" height="20"/>
+                                                <rect key="frame" x="43" y="351" width="74" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="13L-Hz-VBU">
-                                                <rect key="frame" x="43" y="330" width="282" height="30"/>
-                                                <nil key="textColor"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="13L-Hz-VBU">
+                                                <rect key="frame" x="43" y="291" width="282" height="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hh-fI-9mx">
-                                                <rect key="frame" x="43" y="302" width="30" height="20"/>
+                                                <rect key="frame" x="43" y="263" width="30" height="20"/>
                                                 <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1180,6 +816,9 @@ SOFTWARE.</string>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="W2m-ip-Krs" kind="unwind" unwindAction="unwindWithSegue:" id="xkx-vM-UXv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1246,15 +885,30 @@ SOFTWARE.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SZg-hF-ZKr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="6oX-wd-9TF"/>
+                    <navigationItem key="navigationItem" title="Title" id="6oX-wd-9TF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Eu3-pV-BSs">
+                            <connections>
+                                <segue destination="W2m-ip-Krs" kind="unwind" unwindAction="unwindWithSegue:" id="1v8-Nm-cGk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
-                        <outlet property="descriptionTextView" destination="eKq-uq-QSW" id="kVA-6a-zji"/>
+                        <outlet property="bottomLabel" destination="xRK-Jt-P6n" id="2yP-xa-5Wl"/>
+                        <outlet property="clubTextField" destination="13L-Hz-VBU" id="eSz-Kp-Q5Q"/>
+                        <outlet property="dateTextField" destination="MzX-mz-9Is" id="gJg-J3-i0x"/>
+                        <outlet property="descriptionTextView" destination="eKq-uq-QSW" id="OSO-x6-V73"/>
+                        <outlet property="dollarCountTextField" destination="pyk-FC-nlH" id="lW8-xg-9uh"/>
+                        <outlet property="donationTitleTextField" destination="uJ9-yu-32a" id="oWc-Zb-Knk"/>
+                        <outlet property="doneButton" destination="pfZ-KC-5Ev" id="yMj-gw-1AM"/>
+                        <outlet property="itemCountTextField" destination="Hve-dA-flw" id="y2g-fP-dRM"/>
+                        <outlet property="topLabel" destination="4Xy-py-aGr" id="0Dr-3k-5x2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msa-Fp-yQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="W2m-ip-Krs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5583" y="929"/>
+            <point key="canvasLocation" x="5708" y="1156"/>
         </scene>
     </scenes>
     <resources>
@@ -1262,7 +916,7 @@ SOFTWARE.</string>
         <image name="home icon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8S5-Oy-h3j"/>
-        <segue reference="L2B-sW-Be0"/>
+        <segue reference="6Gk-1j-ZCy"/>
+        <segue reference="8Sg-6x-vkM"/>
     </inferredMetricsTieBreakers>
 </document>

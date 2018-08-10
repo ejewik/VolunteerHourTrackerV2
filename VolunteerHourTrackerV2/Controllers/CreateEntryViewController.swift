@@ -24,20 +24,34 @@ class CreateEntryViewController : UIViewController {
     var timeToPicker : UIDatePicker = UIDatePicker()
     var timeFromPicker : UIDatePicker = UIDatePicker()
     
-   
-    @IBOutlet weak var doneButton: UIButton!
+//
+//    @IBOutlet weak var doneButton: UIButton!
+//    @IBOutlet weak var dateTextField: UITextField!
+//    @IBOutlet weak var timeFromTextField: UITextField!
+//    @IBOutlet weak var timeToTextField: UITextField!
+//    @IBOutlet weak var titleTextField: UITextField!
+    
+//    @IBOutlet weak var descriptionTextView: UITextView!
+//    @IBOutlet weak var clubTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeFromTextField: UITextField!
     @IBOutlet weak var timeToTextField: UITextField!
-    @IBOutlet weak var titleTextField: UITextField!
-    
-    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var clubTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bottomLabel.isHidden = true
+        topLabel.isHidden = true 
+        
+        descriptionTextView.isScrollEnabled = false
         //NotificationCenter.default.addObserver(self, selector: #selector(CreateEntryViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         //NotificationCenter.default.addObserver(self, selector: #selector(CreateEntryViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         

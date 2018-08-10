@@ -18,14 +18,26 @@ class DonationViewController: UIViewController {
     //static var totalDollars : Int16 = 0
     
     
-    @IBOutlet weak var dateTextField: UITextField!
-    @IBOutlet weak var donationTitleTextField: UITextField!
+//    @IBOutlet weak var dateTextField: UITextField!
+//    @IBOutlet weak var donationTitleTextField: UITextField!
+//
+//    @IBOutlet weak var itemCountTextField: UITextField!
+//    @IBOutlet weak var clubTextField: UITextField!
+//    @IBOutlet weak var descriptionTextView: UITextView!
+//    @IBOutlet weak var doneButton: UIButton!
+//    @IBOutlet weak var dollarCountTextField: UITextField!
     
+    @IBOutlet weak var donationTitleTextField: UITextField!
+   
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var dollarCountTextField: UITextField!
     @IBOutlet weak var itemCountTextField: UITextField!
     @IBOutlet weak var clubTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var dollarCountTextField: UITextField!
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    
     
     var datePicker: UIDatePicker = UIDatePicker()
     
@@ -34,7 +46,9 @@ class DonationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        descriptionTextView.isScrollEnabled = false
+        bottomLabel.isHidden = true
+        topLabel.isHidden = true
        self.navigationItem.title = "Create"
         
         self.hideKeyboardWhenTappedAround()
