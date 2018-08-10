@@ -655,14 +655,13 @@ SOFTWARE.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="fGi-jG-GaN" firstAttribute="leading" secondItem="yxf-3Q-69E" secondAttribute="trailing" constant="-29" id="F0U-Y9-HCw"/>
                             <constraint firstItem="fGi-jG-GaN" firstAttribute="leading" secondItem="tQJ-ZX-xOc" secondAttribute="leading" constant="50" id="I3E-bL-Vbd"/>
                             <constraint firstItem="yxf-3Q-69E" firstAttribute="top" secondItem="tQJ-ZX-xOc" secondAttribute="top" constant="17" id="JKB-rC-5cb"/>
                             <constraint firstItem="tQJ-ZX-xOc" firstAttribute="trailing" secondItem="fGi-jG-GaN" secondAttribute="trailing" constant="50" id="QU8-uD-1gd"/>
-                            <constraint firstItem="gDM-FK-umy" firstAttribute="top" secondItem="yxf-3Q-69E" secondAttribute="bottom" constant="23" id="Tcc-vS-02b"/>
                             <constraint firstItem="tQJ-ZX-xOc" firstAttribute="bottom" secondItem="gDM-FK-umy" secondAttribute="bottom" constant="107" id="VNo-dP-rxv"/>
                             <constraint firstItem="tQJ-ZX-xOc" firstAttribute="trailing" secondItem="gDM-FK-umy" secondAttribute="trailing" constant="53" id="XJ6-rU-C5E"/>
                             <constraint firstItem="fGi-jG-GaN" firstAttribute="top" secondItem="tQJ-ZX-xOc" secondAttribute="top" constant="10" id="Yuh-Fw-k2w"/>
-                            <constraint firstItem="tQJ-ZX-xOc" firstAttribute="bottom" secondItem="yxf-3Q-69E" secondAttribute="bottom" constant="600" id="a9c-3h-jeJ"/>
                             <constraint firstItem="yxf-3Q-69E" firstAttribute="leading" secondItem="tQJ-ZX-xOc" secondAttribute="leading" constant="23" id="fcj-d2-Crv"/>
                             <constraint firstItem="gDM-FK-umy" firstAttribute="leading" secondItem="tQJ-ZX-xOc" secondAttribute="leading" constant="53" id="imY-2X-Ila"/>
                             <constraint firstItem="gDM-FK-umy" firstAttribute="top" secondItem="tQJ-ZX-xOc" secondAttribute="top" constant="70" id="q3E-1j-Qq2"/>
@@ -673,6 +672,7 @@ SOFTWARE.</string>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="yxf-3Q-69E" id="4gN-ja-PgX"/>
+                        <outlet property="licenseTextView" destination="gDM-FK-umy" id="Pgg-8Q-5zE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAP-Gh-slA" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,10 +11,12 @@ import UIKit
 class InfoViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var licenseTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        licenseTextView.allowsEditingTextAttributes = false
+        licenseTextView.isEditable = false
         // Do any additional setup after loading the view.
     }
 
