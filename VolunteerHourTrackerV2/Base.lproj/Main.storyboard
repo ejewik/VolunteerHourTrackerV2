@@ -396,7 +396,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration" label="ContentView"/>
                                         <constraints>
                                             <constraint firstItem="cPI-6n-B73" firstAttribute="top" secondItem="oEY-Vu-mMy" secondAttribute="top" constant="20" id="1A2-OI-hmn"/>
@@ -821,7 +821,7 @@ SOFTWARE.</string>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration" label="ContentView"/>
                                         <constraints>
                                             <constraint firstItem="MzX-mz-9Is" firstAttribute="top" secondItem="OzK-ch-bhf" secondAttribute="bottom" constant="8" id="1SQ-dV-RLd"/>
