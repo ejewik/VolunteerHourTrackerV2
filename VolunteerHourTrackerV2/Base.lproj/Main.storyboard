@@ -392,7 +392,7 @@
                                                     <color key="titleColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Qto-7F-Lqs" kind="unwind" unwindAction="unwindWithSegue:" id="qEM-B9-jlF"/>
+                                                    <segue destination="Qto-7F-Lqs" kind="unwind" identifier="save" unwindAction="unwindWithSegue:" id="WWY-OL-MGn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -463,7 +463,7 @@
                     <navigationItem key="navigationItem" title="Title" id="IkQ-oq-spf">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="3HM-ag-HAh">
                             <connections>
-                                <segue destination="Qto-7F-Lqs" kind="unwind" unwindAction="unwindWithSegue:" id="l8J-Kf-Y4M"/>
+                                <segue destination="Qto-7F-Lqs" kind="unwind" identifier="cancel" unwindAction="unwindWithSegue:" id="35C-fw-2H3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -817,7 +817,7 @@ SOFTWARE.</string>
                                                     <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="W2m-ip-Krs" kind="unwind" unwindAction="unwindWithSegue:" id="xkx-vM-UXv"/>
+                                                    <segue destination="W2m-ip-Krs" kind="unwind" identifier="done" unwindAction="unwindWithSegue:" id="gC1-lo-e46"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -888,7 +888,7 @@ SOFTWARE.</string>
                     <navigationItem key="navigationItem" title="Title" id="6oX-wd-9TF">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Eu3-pV-BSs">
                             <connections>
-                                <segue destination="W2m-ip-Krs" kind="unwind" unwindAction="unwindWithSegue:" id="1v8-Nm-cGk"/>
+                                <segue destination="W2m-ip-Krs" kind="unwind" unwindAction="unwindWithSegue:" id="I50-Ht-BoI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
